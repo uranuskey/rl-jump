@@ -69,9 +69,9 @@
     "patches/AUTHORS": "52a7345240423dcc5b96295430931e44537ce1eaeb4aaf56cfca7a46c95c3f1e",
     "patches/LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
     "patches/manifest.json": "a85cb376d68a095cde521acddaa94d6c1787730ad437ee878e1da60c8ae3b760",
-    "README.md": "25905dab6bd1933387dde4d77efa8e7bd906b76b7fb60a44495aa54f82723e32",
+    "README.md": "2347541143d747a8141ad053e8717eb4bf937246690b5adc4bb1dadcaef4f6e7",
     "requirements.txt": "35385d055609f9c95f8f009112d33713e3cdbba6e533fa80e62fe3a0a52bb51e",
-    "run_checked.ps1": "c474ca385f0f93e22a015a070360cfffc3087587eaf8a45461f1e078c23484d6",
+    "run_checked.ps1": "59a137156dccf40969156d0321e573a3673f06bc0adb178c3357faa442f78ba4",
     "SOURCE_PROVENANCE.json": "4f88e306ab1fa21ea3f70a131e0244d8f7e38a2a779f2c860725d3789b69f596",
     "verify_portable.py": "f84e35e832dc8210ba36ef00352c12ba4cc1641718659255cba76c872cd1ad40"
   }

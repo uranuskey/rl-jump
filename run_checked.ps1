@@ -3,12 +3,14 @@ param(
     [Parameter(Mandatory=$true)][string]$RunId,
     [ValidateSet(45,256,2048)][int]$NumEnvs=45,
     [string]$SmokeResult,
-    [string]$TrainResult
+    [string]$TrainResult,
+    [string]$PythonPath
 )
 $ErrorActionPreference='Stop'
 if ($RunId -notmatch '^[A-Za-z0-9_-]+$') { throw 'RunId must contain only letters, numbers, underscores and hyphens' }
-$pythonPath=Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
-if (-not (Test-Path -LiteralPath $pythonPath)) { throw 'Create the checkout .venv first' }
+if (-not $PythonPath) { $PythonPath=Join-Path $PSScriptRoot '.venv\Scripts\python.exe' }
+if (-not (Test-Path -LiteralPath $PythonPath)) { throw 'Create the checkout .venv first or supply -PythonPath' }
+$PythonPath=(Resolve-Path -LiteralPath $PythonPath).Path
 $taskPath=Join-Path $PSScriptRoot 'experiments\v7_rs02_24v_flat_landing_reward'
 $runPath=Join-Path $taskPath "runs\$RunId"
 if (Test-Path -LiteralPath $runPath) { throw 'Use a fresh RunId; this output directory already exists' }
@@ -24,7 +26,7 @@ if ($Stage -eq 'evaluate') {
     if ($Stage -eq 'train') { $entryArgs+=@('--smoke-result',$SmokeResult) }
 }
 # A synchronous native invocation returns only after the Python process exits.
-& $pythonPath $entryPath @entryArgs
+& $PythonPath $entryPath @entryArgs
 $processExitCode=$LASTEXITCODE
 if ($null -eq $processExitCode) { throw 'Native process returned no exit code' }
 New-Item -ItemType Directory -Path $runPath -Force | Out-Null

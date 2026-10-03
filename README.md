@@ -34,6 +34,8 @@ $task = 'experiments\v7_rs02_24v_flat_landing_reward'
 
 Use a fresh run ID each time. `run_checked.ps1` waits for the real Python process to exit and records its actual exit code in that run's ignored `exit_receipt.json`. Audit requires successful train and evaluation exit receipts matching the run IDs and frozen manifest, in addition to run statuses. A `STOP` file in the task folder or `experiments/v7_jump_in_place` requests bounded termination. Output goes under ignored `runs/` folders. Plotting is optional; install `matplotlib` to run `plot_training.py` after audit. This repository includes no historical run receipts, trajectories, logs, images, videos, or optimizer output from the landing experiment.
 
+If the virtual environment is outside the checkout, add `-PythonPath` to each wrapper command, for example `-PythonPath '..\.venv\Scripts\python.exe'` when the checkout is a `repo` folder beside the environment. Use that same interpreter for CPU verification and audit.
+
 ## Assets and provenance
 
 `SOURCE_PROVENANCE.json` records original source hashes, the original frozen-manifest hash, and the SHA-256 and source of each necessary base checkpoint. `FROZEN.json` under the task records the exported source/resources/models after path relocation. It is deliberately a new manifest; old machine-specific manifests and training results are excluded.
