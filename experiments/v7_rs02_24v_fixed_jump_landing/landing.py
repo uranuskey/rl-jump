@@ -6,7 +6,7 @@ from environment import JumpEnv
 from controlled_env import HeightEnv
 from plan_contract import reference as launch_reference, HANDOFF
 from jump_task import FAILED
-from control import advance, reference, ACTION_DIM
+from control import prepare, ACTION_DIM
 
 
 class LandingEnv(JumpEnv):
@@ -45,28 +45,21 @@ class LandingEnv(JumpEnv):
         if not torch.equal(self.plan[self.plan_locked], self.locked_plan[self.plan_locked]):
             raise RuntimeError('Frozen jump plan changed')
 
-    def step(self, standing_actions, *, policy_action=None, auto_reset=False):
+    def prepare_commands(self, standing_actions, policy_action=None):
         self.assert_launch_fixed()
-        time = self.ticks*.0025
-        state = launch_reference(self.plan, time)
-        apex = self.task.height_score.apex
-        enabled = apex & ~self.terminal_mask() & (self.ticks < 2000)
-        new = enabled & (self.gate_tick < 0)
-        self.gate_tick[new] = self.ticks[new]
-        self.landing_start[new] = time[new]
-        height, velocity = reference(self.plan, time, self.landing_start, self.task.touchdown_time)
         raw = torch.zeros(self.n, ACTION_DIM, device=self.device) if policy_action is None else policy_action
-        self.height_offset, height, velocity, corrections, effective = advance(
-            raw, enabled, self.height_offset, height, velocity)
-        landing = torch.stack((height-.18, velocity, torch.zeros_like(height), torch.ones_like(height)), 1)
-        state = torch.where(apex[:, None], landing, state)
-        self.curve_state = torch.where((time>=HANDOFF)[:, None], state, self.curve_state)
-        actions = torch.where((time<HANDOFF)[:, None], standing_actions[:, :6], corrections)
-        self.control_gate.copy_(enabled)
-        self.effective_action.copy_(effective)
-        if bool(corrections[~apex].any()):
+        return prepare(self.plan, self.ticks, self.task.height_score.apex, self.terminal_mask(),
+            self.gate_tick, self.landing_start, self.height_offset, self.curve_state, standing_actions, raw,
+            launch_reference(self.plan, self.ticks*.0025), self.task.touchdown_time, HANDOFF)
+
+    def step(self, standing_actions, *, policy_action=None, auto_reset=False):
+        commands = self.prepare_commands(standing_actions, policy_action)
+        for name, value in commands.items():
+            if name!='actions':
+                getattr(self, name).copy_(value)
+        if bool(self.effective_action[~self.task.height_score.apex].any()):
             raise RuntimeError('Landing controller acted before COM apex')
-        out = HeightEnv.step(self, actions, auto_reset=auto_reset)
-        self.previous_policy_action.copy_(effective)
+        out = HeightEnv.step(self, commands['actions'], auto_reset=auto_reset)
+        self.previous_policy_action.copy_(self.effective_action)
         self.assert_launch_fixed()
         return out

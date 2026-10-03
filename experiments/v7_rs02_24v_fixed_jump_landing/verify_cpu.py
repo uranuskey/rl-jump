@@ -6,7 +6,8 @@ import sys
 import torch
 import mujoco
 from bootstrap import ROOT, HERE
-from control import advance, ACTION_DIM, ACTOR_DIM, CRITIC_DIM, DT
+from control import advance, prepare, ACTION_DIM, ACTOR_DIM, CRITIC_DIM, DT
+from plan_contract import reference as launch_reference, HANDOFF
 from learning import Policy, FrozenLaunch, PPO, advantages
 from runtime import verify
 import test_reward
@@ -44,6 +45,18 @@ def main():
     checks.append('GAE respects per-world first landing decision, terminal boundary and invalid rows')
     launch, policy = FrozenLaunch(), Policy()
     plans = launch(torch.randn(4, 17))
+    ticks = torch.tensor([0, 200, 400, 500])
+    apex = torch.tensor([False, False, False, True])
+    gate_tick, start, offset = torch.full((4,), -1), torch.zeros(4), torch.zeros(4)
+    curve, standing = torch.zeros(4, 4), torch.randn(4, 6)
+    args = (plans, ticks, apex, torch.zeros(4, dtype=torch.bool), gate_tick, start, offset, curve, standing)
+    snapshots = [v.clone() for v in args]
+    zero = prepare(*args, torch.zeros(4, 7), launch_reference(plans, ticks*.0025), torch.zeros(4), HANDOFF)
+    other = prepare(*args, torch.randn(4, 7)*4, launch_reference(plans, ticks*.0025), torch.zeros(4), HANDOFF)
+    assert all(torch.equal(v, previous) for v, previous in zip(args, snapshots))
+    assert all(torch.equal(zero[k][~apex], other[k][~apex]) for k in zero)
+    assert not torch.equal(zero['actions'][apex], other['actions'][apex])
+    checks.append('pure same-state controller preserves every pre-apex command and input tensor')
     old = {k:v.clone() for k,v in launch.state_dict().items()}
     assert plans.shape==(4, 9) and not any(p.requires_grad for p in launch.parameters())
     obs = torch.randn(3, 4, ACTOR_DIM)

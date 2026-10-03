@@ -41,6 +41,24 @@ def advance(raw, enabled, offset, base_height, base_velocity):
     return new_offset, height, velocity, motor_latent, effective
 
 
+def prepare(plan, ticks, apex, terminal, gate_tick, start, offset, curve_state,
+            standing, raw, launch_state, touchdown, handoff_s):
+    """Pure controller transition, usable for exact same-state counterfactuals."""
+    time = ticks*.0025
+    enabled = apex & ~terminal & (ticks<2000)
+    new = enabled & (gate_tick<0)
+    gate_tick = torch.where(new, ticks, gate_tick)
+    start = torch.where(new, time, start)
+    height, velocity = reference(plan, time, start, touchdown)
+    offset, height, velocity, corrections, effective = advance(raw, enabled, offset, height, velocity)
+    landing = torch.stack((height-.18, velocity, torch.zeros_like(height), torch.ones_like(height)), 1)
+    state = torch.where(apex[:, None], landing, launch_state)
+    return dict(curve_state=torch.where((time>=handoff_s)[:, None], state, curve_state),
+        actions=torch.where((time<handoff_s)[:, None], standing[:, :6], corrections),
+        gate_tick=gate_tick, landing_start=start, height_offset=offset,
+        control_gate=enabled, effective_action=effective)
+
+
 def features(env):
     time = env.ticks*.0025
     touched = env.task.touchdown_time>0
