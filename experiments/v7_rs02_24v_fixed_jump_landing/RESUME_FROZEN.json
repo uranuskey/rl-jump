@@ -1,0 +1,25 @@
+{
+  "task": "fixed_jump_landing_512_resume_v1",
+  "policy_frozen_sha256": "71ee025e84e4c8c97b09e583b4f8aba6a76403741f36700d203d639a4e23e66a",
+  "contract": {
+    "num_envs": 512,
+    "total_updates": 128,
+    "physics_hz": 400,
+    "control_hz": 50,
+    "guard_frequency_unchanged": true,
+    "reward_and_ppo_unchanged": true
+  },
+  "sha256": {
+    "experiments/v7_rs02_24v_fixed_jump_landing/fast_checks.py": "e4346fcacf39786ed9094cd62442334aa6d9c54f9ba8358c3b8e54ae61ac039d",
+    "experiments/v7_rs02_24v_fixed_jump_landing/fast_env.py": "737b0d7ca192f22e76b5092b18910ff9c5a1958c977e604fd5275190f7141b00",
+    "experiments/v7_rs02_24v_fixed_jump_landing/fast_report.py": "c98565471dbb797ee7e9e9c3faf3b92c80eb2ccdd26931aa905e7410570d278a",
+    "experiments/v7_rs02_24v_fixed_jump_landing/fast_rollout.py": "092e2dc40012e352f6dd7bcf451e4b155f3632763c8c28a00530ee6f76b7edf6",
+    "experiments/v7_rs02_24v_fixed_jump_landing/resume_state.py": "a3d66968bba21148124d70b162e30de91255c2c3a7b747b485a21a89fbb54202",
+    "experiments/v7_rs02_24v_fixed_jump_landing/resume_train.py": "7e6b326f6acb5aa8c28c223fd6f04f80e5a720b23990b3977c21355f49a051ae",
+    "experiments/v7_rs02_24v_fixed_jump_landing/resume_audit.py": "283425a91d00771f4d97f4dcf9037708e1ef14d4f8c1849f35338ef47dccc211",
+    "experiments/v7_rs02_24v_fixed_jump_landing/run_resume.ps1": "cdc990536854ab21ee731cad1e689bd480c8b4427a960bb33eb00faca96a1497",
+    "experiments/v7_rs02_24v_fixed_jump_landing/verify_fast.py": "ea622acf71f35ca3aab98b6f2b4c04435a2f8fbaf09e769b6fd8af68129d08ff",
+    "experiments/v7_rs02_24v_fixed_jump_landing/freeze_resume.py": "3a49fb44804614a8a960d7b1ddf2168f7581d16b328052e7f1ef1b4c7a69c1e1",
+    "experiments/v7_rs02_24v_fixed_jump_landing/RESUME.md": "0d9f729c890cea16ec17849fb95329c0f01b6f39d491272fba7f7b0c7b879065"
+  }
+}
