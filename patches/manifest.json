@@ -1,0 +1,8 @@
+{
+  "package": "mujoco-warp",
+  "version": "3.14.0",
+  "wheel_url": "https://files.pythonhosted.org/packages/02/9d/2233955f4ce9c8c52ac5df8b915fae953c4deb27469a2f0ceae0fe858a9a/mujoco_warp-3.14.0-py3-none-any.whl",
+  "wheel_sha256": "77a3e2b041ef7f7b3d2a41b1686672eec27aebd766eafcc22db8af564b821306",
+  "original_forward_sha256": "a12433dc43c2b012c3a9f11a2db99d8032ac29707c0962f911b33bd5940327d7",
+  "patched_forward_sha256": "a12433dc43c2b012c3a9f11a2db99d8032ac29707c0962f911b33bd5940327d7"
+}

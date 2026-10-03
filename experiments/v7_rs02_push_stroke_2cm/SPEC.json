@@ -1,0 +1,41 @@
+{
+  "stage": "stroke",
+  "profiles": [
+    {
+      "name": "cosine_120to210",
+      "crouch": 0.12,
+      "extend": 0.21,
+      "shape": "cosine",
+      "up_s": 0.12,
+      "velocity_fraction": 0.34
+    },
+    {
+      "name": "quintic_120to210",
+      "crouch": 0.12,
+      "extend": 0.21,
+      "shape": "quintic",
+      "up_s": 0.12,
+      "velocity_fraction": 0.34
+    },
+    {
+      "name": "quintic_120to220",
+      "crouch": 0.12,
+      "extend": 0.22,
+      "shape": "quintic",
+      "up_s": 0.12,
+      "velocity_fraction": 0.34
+    },
+    {
+      "name": "quintic_100to220",
+      "crouch": 0.1,
+      "extend": 0.22,
+      "shape": "quintic",
+      "up_s": 0.12,
+      "velocity_fraction": 0.34
+    }
+  ],
+  "authorization": "User accepted the proposed2cm comparison:trajectory shape first,then larger stroke;2048env requested;small fallback authorized for concurrency.",
+  "changed_variable": "After audited shape selection compare120to210 vs120to220,then100to220;fixedshape,120ms,34percent feedforward;keepcosine120to210control.",
+  "selection_rule": "No promoted winner unless45of45complete;report actual>=2cm separately from1.5..2.5cm tolerance passes;no further auto expansion in this bounded comparison.",
+  "shape_selection": "SELECTION.json"
+}
