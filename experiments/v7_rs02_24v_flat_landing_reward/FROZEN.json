@@ -34,7 +34,7 @@
     "experiments/v7_rl/actuator.py": "17c60ffe87152a5d6275f331a46ea2a960510be147fdebb9df2e11fd511ee282",
     "experiments/v7_rs02_24v_flat_landing_reward/assist_contract.py": "99661fb03966e24a18d9ab6d5a3bd0e384f010bf8da59a7605de309180fe5ca2",
     "experiments/v7_rs02_24v_flat_landing_reward/audit_training.py": "8c15bcaa1761a33c5755a88da4502a63d8635f8c9c0103cd1d9901629c692c11",
-    "experiments/v7_rs02_24v_flat_landing_reward/bootstrap.py": "f048ecbec51b97309d28c3ad32d41493810d6e0eed85037ff1e0272353495e73",
+    "experiments/v7_rs02_24v_flat_landing_reward/bootstrap.py": "cc4cd65db7759875111bed2d37dae33c0106652596cf20a276a38ebd62dff2b2",
     "experiments/v7_rs02_24v_flat_landing_reward/controlled_env.py": "69a51facc6bcf28ab9c7b59e7d7317f225f18a2e5f03915336772a220f5c68a8",
     "experiments/v7_rs02_24v_flat_landing_reward/curve_contract.py": "04401c72a0fe102e2eb40bc142dcff978bcdf882d2cfbf02358ef6f2c9764035",
     "experiments/v7_rs02_24v_flat_landing_reward/environment.py": "59bda5bd23b80ffc5a684ce3222827fbf588d618b15ca09ace9a3102da59c90d",
@@ -69,7 +69,7 @@
     "patches/AUTHORS": "52a7345240423dcc5b96295430931e44537ce1eaeb4aaf56cfca7a46c95c3f1e",
     "patches/LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
     "patches/manifest.json": "a85cb376d68a095cde521acddaa94d6c1787730ad437ee878e1da60c8ae3b760",
-    "README.md": "634ead6fbbe07a54b1b5b30e18e05c385f25730e6ba4d2c3a246940e831f423f",
+    "README.md": "1ec39e2b567e10acf4ea914a930683541fcffed8dbd6e7f3123cb4a1d9a53653",
     "requirements.txt": "35385d055609f9c95f8f009112d33713e3cdbba6e533fa80e62fe3a0a52bb51e",
     "SOURCE_PROVENANCE.json": "4f88e306ab1fa21ea3f70a131e0244d8f7e38a2a779f2c860725d3789b69f596",
     "verify_portable.py": "f84e35e832dc8210ba36ef00352c12ba4cc1641718659255cba76c872cd1ad40"

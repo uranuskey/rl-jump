@@ -14,6 +14,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe verify_portable.py
 ```
 
+Use an ASCII checkout path such as `D:\RL_JUMP`. The Windows bootstrap sets process-local `TEMP`/`TMP` to `.tmp` and `WARP_CACHE_PATH` to `.warp_cache` in the checkout because NVRTC can fail on Chinese temporary paths. These generated directories are ignored. It does not change system environment settings.
+
 The source environment used torch 2.8.0+cu128. CUDA wheel compatibility and physical baseline equivalence must be measured on each target machine. CPU verification does not validate GPU physics. `patches/manifest.json` records the official mujoco-warp 3.14.0 wheel and the frozen `forward.py` hash. The local frozen file is byte-identical to the official wheel; no patch is needed. Runtime verification fails if its version or hash changes. The reused RSL-RL modules are vendored with their existing license.
 
 ## Run

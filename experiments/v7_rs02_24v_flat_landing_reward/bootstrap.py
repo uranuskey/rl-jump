@@ -1,8 +1,19 @@
 """Isolated assistive curriculum; archived experiments remain read-only."""
 from pathlib import Path
 import sys
+import os
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
+# NVRTC needs ASCII temporary paths on Windows; change only this process.
+if os.name == 'nt':
+    scratch=ROOT/'.tmp'
+    cache=ROOT/'.warp_cache'
+    if not str(scratch).isascii():
+        raise RuntimeError('Place the portable checkout in an ASCII path for CUDA NVRTC')
+    scratch.mkdir(exist_ok=True)
+    cache.mkdir(exist_ok=True)
+    os.environ['TEMP']=os.environ['TMP']=str(scratch)
+    os.environ['WARP_CACHE_PATH']=str(cache)
 PARENT=HERE.parent/'v7_rs02_learned_curve'
 CHECKPOINT=ROOT/'models/standing_crouch_verified.pt'
 SOURCE_SHA='989d35d76c3f81a152db602a200f3d2ea3be62b4452db7a0a47a0c186e237f5b'
