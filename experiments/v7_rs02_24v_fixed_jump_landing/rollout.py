@@ -181,7 +181,8 @@ def prefix_check(env, standing, launch, limit, out):
                 for r, predicted in zip(env.last['traces'], expected):
                     actual = torch.cat((r['arrived_corrections'], r['arrived_reference_height'][:, None],
                                         r['arrived_motor_velocity'], r['thrust_requested_force'][:, None]), 1)
-                    if not torch.equal(actual[~enabled], predicted[~enabled]):
+                    decoded = torch.cat((predicted[:, :6], (.18+.03*predicted[:, 6])[:, None], predicted[:, 7:]), 1)
+                    if not torch.equal(actual[~enabled], decoded[~enabled]):
                         raise RuntimeError('Native pre-apex FIFO differs from the checked command path')
                     physics_comparisons += int((~enabled).sum())
                     row = {k: r[k].detach().cpu().numpy() for k in fields}
