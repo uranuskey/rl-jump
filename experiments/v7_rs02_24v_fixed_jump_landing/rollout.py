@@ -121,14 +121,17 @@ def trial(env, standing, launch, policy, limit, *, stochastic=False, collect=Fal
     return batch, summary
 
 
-def prefix_check(env, standing, launch, limit):
+def prefix_check(env, standing, launch, limit, out):
     """Paired native proof through each world's apex, with different future actions."""
     results = []
     fields = ('q', 'v', 'arrived_reference_height', 'arrived_corrections',
               'requested_height', 'requested_motor_velocity', 'requested_thrust_force',
               'assist_wrench')
-    for treatment in (False, True):
+    initial = []
+    for treatment in (False, False, True):
         reset(env)
+        initial.append(dict(q=env.q.cpu().numpy().copy(), v=env.v.cpu().numpy().copy(),
+                            obs=env.obs.cpu().numpy().copy()))
         env.record = True
         records = []
         with torch.no_grad():
@@ -157,7 +160,32 @@ def prefix_check(env, standing, launch, limit):
                 raise RuntimeError('Paired proof did not reach all 45 COM apices')
         results.append({k: np.stack([r[k] for r in records]) for k in records[0]})
     env.record = False
-    a, b = results
+    from runtime import write
+    names = ('zero_first', 'zero_repeat', 'distinct')
+    for name, arrays in zip(names, results):
+        np.savez_compressed(out/f'prefix_{name}.npz', **arrays)
+    diagnostics = []
+    for index in (1, 2):
+        a, b = results[0], results[index]
+        length = min(len(a['mask']), len(b['mask']))
+        mask = a['mask'][:length] & b['mask'][:length]
+        differences, first_difference = {}, {}
+        for name in a:
+            if name=='mask':
+                continue
+            delta = np.abs(a[name][:length]-b[name][:length])
+            differences[name] = float(np.max(delta[mask], initial=0))
+            while delta.ndim>2:
+                delta = delta.max(-1)
+            where = np.argwhere((delta>1e-7)&mask)
+            first_difference[name] = where[0].tolist() if len(where) else None
+        diagnostics.append(dict(comparison=names[index],
+            shape_a=list(a['mask'].shape), shape_b=list(b['mask'].shape),
+            masks_equal=a['mask'].shape==b['mask'].shape and np.array_equal(a['mask'], b['mask']),
+            initial_max_difference={k:float(np.max(np.abs(initial[0][k]-initial[index][k]))) for k in initial[0]},
+            common_pre_apex_max_difference=differences, first_difference_tick_world=first_difference))
+    write(out/'prefix_diagnostics.json', diagnostics)
+    a, _, b = results
     if a['mask'].shape != b['mask'].shape or not np.array_equal(a['mask'], b['mask']):
         raise RuntimeError('Landing actions changed apex timing')
     mask = a['mask']

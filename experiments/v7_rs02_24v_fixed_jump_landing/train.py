@@ -31,7 +31,7 @@ def execute(args, out, result, limit):
     result['readback'] = readback(env, world=1)
     result['selective_reset'] = selective_reset(env)
     if args.mode == 'smoke':
-        result['prefix_proof'] = prefix_check(env, standing, launch, limit)
+        result['prefix_proof'] = prefix_check(env, standing, launch, limit, out)
         write(out/'prefix_proof.json', result['prefix_proof'])
         print(json.dumps(dict(event='prefix_proof', **result['prefix_proof'])), flush=True)
     else:
