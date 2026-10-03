@@ -2,7 +2,7 @@
   "source_frozen_sha256": "c1e29757537ed2aed391986af0df19b73c31db3da732634ca2ef7e2c427fbdc3",
   "sha256": {
     ".gitattributes": "913d37394001c0ed8263f5de7851ee60da1b55a996df96729d73038a602abedb",
-    ".gitignore": "47ed6be52a44ee432ad6a3e9b16794992fc862b058c6e44316e01f479ee0defd",
+    ".gitignore": "c256bf9effcdf084ed016dc87df848c5b6e63c5e6011404fa66c8ab1b27301bc",
     "experiments/v7_exact_rotor_mjcf/targets.json": "6d1162c0d2b5230035972abb563dd7620c4d8d2d9fa08a4420d35340938235be",
     "experiments/v7_height_conditioned_transfer/bindings.py": "94c797179d0223cd13a57093aeaab9e63ec662883b3a74bec27d1c8ccc69f2d1",
     "experiments/v7_height_conditioned_transfer/height_contract.py": "8dcde2b82aff77bf961ca3753fe56fdd4b529af61f3cf6ade0ff97893f2c8344",
@@ -33,7 +33,7 @@
     "experiments/v7_mujoco_training_gate/vendor/RSL_RL_LICENSE": "d96416ef724b3972dd9a8316008b1b51d8972c1be5fd0d38f0b4b1664b125e4e",
     "experiments/v7_rl/actuator.py": "17c60ffe87152a5d6275f331a46ea2a960510be147fdebb9df2e11fd511ee282",
     "experiments/v7_rs02_24v_flat_landing_reward/assist_contract.py": "99661fb03966e24a18d9ab6d5a3bd0e384f010bf8da59a7605de309180fe5ca2",
-    "experiments/v7_rs02_24v_flat_landing_reward/audit_training.py": "8c15bcaa1761a33c5755a88da4502a63d8635f8c9c0103cd1d9901629c692c11",
+    "experiments/v7_rs02_24v_flat_landing_reward/audit_training.py": "90e54a228fa3ed6425aa5bd8a0b72a5cd22b3b75fa832db35b7ed1b11fc5d5ae",
     "experiments/v7_rs02_24v_flat_landing_reward/bootstrap.py": "cc4cd65db7759875111bed2d37dae33c0106652596cf20a276a38ebd62dff2b2",
     "experiments/v7_rs02_24v_flat_landing_reward/controlled_env.py": "69a51facc6bcf28ab9c7b59e7d7317f225f18a2e5f03915336772a220f5c68a8",
     "experiments/v7_rs02_24v_flat_landing_reward/curve_contract.py": "04401c72a0fe102e2eb40bc142dcff978bcdf882d2cfbf02358ef6f2c9764035",
@@ -69,8 +69,9 @@
     "patches/AUTHORS": "52a7345240423dcc5b96295430931e44537ce1eaeb4aaf56cfca7a46c95c3f1e",
     "patches/LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
     "patches/manifest.json": "a85cb376d68a095cde521acddaa94d6c1787730ad437ee878e1da60c8ae3b760",
-    "README.md": "1ec39e2b567e10acf4ea914a930683541fcffed8dbd6e7f3123cb4a1d9a53653",
+    "README.md": "25905dab6bd1933387dde4d77efa8e7bd906b76b7fb60a44495aa54f82723e32",
     "requirements.txt": "35385d055609f9c95f8f009112d33713e3cdbba6e533fa80e62fe3a0a52bb51e",
+    "run_checked.ps1": "c474ca385f0f93e22a015a070360cfffc3087587eaf8a45461f1e078c23484d6",
     "SOURCE_PROVENANCE.json": "4f88e306ab1fa21ea3f70a131e0244d8f7e38a2a779f2c860725d3789b69f596",
     "verify_portable.py": "f84e35e832dc8210ba36ef00352c12ba4cc1641718659255cba76c872cd1ad40"
   }

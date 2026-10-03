@@ -26,13 +26,13 @@ From the checkout root, first run the CPU checks, then a new 45-environment, 2-u
 $py = '.\.venv\Scripts\python.exe'
 $task = 'experiments\v7_rs02_24v_flat_landing_reward'
 & $py verify_portable.py
-& $py "$task\train.py" --mode smoke --num-envs 45 --run-id smoke_01
-& $py "$task\train.py" --mode train --num-envs 256 --run-id train_01 --smoke-result "$task\runs\smoke_01\result.json"
-& $py "$task\evaluate_training.py" --train-result "$task\runs\train_01\result.json" --run-id eval_01
+.\run_checked.ps1 -Stage smoke -NumEnvs 45 -RunId smoke_01
+.\run_checked.ps1 -Stage train -NumEnvs 256 -RunId train_01 -SmokeResult "$task\runs\smoke_01\result.json"
+.\run_checked.ps1 -Stage evaluate -RunId eval_01 -TrainResult "$task\runs\train_01\result.json"
 & $py "$task\audit_training.py" --training "$task\runs\train_01" --evaluation "$task\runs\eval_01"
 ```
 
-Use a fresh run ID each time. A `STOP` file in the task folder or `experiments/v7_jump_in_place` requests bounded termination. Output goes under ignored `runs/` folders. Plotting is optional; install `matplotlib` to run `plot_training.py` after audit. This repository includes no historical run receipts, trajectories, logs, images, videos, or optimizer output from the landing experiment. Audit validates newly generated run statuses rather than local archived shell exit receipts.
+Use a fresh run ID each time. `run_checked.ps1` waits for the real Python process to exit and records its actual exit code in that run's ignored `exit_receipt.json`. Audit requires successful train and evaluation exit receipts matching the run IDs and frozen manifest, in addition to run statuses. A `STOP` file in the task folder or `experiments/v7_jump_in_place` requests bounded termination. Output goes under ignored `runs/` folders. Plotting is optional; install `matplotlib` to run `plot_training.py` after audit. This repository includes no historical run receipts, trajectories, logs, images, videos, or optimizer output from the landing experiment.
 
 ## Assets and provenance
 

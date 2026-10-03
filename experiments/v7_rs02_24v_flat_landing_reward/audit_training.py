@@ -96,7 +96,11 @@ def main():
     assert train['status'] == 'BUDGET_COMPLETED' and train['completed_updates'] == 128
     assert evaluation['status'] == 'EVALUATED'
     assert train['frozen_sha256'] == train['final_frozen_sha256'] == evaluation['final_frozen_sha256']
-    # Status and frozen hashes above gate this new run; archived exit receipts are not portable.
+    for folder, stage in ((args.training, 'train'), (args.evaluation, 'evaluate')):
+        receipt = read(folder / 'exit_receipt.json')
+        assert receipt['process_exited'] is True and receipt['exit_code'] == 0
+        assert receipt['stage'] == stage and receipt['run_id'] == folder.name
+        assert receipt['frozen_sha256'] == train['frozen_sha256']
     updates = [read(args.training / f'update_{i:04d}.json') for i in range(1, 129)]
     assert all(x['update'] == i + 1 and x['trial']['assist_strength'] == .625 for i, x in enumerate(updates))
     assert sum(x['actor_steps'] for x in updates) == train['actor_steps']
