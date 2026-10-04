@@ -1,0 +1,51 @@
+{
+  "task": "compliant_parameter_cushion_v3",
+  "predecessor_sha256": "9f8fdd3a2877558f54f31e88e3c8c9282def1af5de0989ccbc032baf280d4e73",
+  "parent_sha256": "dbd6c361f2ae6fe6fe1d72060b249dd3120d402bca7801c32bcdbb8272acdf8b",
+  "contract": {
+    "num_envs": 512,
+    "updates": 128,
+    "voltage_v": 24,
+    "assist_strength": 0.625,
+    "action_dim": 16,
+    "observation_dim": 17,
+    "physics_hz": 400,
+    "landing_reference_hz": 400,
+    "fifo_delay_physics_ticks": [
+      0,
+      8
+    ],
+    "fifo_channels": 15,
+    "source_update": 80,
+    "source_checkpoint_sha256": "647d6322268541be83874ce18c61ff87a88211456b23713c625757bf2aff9186",
+    "immutable_launch": true,
+    "immutable_physics": true,
+    "controller_revised": true,
+    "admission": {
+      "all_cases_pass": true,
+      "retain_height": true,
+      "min_com_stroke_m": 0.035,
+      "max_force_ratio_to_parent": 0.9
+    },
+    "motor_support_force": "actuated through joint torques and unchanged envelope; never an external vertical force",
+    "initialization": "copy matching observation features and 8 attitude feedback outputs; new 8 controller parameters, critic and Adam"
+  },
+  "sha256": {
+    "experiments/v7_rs02_24v_compliant_landing_v3/audit.py": "14d62ba71f41d4b943580d3076957b21119a1d0ebcbd7651817e3cb0fd286fb9",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_backends.py": "e1933fa5044c053efea91739905b5e9a3d39a4487a53d52136d29727d767f346",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_control.py": "9bf6c0a8491243069a0ac3c8c75f38f3dcd8791c26570f3197a94d8a160c5dfb",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_env.py": "7ad49661d4032c369412275a85d8fbda5ec1292f4117af2f8513e139b4a9a3d6",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_learning.py": "d1d02f937fa77eb4ba47d0540fb017ffc912740dfb20803d5018a650b595491f",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_paths.py": "85da3507017df388cef1d28db56724c55618b7fb7bbef632166675f5e38a755c",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_rollout.py": "9e273f633241b52cac2b18033cd5808b908f8ef24d0b061651cac33cabc61a11",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_runtime.py": "f87b0f93ff3e45798b61fbc1966d9b08124e5b576bdab23abe6bf912115e755c",
+    "experiments/v7_rs02_24v_compliant_landing_v3/compliant_servo.py": "a22f70a5f97a29ac4e90ec9bec67a096aae61c627ab7eb11140de8b32f56b62f",
+    "experiments/v7_rs02_24v_compliant_landing_v3/evaluate.py": "39cadd138bb59a01bed54786f01b148786cbea9610b19980f4cb276f2ad0da72",
+    "experiments/v7_rs02_24v_compliant_landing_v3/freeze.py": "2141ca9162427323b9ec4b9b3277ae7dd8b55dcd8bde9cdb398e60fc6b0ecd9f",
+    "experiments/v7_rs02_24v_compliant_landing_v3/probe.py": "fb6c83e256ae251f6de06009e385de4dd5ac4594498637e3c591c6e895c0ae4a",
+    "experiments/v7_rs02_24v_compliant_landing_v3/README.md": "5cefcc68e946b863a2a29a083f98814332d8448383bd9a9c0a1ba973b2e1b6a7",
+    "experiments/v7_rs02_24v_compliant_landing_v3/run_pipeline.ps1": "06c0114b18541f216e9ed19df227f7878c5c301fbeade6a79dcce30625a40bb2",
+    "experiments/v7_rs02_24v_compliant_landing_v3/train.py": "2dd6cff961a2497843f66f0f4c8e0fad3d27212a7c79da14f2397dae63194d88",
+    "experiments/v7_rs02_24v_compliant_landing_v3/verify_cpu.py": "d6470f8f482f688070cb08e0ec1ab2da9a978b055a5a8c36e48b19acebf40d7f"
+  }
+}
