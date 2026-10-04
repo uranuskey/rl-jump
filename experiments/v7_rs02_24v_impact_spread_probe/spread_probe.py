@@ -140,6 +140,9 @@ def execute(args,out,result,limit):
             output=super().step(standing_actions,**kw)
             if args.height_m and self.policy_calls==64:
                 self.terrain_receipt['first_step_force_max_n']=float(self.support.max())
+                floor_z=wp.to_torch(self.gd.geom_xpos)[:,self.ground,2]
+                self.terrain_receipt['actual_plane_z_error_m']=float((floor_z-args.height_m).abs().max())
+                assert self.terrain_receipt['actual_plane_z_error_m']<1e-7
                 assert float(self.support.max())<=.5, 'Terrain placement injected contact'
             return output
 
