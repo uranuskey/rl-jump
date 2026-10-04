@@ -57,7 +57,7 @@ def force_windows(path):
                 under250=sum(r['overall_peak_n']<=250 for r in valid))
 
 
-def schedule_audit(path,profile):
+def schedule_audit(path,profile,protect_landing=False):
     import numpy as np
     import torch
     from velocity_contract import reference_motor_velocity
@@ -65,8 +65,17 @@ def schedule_audit(path,profile):
         live=z['active'] & z['landing_control_enabled']
         active=z['sensor_pre_active'] & live
         requested=z['requested_payload']
-        for i,key in ((12,'kp'),(13,'kd'),(11,'force')):
-            assert np.array_equal(requested[...,i][live],z['sensor_pre_original_'+key][live])
+        for i,key in ((12,'kp'),(13,'kd')):
+            assert np.array_equal(requested[...,i][live],z['sensor_pre_requested_'+key][live])
+        assert np.array_equal(requested[...,11][live],z['sensor_pre_original_force'][live])
+        post=live & (z['sensor_pre_touchdown_s']>0) & protect_landing
+        u=np.clip((.140-z['sensor_pre_leg_height_m'].min(-1))/.025,0,1)
+        depth=np.where(post,u*u*(3-2*u),0)
+        assert np.allclose(depth[live],z['sensor_pre_landing_brake'][live],atol=1e-6)
+        for i,key,fraction in ((12,'kp',.20),(13,'kd',.10)):
+            expected_gain=np.minimum(1.,z['sensor_pre_original_'+key]*(1+fraction*depth))
+            assert np.allclose(requested[...,i][live],expected_gain[live],atol=1e-6)
+            assert np.array_equal(requested[...,i][live & ~post],z['sensor_pre_original_'+key][live & ~post])
         height=z['sensor_pre_requested_height_m']
         velocity=z['sensor_pre_requested_velocity_mps']
         assert np.max(abs((.18+.03*requested[...,6]-height)[live]))<1e-6
@@ -90,10 +99,12 @@ def schedule_audit(path,profile):
         if not profile['enabled']:
             assert not active.any() and np.all(offset==0) and np.all(dv==0)
         maximum_extra=float(-offset.min())
-    return dict(status='PASS',all_impedance_and_support_unchanged=True,
+    return dict(status='PASS',air_impedance_and_all_support_unchanged=True,
+        landing_impedance_protection=protect_landing,protection_formula_recomputed=True,
         causal_clearance_and_velocity_verified=True,precontact_only=True,
         requested_velocity_matches_reference=True,max_extra_retraction_m=maximum_extra,
-        baseline_exact=not profile['enabled'],proximity_input='ideal simulated measurement')
+        baseline_exact=not profile['enabled'] and not protect_landing,
+        precontact_disabled=not profile['enabled'],proximity_input='ideal simulated measurement')
 
 
 def execute(args,out,result,limit):
@@ -167,7 +178,8 @@ def execute(args,out,result,limit):
                 surface=self.world_floor_positions[:,self.ground,2]
                 c,diag,progress=modulate(c,self.config,self.pre_state,
                     clearance=self.clearance,surface_z=surface,com_vz=self.com_v[:,2],
-                    touchdown=self.task.touchdown_time)
+                    touchdown=self.task.touchdown_time,leg_height=height,
+                    protect_landing=args.protect_landing)
                 motor_v=reference_motor_velocity(c['height'],c['velocity'])
                 new=payload(torch.tanh(c['correction']),c['height'],motor_v,c['force'],c['kp'],c['kd'],c['enabled'])
                 return c,torch.where(c['enabled'][:,None],new,held),diag,progress
@@ -235,6 +247,8 @@ def execute(args,out,result,limit):
     result.update(profiles=profiles,source_checkpoint=dict(path=str(args.checkpoint),sha256=SOURCE_SHA,update=56),
         mass_kg=env.mass,terrain=env.terrain_receipt,all_metrics=metrics(summary),evaluation=compact(summary),
         prefix_proof_samples=env.proof_samples,launch_fixed=True,training_updates=0,
+        landing_protection=dict(enabled=args.protect_landing,start_height_m=.140,full_height_m=.115,
+            max_kp_multiplier=1.20,max_kd_multiplier=1.10,old_collision_gate_unchanged=True),
         proximity_sensor=dict(kind='ideal simulated clearance, causal backward-difference velocity',
             actual_fifo_delay_exposed=False,hardware_qualified=False,noise_tested=False))
     assert env.proof_samples>0
@@ -253,7 +267,7 @@ def execute(args,out,result,limit):
     else:
         result.update(status='EVALUATED',force_timing=contact_metrics(trace),force_windows=force_windows(trace),
             physical_audit=audit_trace(trace,summary,env.mass),controller_audit=load_controller_audit()(trace,summary),
-            schedule_audit=schedule_audit(trace,profiles[0]),precontact_analysis=analyze(trace))
+            schedule_audit=schedule_audit(trace,profiles[0],args.protect_landing),precontact_analysis=analyze(trace))
         if args.height_m:
             with np.load(trace) as z:
                 error=float(np.abs(z['sensor_landing_surface_z_m'][504:]-args.height_m).max())
@@ -283,6 +297,7 @@ def main():
     p.add_argument('--rank',type=int,choices=[0,1],default=0)
     p.add_argument('--baseline',type=Path)
     p.add_argument('--height-m',type=float,choices=[0.,.01],default=0.)
+    p.add_argument('--protect-landing',action='store_true')
     a=p.parse_args()
     assert __import__('re').fullmatch('[A-Za-z0-9_-]+',a.run_id)
     assert not a.height_m or a.mode=='native'

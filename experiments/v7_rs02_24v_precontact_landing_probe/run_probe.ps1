@@ -1,6 +1,7 @@
 param([Parameter(Mandatory=$true)][string]$PythonPath,
       [Parameter(Mandatory=$true)][string]$Checkpoint,
-      [Parameter(Mandatory=$true)][string]$RunId)
+      [Parameter(Mandatory=$true)][string]$RunId,
+      [switch]$ProtectLanding)
 $ErrorActionPreference='Stop'
 if($RunId -notmatch '^[A-Za-z0-9_-]+$'){throw 'Invalid run id'}
 $runs=Join-Path $PSScriptRoot 'runs'
@@ -16,6 +17,7 @@ function Save-Pipeline([string]$Status,[string]$Stage){
 function Run-Stage([string]$Suffix,[string[]]$Extra){
     $name="${RunId}_${Suffix}"
     Save-Pipeline 'RUNNING' $Suffix
+    if($ProtectLanding){$Extra+=@('--protect-landing')}
     & $PythonPath -X faulthandler -u (Join-Path $PSScriptRoot 'precontact_probe.py') --checkpoint $Checkpoint --run-id $name @Extra
     $code=$LASTEXITCODE
     $dir=Join-Path $runs $name
@@ -30,6 +32,11 @@ try {
     $baseline=Join-Path $runs "${RunId}_baseline\result.json"
     $base=Get-Content -LiteralPath $baseline -Raw|ConvertFrom-Json
     if($base.all_metrics.passed -ne 45){Save-Pipeline 'BASELINE_NOT_QUALIFIED' 'baseline';exit 2}
+    if($ProtectLanding){
+        Run-Stage 'baseline_repeat' @('--mode','native')
+        $baseRepeat=Get-Content -LiteralPath (Join-Path $runs "${RunId}_baseline_repeat\result.json") -Raw|ConvertFrom-Json
+        if($baseRepeat.all_metrics.passed -ne 45){Save-Pipeline 'BASELINE_NOT_QUALIFIED' 'baseline_repeat';exit 2}
+    }
     Run-Stage 'smoke' @('--mode','native','--profile','1','--baseline',$baseline)
     Run-Stage 'search' @('--mode','search')
     $search=Join-Path $runs "${RunId}_search\result.json"

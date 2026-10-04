@@ -6,7 +6,7 @@ from precontact_control import DT, initial, modulate, profile, table
 
 class PrecontactContract(unittest.TestCase):
     def sample(self, *, cfg=None, gap=.02, closing=.95, com=-1.4, seen=False,
-               enabled=True, height=.19, old_offset=0., old_speed=0.):
+               enabled=True, height=.19, old_offset=0., old_speed=0., protect=False):
         n=45; one=torch.ones(n)
         c=dict(enabled=torch.full((n,),enabled),height=height*one,velocity=-.75*one,
                kp=.47*one,kd=.42*one,force=torch.zeros(n))
@@ -16,7 +16,8 @@ class PrecontactContract(unittest.TestCase):
         s['clearance1']=clear+closing*DT
         s['offset'].fill_(old_offset);s['speed'].fill_(old_speed)
         result=modulate(c,table([cfg or profile('test')],'cpu'),s,clearance=clear,
-            surface_z=torch.zeros(n),com_vz=com*one,touchdown=one if seen else 0*one)
+            surface_z=torch.zeros(n),com_vz=com*one,touchdown=one if seen else 0*one,
+            leg_height=torch.full((n,2),height),protect_landing=protect)
         return c,result
 
     def test_baseline_preapex_ascent_and_postcontact_unchanged(self):
@@ -55,11 +56,22 @@ class PrecontactContract(unittest.TestCase):
         clear=state['clearance1'];previous=initial(45,'cpu');previous['count'].fill_(2)
         previous['clearance2']=clear+.95*2*DT
         a=modulate(c,table([profile('test')],'cpu'),previous,clearance=clear,
-            surface_z=torch.zeros(45),com_vz=torch.full((45,),-1.4),touchdown=torch.zeros(45))
+            surface_z=torch.zeros(45),com_vz=torch.full((45,),-1.4),touchdown=torch.zeros(45),
+            leg_height=torch.full((45,2),.19))
         b=modulate(c,table([profile('test')],'cpu'),previous,clearance=clear,
-            surface_z=torch.full((45,),.01),com_vz=torch.full((45,),-1.4),touchdown=torch.zeros(45))
+            surface_z=torch.full((45,),.01),com_vz=torch.full((45,),-1.4),touchdown=torch.zeros(45),
+            leg_height=torch.full((45,2),.19))
         self.assertTrue(torch.equal(a[1]['pre_wheel_vz_mps'],b[1]['pre_wheel_vz_mps']))
         self.assertTrue(bool((b[1]['pre_ttc_s']<a[1]['pre_ttc_s']).all()))
+
+    def test_geometry_protection_is_postcontact_only_and_keeps_reference(self):
+        c,(air,_,_)=self.sample(height=.115,protect=True)
+        c,(landed,diag,_)=self.sample(height=.115,protect=True,seen=True)
+        self.assertTrue(torch.equal(air['kp'],c['kp']))
+        torch.testing.assert_close(landed['kp'],1.2*c['kp'])
+        torch.testing.assert_close(landed['kd'],1.1*c['kd'])
+        for key in ('height','velocity','force'):
+            self.assertTrue(torch.equal(landed[key],c[key]))
 
 
 if __name__=='__main__':

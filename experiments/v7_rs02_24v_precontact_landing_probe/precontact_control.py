@@ -51,7 +51,8 @@ def smooth(x):
     return x*x*(3-2*x)
 
 
-def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown):
+def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown,
+             leg_height, protect_landing=False):
     enabled,horizon,target,budget,gain,vmax,amax=config.unbind(1)
     valid=previous['count']>=2
     wheel_vz=(clearance-previous['clearance2'])/(2*DT)
@@ -79,6 +80,13 @@ def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown):
     out=dict(c)
     out['height']=c['height']+offset
     out['velocity']=c['velocity']+delta_v
+    # Optional, separately baselined protection against the observed dynamic
+    # lower-link/body contact near 101 mm. This is motor impedance, not an
+    # external force or a relaxation of the original collision gate.
+    post=c['enabled'] & (touchdown>0) & protect_landing
+    depth=torch.where(post,smooth((.140-leg_height.min(1).values)/.025),torch.zeros_like(gap))
+    out['kp']=(c['kp']*(1+.20*depth)).clamp_max(1.)
+    out['kd']=(c['kd']*(1+.10*depth)).clamp_max(1.)
     state=dict(clearance1=clearance.clone(),clearance2=previous['clearance1'].clone(),
         count=(previous['count']+1).clamp_max(2),offset=offset,
         speed=torch.where(active,(-delta_v).clamp_min(0),torch.zeros_like(delta_v)))
@@ -88,6 +96,8 @@ def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown):
         pre_original_velocity_mps=c['velocity'],pre_requested_height_m=out['height'],
         pre_requested_velocity_mps=out['velocity'],pre_original_kp=c['kp'],
         pre_original_kd=c['kd'],pre_original_force=c['force'],
+        pre_requested_kp=out['kp'],pre_requested_kd=out['kd'],
+        pre_landing_brake=depth,pre_leg_height_m=leg_height.clone(),
         pre_surface_z_m=surface_z,pre_absolute_clearance_m=clearance.clone(),
         pre_com_vz_mps=com_vz.clone(),pre_touchdown_s=touchdown.clone())
     return out,diag,state

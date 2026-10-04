@@ -37,3 +37,22 @@ Native audits reconstruct motor FIFO, reference velocities, causal measurement
 history, precontact-only activation, unchanged impedance, and actual COM stroke.
 Process exit receipts are independent of progress/result status. Existing runs
 must never be overwritten; any error retains its artifacts and stops the pipeline.
+
+## Baseline failure and isolated protection revision
+
+`probe_01` stopped before testing the new precontact controller: the unchanged
+baseline passed 44/45 and world 0 triggered self-contact at 1.4475 s. GPU flags
+and CPU reconstruction both locate lower-link/body contact near 101.3 mm actual
+leg height (about 0.108 mm penetration on the left). Previous passing native
+replays and this failure demonstrate inadequate margin; their numerical
+cross-run discrepancy is not explained or declared fixed.
+
+Optional `--protect-landing` adds postcontact gain scheduling based on measured
+leg height: smooth onset at 140 mm, full strength at 115 mm, up to 1.20 times
+the inherited Kp and 1.10 times Kd, capped at original standing gains. References,
+support feedforward, collision criteria, physics and actuator limits stay fixed.
+This is a new motor control change, not hardware clearance or an external force.
+Its baseline must pass two independent native45 runs before the precontact
+screening proceeds. All screened profiles share this same protection so that
+the effect of precontact feedback can be assessed separately. No candidate gate
+is relaxed. Preserve `probe_01` and use a new run id for the protected experiment.
