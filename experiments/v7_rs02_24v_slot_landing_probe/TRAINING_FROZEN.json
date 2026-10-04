@@ -1,0 +1,24 @@
+{
+  "parent_frozen_sha256": "4ef61ca9d5689005391c487fe7bca14bf95b31b11f95db079040d65d5b9b1b8f",
+  "sha256": {
+    "experiments/v7_rs02_24v_geometry_pose_probe/cad_path.json": "50ab9d3b82ce9611489b492804d9695f75dd5b6a67325971c2cd5880d1f7054e",
+    "experiments/v7_rs02_24v_impact_spread_probe/analyze_saved.py": "31d5b1b4797e357d171d5ebebf59a533bcceab2ac6f6bf71dd3349dbeddf8812",
+    "experiments/v7_rs02_24v_impact_spread_probe/spread_probe.py": "c77a1329791e47f54b9761b225b3b4b492d7305bf7f43242a5a6f22b0bb9ac33",
+    "experiments/v7_rs02_24v_precontact_landing_probe/analyze_precontact.py": "997449a7af4782dafd3734fe8dac5967baf258b104015883e994a196a5c1d2a7",
+    "experiments/v7_rs02_24v_precontact_landing_probe/precontact_control.py": "2db12f9270734e1239a3a8274a194683eab704140de454077edde2faf93de61c",
+    "experiments/v7_rs02_24v_slot_landing_probe/README.md": "f6c6a5764e61a7976129a045fcd89d5c8177ecf0cf05a34983cd1ac67d9d503d",
+    "experiments/v7_rs02_24v_slot_landing_probe/run_probe.ps1": "9d4187bf2f03bbf8f1812d361c8861c31a4c68e58e0cdadfe7c0fbf6bc19f118",
+    "experiments/v7_rs02_24v_slot_landing_probe/run_training.ps1": "478c109bcfec0bd67dc03d2022593a73db7bad9e6caeeb31bb70872c34234905",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_audit.py": "96ff2c9c7492b2eeb077e1144f8623bdebf83fd8265f84b7d1447e97dbf83c28",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_control.py": "6114549ad93df71051738df235a9607a40c15252b7c90a0be2595c89469c6e8f",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_env.py": "86a0e30ef98ffc4595593fb3e7750050eadadd987211bc8538871bcda9f66a19",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_evaluate.py": "c4d5a9153a41d8114acb34b4931043f396c85341bae8b10c34d331eeceb6f2eb",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_learning.py": "32b0b65549b77685be072a109ec3a5bcbc285f5319b05ddaaa17ccda77f11eed",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_probe.py": "71b5e0f122511f8b804d27d863f9167cc6b9d77bf61bc8f836fcf1474d3a4c95",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_train.py": "d7dc7da6969f43107f4e3b2a3e6a43fbc50ae47c7865243d3c281282fa1dcba3",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_training_audit.py": "25c20319c128f617fb95e537392c2226c8c24f8f1f980f94dba2ed34886d744d",
+    "experiments/v7_rs02_24v_slot_landing_probe/slot_training_runtime.py": "9006eb93644d82cab32597cadb146ee78030674cbf4ca9708cae70a4dc2a1a86",
+    "experiments/v7_rs02_24v_slot_landing_probe/test_slot.py": "9f57f02349739ac201e2479e22224699ca186c1c42a23e1e24b20cc939be5a1b",
+    "experiments/v7_rs02_24v_slot_landing_probe/TRAINING.md": "0983ee190db4f0b5601ffbf72f6bc600eff1cae59702db6f972e3cea0df95430"
+  }
+}
