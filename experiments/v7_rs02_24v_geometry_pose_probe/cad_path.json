@@ -1,0 +1,586 @@
+{
+  "source": "mechanical/serial_robot_v7_deep_crouch/analysis/squat_path_verification.json",
+  "source_sha256": "1d075065ba6b406c92bcba12e21b2a54b6dd8ede0ef4f9dad843c9116708a2fe",
+  "original_status": "PASS_SAMPLED_CROUCH_PATH",
+  "original_limits": [
+    "Upright, synchronized bilateral path; nominal mass-based balancing, not dynamic control or a rectangular joint workspace.",
+    "2 mm height samples plus +/-3 mm fore-aft perturbations at five heights; not a continuous swept-volume proof.",
+    "No real cables/plugs/screws, belt teeth or deformation. Known simplified M3508 round shaft/mock D-flat hub pair excluded.",
+    "No strength, fatigue, shock, power, torque-speed, or hardware jump validation."
+  ],
+  "samples": [
+    {
+      "h_mm": 90.0,
+      "dx_mm": 52.6823990046978,
+      "hip_rad": -2.060396557389141,
+      "knee_rad": 2.3397560102577493,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 92.0,
+      "dx_mm": 52.77963653206825,
+      "hip_rad": -2.035510908770122,
+      "knee_rad": 2.3227914439935784,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 94.0,
+      "dx_mm": 52.87058725953102,
+      "hip_rad": -2.01105989728341,
+      "knee_rad": 2.305766317287765,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 96.0,
+      "dx_mm": 52.955517917871475,
+      "hip_rad": -1.9870216159937129,
+      "knee_rad": 2.2886775045178243,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 98.0,
+      "dx_mm": 53.03467586636543,
+      "hip_rad": -1.9633753218907364,
+      "knee_rad": 2.2715219664860626,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 100.0,
+      "dx_mm": 53.10829654335976,
+      "hip_rad": -1.9401013667904699,
+      "knee_rad": 2.254296703217107,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 102.0,
+      "dx_mm": 53.176598995923996,
+      "hip_rad": -1.9171810925410586,
+      "knee_rad": 2.236998763135677,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 104.0,
+      "dx_mm": 53.23978736996651,
+      "hip_rad": -1.8945967563992046,
+      "knee_rad": 2.2196252251728605,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 106.0,
+      "dx_mm": 53.29805687069893,
+      "hip_rad": -1.8723314806225813,
+      "knee_rad": 2.2021731625260603,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 108.0,
+      "dx_mm": 53.35158780217171,
+      "hip_rad": -1.8503691627772203,
+      "knee_rad": 2.1846396597403346,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 110.0,
+      "dx_mm": 53.40055003762245,
+      "hip_rad": -1.82869443126936,
+      "knee_rad": 2.167021784033722,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 112.0,
+      "dx_mm": 53.445104509592056,
+      "hip_rad": -1.8072925943983782,
+      "knee_rad": 2.149316570632354,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 114.0,
+      "dx_mm": 53.48540022969246,
+      "hip_rad": -1.7861495766413182,
+      "knee_rad": 2.1315210271292093,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 116.0,
+      "dx_mm": 53.52157726883888,
+      "hip_rad": -1.7652518815832334,
+      "knee_rad": 2.1136321125931294,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 118.0,
+      "dx_mm": 53.55376675724983,
+      "hip_rad": -1.7445865468947004,
+      "knee_rad": 2.095646729527893,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 120.0,
+      "dx_mm": 53.58209386467934,
+      "hip_rad": -1.7241411136372626,
+      "knee_rad": 2.0775617037066767,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 122.0,
+      "dx_mm": 53.60667034983635,
+      "hip_rad": -1.7039035589013976,
+      "knee_rad": 2.0593738060918874,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 124.0,
+      "dx_mm": 53.627604991197586,
+      "hip_rad": -1.683862298469108,
+      "knee_rad": 2.041079702175395,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 126.0,
+      "dx_mm": 53.644997626543045,
+      "hip_rad": -1.664006129683604,
+      "knee_rad": 2.0226759674977215,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 128.0,
+      "dx_mm": 53.65894213318825,
+      "hip_rad": -1.644324209967586,
+      "knee_rad": 2.0041590667732674,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 130.0,
+      "dx_mm": 53.669523447752,
+      "hip_rad": -1.6248060148302708,
+      "knee_rad": 1.9855253561289605,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 132.0,
+      "dx_mm": 53.676825016736984,
+      "hip_rad": -1.6054413358763742,
+      "knee_rad": 1.9667710443993571,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 134.0,
+      "dx_mm": 53.680918365716934,
+      "hip_rad": -1.5862202142813182,
+      "knee_rad": 1.9478922229793867,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 136.0,
+      "dx_mm": 53.68187353014946,
+      "hip_rad": -1.5671329520325963,
+      "knee_rad": 1.92888481463314,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 138.0,
+      "dx_mm": 53.679753094911575,
+      "hip_rad": -1.5481700640232572,
+      "knee_rad": 1.9097445845755303,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 140.0,
+      "dx_mm": 53.67461368441582,
+      "hip_rad": -1.529322258295619,
+      "knee_rad": 1.890467122043387,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 142.0,
+      "dx_mm": 53.6665104329586,
+      "hip_rad": -1.5105804271914285,
+      "knee_rad": 1.871047810147377,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 144.0,
+      "dx_mm": 53.655488044023514,
+      "hip_rad": -1.491935591454011,
+      "knee_rad": 1.8514818444322654,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 146.0,
+      "dx_mm": 53.64158973097801,
+      "hip_rad": -1.4733789080504434,
+      "knee_rad": 1.8317641838119214,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 148.0,
+      "dx_mm": 53.62485572695732,
+      "hip_rad": -1.4549016408438862,
+      "knee_rad": 1.8118895391324854,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 150.0,
+      "dx_mm": 53.60531583428383,
+      "hip_rad": -1.4364951112764512,
+      "knee_rad": 1.7918523814837666,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 152.0,
+      "dx_mm": 53.58299985527992,
+      "hip_rad": -1.4181507104527329,
+      "knee_rad": 1.771646883772537,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 154.0,
+      "dx_mm": 53.55793163180351,
+      "hip_rad": -1.399859854294472,
+      "knee_rad": 1.7512669200797453,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 156.0,
+      "dx_mm": 53.53013053536415,
+      "hip_rad": -1.381613963876727,
+      "knee_rad": 1.7307060357076045,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 158.0,
+      "dx_mm": 53.49961146712303,
+      "hip_rad": -1.3634044398683018,
+      "knee_rad": 1.7099574202158225,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 160.0,
+      "dx_mm": 53.46638485789299,
+      "hip_rad": -1.345222636001485,
+      "knee_rad": 1.6890138776982502,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 162.0,
+      "dx_mm": 53.430455178022385,
+      "hip_rad": -1.327059826553642,
+      "knee_rad": 1.6678677991912536,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 164.0,
+      "dx_mm": 53.391823917627335,
+      "hip_rad": -1.3089071867788902,
+      "knee_rad": 1.6465111157370484,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 166.0,
+      "dx_mm": 53.3504880964756,
+      "hip_rad": -1.290755756915326,
+      "knee_rad": 1.6249352632736478,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 168.0,
+      "dx_mm": 53.30643877387047,
+      "hip_rad": -1.2725964043201445,
+      "knee_rad": 1.6031311428409094,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 170.0,
+      "dx_mm": 53.25966253876686,
+      "hip_rad": -1.2544197924433298,
+      "knee_rad": 1.581089065057486,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 172.0,
+      "dx_mm": 53.21013852953911,
+      "hip_rad": -1.23621633291382,
+      "knee_rad": 1.5587987042445395,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 174.0,
+      "dx_mm": 53.15784439444542,
+      "hip_rad": -1.217976161327781,
+      "knee_rad": 1.5362490143277174,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 176.0,
+      "dx_mm": 53.10274884104729,
+      "hip_rad": -1.1996890679423475,
+      "knee_rad": 1.5134281836179726,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 178.0,
+      "dx_mm": 53.044816106557846,
+      "hip_rad": -1.1813444596563458,
+      "knee_rad": 1.4903235385900515,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 180.0,
+      "dx_mm": 52.984004467725754,
+      "hip_rad": -1.1629312979371795,
+      "knee_rad": 1.4669214576543739,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 182.0,
+      "dx_mm": 52.92026177048683,
+      "hip_rad": -1.1444380216339856,
+      "knee_rad": 1.4432072826843019,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 184.0,
+      "dx_mm": 52.85353139042854,
+      "hip_rad": -1.12585249159594,
+      "knee_rad": 1.4191651791767015,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 186.0,
+      "dx_mm": 52.783750742673874,
+      "hip_rad": -1.107161903489032,
+      "knee_rad": 1.3947780047959673,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 188.0,
+      "dx_mm": 52.710842341184616,
+      "hip_rad": -1.088352668992751,
+      "knee_rad": 1.3700271833355344,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 190.0,
+      "dx_mm": 52.634722739458084,
+      "hip_rad": -1.0694103326347995,
+      "knee_rad": 1.3448924909630957,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 192.0,
+      "dx_mm": 52.55529806017876,
+      "hip_rad": -1.0503194341805502,
+      "knee_rad": 1.319351859610177,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 194.0,
+      "dx_mm": 52.47246101498604,
+      "hip_rad": -1.0310633552943738,
+      "knee_rad": 1.2933811391794527,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 196.0,
+      "dx_mm": 52.38609090447426,
+      "hip_rad": -1.0116241492852929,
+      "knee_rad": 1.2669538053313862,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 198.0,
+      "dx_mm": 52.29605361819267,
+      "hip_rad": -0.9919823398735479,
+      "knee_rad": 1.2400406133539703,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 200.0,
+      "dx_mm": 52.202194184064865,
+      "hip_rad": -0.9721166635670103,
+      "knee_rad": 1.2126092126540677,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 202.0,
+      "dx_mm": 52.104342728853226,
+      "hip_rad": -0.9520037982987644,
+      "knee_rad": 1.1846236300876933,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 204.0,
+      "dx_mm": 52.002302557229996,
+      "hip_rad": -0.9316179886970538,
+      "knee_rad": 1.1560437145984892,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 206.0,
+      "dx_mm": 51.89585164189339,
+      "hip_rad": -0.9109306291718312,
+      "knee_rad": 1.126824401564817,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 208.0,
+      "dx_mm": 51.78473815321922,
+      "hip_rad": -0.8899097354713317,
+      "knee_rad": 1.0969148299617797,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 210.0,
+      "dx_mm": 51.668673008680344,
+      "hip_rad": -0.8685192841587248,
+      "knee_rad": 1.0662572519322644,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 212.0,
+      "dx_mm": 51.54732242226601,
+      "hip_rad": -0.8467183874108201,
+      "knee_rad": 1.034785654910218,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 214.0,
+      "dx_mm": 51.42030343413353,
+      "hip_rad": -0.8244602532444072,
+      "knee_rad": 1.002423987841142,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 216.0,
+      "dx_mm": 51.28716453909874,
+      "hip_rad": -0.8016908156567514,
+      "knee_rad": 0.9690839255022375,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 218.0,
+      "dx_mm": 51.147378236055374,
+      "hip_rad": -0.7783469767041034,
+      "knee_rad": 0.9346618678780854,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 220.0,
+      "dx_mm": 51.00031420588493,
+      "hip_rad": -0.7543542280316108,
+      "knee_rad": 0.8990350059490945,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 222.0,
+      "dx_mm": 50.84521695971489,
+      "hip_rad": -0.7296234426593519,
+      "knee_rad": 0.8620559124661719,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 224.0,
+      "dx_mm": 50.68116411566734,
+      "hip_rad": -0.7040463890474963,
+      "knee_rad": 0.8235450573246663,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 226.0,
+      "dx_mm": 50.507015734910965,
+      "hip_rad": -0.6774893338288482,
+      "knee_rad": 0.7832800716548062,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 228.0,
+      "dx_mm": 50.32132789492607,
+      "hip_rad": -0.6497835868290069,
+      "knee_rad": 0.740979968468777,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 230.0,
+      "dx_mm": 50.1222338227774,
+      "hip_rad": -0.6207110435384621,
+      "knee_rad": 0.6962809258369436,
+      "dx_perturbation_mm": 0
+    },
+    {
+      "h_mm": 90.0,
+      "dx_mm": 49.6823990046978,
+      "hip_rad": -2.0488650628124843,
+      "knee_rad": 2.3538869313166675,
+      "dx_perturbation_mm": -3
+    },
+    {
+      "h_mm": 90.0,
+      "dx_mm": 55.6823990046978,
+      "hip_rad": -2.0708038635842296,
+      "knee_rad": 2.3250043408105645,
+      "dx_perturbation_mm": 3
+    },
+    {
+      "h_mm": 100.0,
+      "dx_mm": 50.10829654335976,
+      "hip_rad": -1.9282104707316314,
+      "knee_rad": 2.267483133447892,
+      "dx_perturbation_mm": -3
+    },
+    {
+      "h_mm": 100.0,
+      "dx_mm": 56.10829654335976,
+      "hip_rad": -1.9509951000913306,
+      "knee_rad": 2.2404961933999026,
+      "dx_perturbation_mm": 3
+    },
+    {
+      "h_mm": 120.0,
+      "dx_mm": 50.58209386467934,
+      "hip_rad": -1.7124330379271575,
+      "knee_rad": 2.0893381542906275,
+      "dx_perturbation_mm": -3
+    },
+    {
+      "h_mm": 120.0,
+      "dx_mm": 56.58209386467934,
+      "hip_rad": -1.7350564822276848,
+      "knee_rad": 2.0651900778111876,
+      "dx_perturbation_mm": 3
+    },
+    {
+      "h_mm": 180.0,
+      "dx_mm": 49.984004467725754,
+      "hip_rad": -1.154076565695493,
+      "knee_rad": 1.4771158259648587,
+      "dx_perturbation_mm": -3
+    },
+    {
+      "h_mm": 180.0,
+      "dx_mm": 55.984004467725754,
+      "hip_rad": -1.1712720576853395,
+      "knee_rad": 1.456121222261185,
+      "dx_perturbation_mm": 3
+    },
+    {
+      "h_mm": 230.0,
+      "dx_mm": 47.1222338227774,
+      "hip_rad": -0.6169689919430157,
+      "knee_rad": 0.7110882791686406,
+      "dx_perturbation_mm": -3
+    },
+    {
+      "h_mm": 230.0,
+      "dx_mm": 53.1222338227774,
+      "hip_rad": -0.6236810617251699,
+      "knee_rad": 0.6802672367318704,
+      "dx_perturbation_mm": 3
+    }
+  ],
+  "collider_labels": {
+    "c003": "/serial_wheel_leg_v7_deep_crouch_provisional/base_link/collisions/side_frame__1/mesh",
+    "c004": "/serial_wheel_leg_v7_deep_crouch_provisional/base_link/collisions/side_frame_1/mesh",
+    "c088": "/serial_wheel_leg_v7_deep_crouch_provisional/left_lower/collisions/left_wheel_motor/mesh",
+    "c120": "/serial_wheel_leg_v7_deep_crouch_provisional/right_lower/collisions/right_wheel_motor/mesh"
+  }
+}
