@@ -1,0 +1,42 @@
+{
+  "task": "fixed_jump_13d_parameter_landing_v1",
+  "parent_policy_sha256": "71ee025e84e4c8c97b09e583b4f8aba6a76403741f36700d203d639a4e23e66a",
+  "parent_fast_sha256": "8180833e3cdcd47e905826dc70d2743426000f1d7a811ce9dc6510db1d82c508",
+  "contract": {
+    "voltage_v": 24,
+    "assist_strength": 0.625,
+    "physics_hz": 400,
+    "control_hz": 50,
+    "action_dim": 13,
+    "observation_dim": 17,
+    "action_samples_per_episode": 1,
+    "sample_time_s": 0.6,
+    "activation": "per-world confirmed COM apex",
+    "num_envs": 512,
+    "updates": 128,
+    "seed": 104031,
+    "reward": "original ten-term undiscounted landing score",
+    "reward_scale": 0.01,
+    "actor_lr": 5e-05,
+    "critic_lr": 0.0003,
+    "epochs": 2,
+    "minibatches": 4,
+    "max_global_kl": 0.03
+  },
+  "sha256": {
+    "experiments/v7_rs02_24v_param_landing/audit.py": "4354a83ba0b5d008c8cb1a3d77bb87a3fbdbb756ea6ca23ef0d075eb0f0ce9b1",
+    "experiments/v7_rs02_24v_param_landing/evaluate.py": "8bbebb779dbf7b1f63e5cce0a22f1e76d07e2f59cc12c2514d35b47d3ddf1f45",
+    "experiments/v7_rs02_24v_param_landing/freeze.py": "4d3535b5ac2cd65c3a4711d41bd9999f2fba5de64ba5ad0cd1e86cfa626cd9c6",
+    "experiments/v7_rs02_24v_param_landing/param_control.py": "97d4f5f2aeb755bd2108cf39ccbe5f43d789c75094c227b68cb8cc287f27f920",
+    "experiments/v7_rs02_24v_param_landing/param_env.py": "98687a5a31196ea122d51e2f7e7a51d8e707221039e409e9332227e02a13ee7c",
+    "experiments/v7_rs02_24v_param_landing/param_learning.py": "d43e8a0612cce0c4cdb57053c696752f90714bd15b04f005b51e8b4b58b64588",
+    "experiments/v7_rs02_24v_param_landing/param_prefix.py": "0931d652b90917d2b357bdec8ea97134099a00a35f142dbbf68c128d7f2260d1",
+    "experiments/v7_rs02_24v_param_landing/param_rollout.py": "f72ae9f8aef517cbbee34f0c0ee6375d13cbdf0870adc77fd2316ed5d5fa06bc",
+    "experiments/v7_rs02_24v_param_landing/param_runtime.py": "e8372c7f1086337166ddef98c8a6241f944290c1350ec69655e5db29f050d1aa",
+    "experiments/v7_rs02_24v_param_landing/path_setup.py": "c221f6a2eb11a1ea2bcd596a4da6059c0fde81c345bec74907f94ca3b8dcab6e",
+    "experiments/v7_rs02_24v_param_landing/README.md": "07de1b38f641603f883d7f727a0bc7c25658dd6410a9facca0adcf939bed638a",
+    "experiments/v7_rs02_24v_param_landing/run_pipeline.ps1": "bca786d52a696d16cacf32e361a74688fba7443f04aa70633ee3762522a4c6bb",
+    "experiments/v7_rs02_24v_param_landing/train.py": "6c312120f9b669fea28305983bc08515d584531575f364156d5c7b58911c4e16",
+    "experiments/v7_rs02_24v_param_landing/verify_cpu.py": "de32cfe2796d49caeb206ba4960610c556a03f3b3ccf55fd2b7036539b9ac8f8"
+  }
+}
