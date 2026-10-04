@@ -115,14 +115,25 @@ def execute(args,out,result,limit):
             super().__init__(n,**kw)
             self.ground=self.m.geom('ground').id
             self.floor_positions=wp.to_torch(self.gm.geom_pos)
+            self.world_floor_positions=wp.to_torch(self.gd.geom_xpos)
+
+        def set_floor_height(self,height):
+            self.m.geom_pos[self.ground,2]=height
+            if self.floor_positions.ndim==3:
+                self.floor_positions[:,self.ground,2]=height
+            elif self.floor_positions.ndim==2:
+                self.floor_positions[self.ground,2]=height
+            else:
+                raise RuntimeError('Unexpected geom_pos shape')
+            # Warp smooth._geom_local_to_global deliberately skips static world
+            # geoms; make_data initialized this cache only once. Update the
+            # matching world placement as well as the authored local position.
+            self.world_floor_positions[:,self.ground,2]=height
 
         def reset(self,mask,**kw):
             if hasattr(self,'floor_positions'):
                 assert bool(mask.all()), 'Diagnostic only supports full reset'
-                if self.floor_positions.ndim==3:
-                    self.floor_positions[:,self.ground,2]=0.
-                else:
-                    self.floor_positions[self.ground,2]=0.
+                self.set_floor_height(0.)
             self.policy_calls=0
             self.terrain_activated=False
             return super().reset(mask,**kw)
@@ -134,16 +145,12 @@ def execute(args,out,result,limit):
                 assert float(self.support.max())<=.5
                 assert float(self.clearance.min())>args.height_m+.03
                 before_q,before_v=self.q.clone(),self.v.clone()
-                if self.floor_positions.ndim==3:
-                    self.floor_positions[:,self.ground,2]=args.height_m
-                elif self.floor_positions.ndim==2:
-                    self.floor_positions[self.ground,2]=args.height_m
-                else:
-                    raise RuntimeError('Unexpected geom_pos shape')
+                self.set_floor_height(args.height_m)
                 self.terrain_activated=True
                 self.terrain_receipt=dict(at_s=1.26,height_m=args.height_m,
                     minimum_wheel_gap_before_m=float(self.clearance.min()),
                     initial_qv_unchanged=torch.equal(before_q,self.q) and torch.equal(before_v,self.v),
+                    static_world_geom_cache_updated=True,
                     input_to_policy=False,mode='airborne landing-height perturbation; not a static stair edge')
             self.policy_calls+=1
             output=super().step(standing_actions,**kw)
@@ -158,9 +165,10 @@ def execute(args,out,result,limit):
         def sensors(self,motor=None):
             x=super().sensors(motor)
             # Preserve original jump height datum; report the new surface clearance separately.
-            height=args.height_m if self.terrain_activated else 0.
-            x['landing_surface_z_m']=torch.full((self.n,),height,device=self.device)
-            x['clearance_above_surface_m']=x['wheel_clearance_m']-height
+            height=(self.world_floor_positions[:,self.ground,2].clone()
+                    if hasattr(self,'world_floor_positions') else torch.zeros(self.n,device=self.device))
+            x['landing_surface_z_m']=height
+            x['clearance_above_surface_m']=x['wheel_clearance_m']-height[:,None]
             return x
 
     env=ProbeEnv(45*len(profiles),fast_backend=args.mode=='search',proof=True,abort_dir=out/'aborts')
@@ -195,11 +203,13 @@ def execute(args,out,result,limit):
         result['status']='EVALUATED'
         if args.height_m:
             with np.load(trace) as z:
+                plane_error=float(np.abs(z['sensor_landing_surface_z_m'][504:]-args.height_m).max())
+                assert plane_error<1e-7, 'Landing plane position did not remain at requested height'
                 contact=z['sensor_wheel_force_n'][-200:].min(2)>=1
                 gap=z['sensor_clearance_above_surface_m'][-200:]
                 good=contact.all(0)&(np.abs(gap).max(axis=(0,2))<.004)
                 result['surface_support']=dict(worlds=int(good.sum()),expected=45,
-                    max_abs_final_gap_m=float(np.abs(gap).max()))
+                    max_abs_final_gap_m=float(np.abs(gap).max()),max_plane_position_error_m=plane_error)
                 assert int(good.sum())==45 or summary['passed']!=45, 'Passed without actual elevated support'
         if args.baseline:
             base=read(args.baseline)

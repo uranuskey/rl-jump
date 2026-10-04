@@ -25,3 +25,16 @@ Jump height keeps its original takeoff-ground datum. A separate sensor records
 actual clearance over the elevated plane, and final elevated support is checked.
 Native traces retain all original force/actuator/contact/assistance audits.
 All artifacts stay under ignored runs/, never in the public source repository.
+
+Probe_01 stopped before simulation due to an audit-module name collision.
+Probe_02 completed flat and screening, then stopped before landing because the
+requested ground position did not propagate into Warp's static world-geometry
+cache. Neither failed raised run is evidence about obstacle buffering. The
+fixture now updates both authored placement and the static geom_xpos cache,
+records measured plane height at every sample, and audits its final support.
+
+run_height_followup.ps1 reuses the verified flat baseline and retains all failed
+artifacts. It tests native raised selected56, then native flat/raised air_minus5mm.
+That profile passed 45/45 in screening but narrowly missed the declared 3%
+improvement threshold. This follow-up does not relabel that search as admitted;
+native comparison and any failure remain explicit. No PPO or auto-promotion.
