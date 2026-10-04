@@ -1,9 +1,11 @@
 param([Parameter(Mandatory=$true)][string]$PythonPath,
       [Parameter(Mandatory=$true)][string]$Checkpoint,
       [Parameter(Mandatory=$true)][string]$RunId,
-      [switch]$ProtectLanding)
+      [switch]$ProtectLanding,
+      [switch]$Coupled)
 $ErrorActionPreference='Stop'
 if($RunId -notmatch '^[A-Za-z0-9_-]+$'){throw 'Invalid run id'}
+if($Coupled -and -not $ProtectLanding){throw 'Coupled trial requires ProtectLanding'}
 $runs=Join-Path $PSScriptRoot 'runs'
 $resultDir=Join-Path $runs $RunId
 if(Test-Path -LiteralPath $resultDir){throw 'Use a new run id'}
@@ -18,6 +20,7 @@ function Run-Stage([string]$Suffix,[string[]]$Extra){
     $name="${RunId}_${Suffix}"
     Save-Pipeline 'RUNNING' $Suffix
     if($ProtectLanding){$Extra+=@('--protect-landing')}
+    if($Coupled){$Extra+=@('--coupled')}
     & $PythonPath -X faulthandler -u (Join-Path $PSScriptRoot 'precontact_probe.py') --checkpoint $Checkpoint --run-id $name @Extra
     $code=$LASTEXITCODE
     $dir=Join-Path $runs $name

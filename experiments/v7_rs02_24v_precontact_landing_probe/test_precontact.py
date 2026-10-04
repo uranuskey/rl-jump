@@ -1,15 +1,16 @@
 """Meaningful CPU checks for causal feedback, travel bounds, and phase isolation."""
 import unittest
 import torch
-from precontact_control import DT, initial, modulate, profile, table
+from precontact_control import DT, initial, modulate, profile, table, coupled_profile
 
 
 class PrecontactContract(unittest.TestCase):
     def sample(self, *, cfg=None, gap=.02, closing=.95, com=-1.4, seen=False,
-               enabled=True, height=.19, old_offset=0., old_speed=0., protect=False):
+               enabled=True, height=.19, old_offset=0., old_speed=0., protect=False,
+               kp=.47,kd=.42):
         n=45; one=torch.ones(n)
         c=dict(enabled=torch.full((n,),enabled),height=height*one,velocity=-.75*one,
-               kp=.47*one,kd=.42*one,force=torch.zeros(n))
+               kp=kp*one,kd=kd*one,force=torch.zeros(n))
         s=initial(n,'cpu'); s['count'].fill_(2)
         clear=torch.full((n,2),gap)
         s['clearance2']=clear+closing*2*DT
@@ -72,6 +73,25 @@ class PrecontactContract(unittest.TestCase):
         torch.testing.assert_close(landed['kd'],1.1*c['kd'])
         for key in ('height','velocity','force'):
             self.assertTrue(torch.equal(landed[key],c[key]))
+
+    def test_earlier_brake_uses_height_and_retains_air_and_force_contract(self):
+        cfg=coupled_profile('test',enabled=False,strong=True)
+        c,(air,_,_)=self.sample(cfg=cfg,height=.145,protect=True)
+        c,(land,_,_)=self.sample(cfg=cfg,height=.145,protect=True,seen=True)
+        self.assertTrue(torch.equal(c['kp'],air['kp']))
+        self.assertTrue(bool((land['kp']>c['kp']).all()))
+        self.assertTrue(bool((land['kd']>c['kd']).all()))
+        for key in ('height','velocity','force'):
+            self.assertTrue(torch.equal(c[key],land[key]))
+        _,(bottom,_,_)=self.sample(cfg=cfg,height=.12,protect=True,seen=True)
+        torch.testing.assert_close(bottom['kp'],1.6*c['kp'])
+        torch.testing.assert_close(bottom['kd'],1.3*c['kd'])
+
+    def test_postcontact_gains_never_exceed_original_standing_gains(self):
+        cfg=coupled_profile('test',strong=True)
+        _,(out,_,_)=self.sample(cfg=cfg,height=.10,protect=True,seen=True,kp=.95,kd=.95)
+        self.assertTrue(torch.equal(out['kp'],torch.ones(45)))
+        self.assertTrue(torch.equal(out['kd'],torch.ones(45)))
 
 
 if __name__=='__main__':

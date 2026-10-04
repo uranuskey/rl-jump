@@ -56,3 +56,24 @@ Its baseline must pass two independent native45 runs before the precontact
 screening proceeds. All screened profiles share this same protection so that
 the effect of precontact feedback can be assessed separately. No candidate gate
 is relaxed. Preserve `probe_01` and use a new run id for the protected experiment.
+
+## Bounded coordinated braking follow-up
+
+`probe_02` completed without an eligible candidate. Both protected native
+baselines passed 45/45 (331.74 / 331.67 N average peak), but the initial
+precontact profile passed only 38/45 at 292.22 N. All ten new screening profiles
+had illegal contacts. CPU reconstruction of its world 0 confirms lower-link/
+body contact at 98.8 mm leg height while COM velocity was still -0.387 m/s.
+Do not report the failed groups' recovery averages as an improvement: terminated
+worlds have success_s=0 in the inherited metric. Their force means also include
+truncated failures and are not qualified full-land-and-recover performance.
+
+`--coupled --protect-landing` selects a separate fixed nine-profile / 405-world
+follow-up, retaining the current protected baseline and two postcontact-only
+controls. Earlier braking starts at 160 mm and reaches full strength at 125 mm:
+Kp/Kd multipliers are either 1.35/1.15 or 1.60/1.30, still capped at standing
+gains and sent through the original delayed motor FIFO. Three precontact
+settings (late/3 mm, mid/6 mm, late/6 mm) pair with both braking schedules.
+This tests coordinating wheel preparation with earlier motor braking; it is not
+a force-tracking controller or a claim of 250 N performance. The same admission
+thresholds, native baselines, independent repeats, and no-PPO boundary apply.

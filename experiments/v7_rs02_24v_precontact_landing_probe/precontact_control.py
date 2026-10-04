@@ -9,14 +9,18 @@ import torch
 DT = .0025
 MIN_REFERENCE_M = .160
 FIELDS = ('enabled', 'horizon_s', 'closing_target_mps', 'extra_limit_m',
-          'gain', 'max_extra_speed_mps', 'max_extra_accel_mps2')
+          'gain', 'max_extra_speed_mps', 'max_extra_accel_mps2',
+          'brake_start_m', 'brake_full_m', 'brake_kp_extra', 'brake_kd_extra')
 
 
 def profile(name, horizon=.045, target=.45, budget=.006, gain=1., speed=.65,
-            accel=25., enabled=True):
+            accel=25., enabled=True, brake_start=.140, brake_full=.115,
+            brake_kp=.20, brake_kd=.10):
     return dict(name=name, enabled=enabled, horizon_s=horizon,
         closing_target_mps=target, extra_limit_m=budget, gain=gain,
-        max_extra_speed_mps=speed, max_extra_accel_mps2=accel)
+        max_extra_speed_mps=speed, max_extra_accel_mps2=accel,
+        brake_start_m=brake_start,brake_full_m=brake_full,
+        brake_kp_extra=brake_kp,brake_kd_extra=brake_kd)
 
 
 PROFILES = [
@@ -31,6 +35,25 @@ PROFILES = [
     profile('close65_h45_b9', target=.65, budget=.009, speed=.45),
     profile('close25_h60_b9', horizon=.060, target=.25, budget=.009, speed=.8),
     profile('close65_h30_b3', horizon=.030, target=.65, budget=.003, speed=.45),
+]
+
+# Predeclared bounded follow-up: two postcontact-only controls distinguish the
+# effect of earlier braking from that of precontact wheel-speed preparation.
+def coupled_profile(name, *, strong=False, **kw):
+    return profile(name,brake_start=.160,brake_full=.125,
+        brake_kp=.60 if strong else .35,brake_kd=.30 if strong else .15,**kw)
+
+
+COUPLED_PROFILES = [
+    profile('protected_current',enabled=False),
+    coupled_profile('earlier_brake_only',enabled=False),
+    coupled_profile('stronger_brake_only',enabled=False,strong=True),
+    coupled_profile('late3_earlier',target=.65,horizon=.030,budget=.003,speed=.45),
+    coupled_profile('late3_stronger',target=.65,horizon=.030,budget=.003,speed=.45,strong=True),
+    coupled_profile('mid6_earlier',target=.65,speed=.45),
+    coupled_profile('mid6_stronger',target=.65,speed=.45,strong=True),
+    coupled_profile('late6_earlier',target=.45,horizon=.030),
+    coupled_profile('late6_stronger',target=.45,horizon=.030,strong=True),
 ]
 
 
@@ -53,7 +76,7 @@ def smooth(x):
 
 def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown,
              leg_height, protect_landing=False):
-    enabled,horizon,target,budget,gain,vmax,amax=config.unbind(1)
+    enabled,horizon,target,budget,gain,vmax,amax,brake_start,brake_full,brake_kp,brake_kd=config.unbind(1)
     valid=previous['count']>=2
     wheel_vz=(clearance-previous['clearance2'])/(2*DT)
     wheel_vz=torch.where(valid[:,None],wheel_vz,torch.zeros_like(wheel_vz))
@@ -84,9 +107,9 @@ def modulate(c, config, previous, *, clearance, surface_z, com_vz, touchdown,
     # lower-link/body contact near 101 mm. This is motor impedance, not an
     # external force or a relaxation of the original collision gate.
     post=c['enabled'] & (touchdown>0) & protect_landing
-    depth=torch.where(post,smooth((.140-leg_height.min(1).values)/.025),torch.zeros_like(gap))
-    out['kp']=(c['kp']*(1+.20*depth)).clamp_max(1.)
-    out['kd']=(c['kd']*(1+.10*depth)).clamp_max(1.)
+    depth=torch.where(post,smooth((brake_start-leg_height.min(1).values)/(brake_start-brake_full)),torch.zeros_like(gap))
+    out['kp']=(c['kp']*(1+brake_kp*depth)).clamp_max(1.)
+    out['kd']=(c['kd']*(1+brake_kd*depth)).clamp_max(1.)
     state=dict(clearance1=clearance.clone(),clearance2=previous['clearance1'].clone(),
         count=(previous['count']+1).clamp_max(2),offset=offset,
         speed=torch.where(active,(-delta_v).clamp_min(0),torch.zeros_like(delta_v)))

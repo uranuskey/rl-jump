@@ -16,7 +16,7 @@ import compliant_paths
 sys.path.insert(0,str(IMPACT))
 from compliant_runtime import verify,sha,read,write,exclusive,now,resource_limit
 from spread_probe import SOURCE_SHA,SOURCE_FROZEN,change_parameters,metrics,load_controller_audit
-from precontact_control import PROFILES
+from precontact_control import PROFILES,COUPLED_PROFILES
 
 
 def code_hashes():
@@ -69,10 +69,11 @@ def schedule_audit(path,profile,protect_landing=False):
             assert np.array_equal(requested[...,i][live],z['sensor_pre_requested_'+key][live])
         assert np.array_equal(requested[...,11][live],z['sensor_pre_original_force'][live])
         post=live & (z['sensor_pre_touchdown_s']>0) & protect_landing
-        u=np.clip((.140-z['sensor_pre_leg_height_m'].min(-1))/.025,0,1)
+        u=np.clip((profile['brake_start_m']-z['sensor_pre_leg_height_m'].min(-1)) /
+            (profile['brake_start_m']-profile['brake_full_m']),0,1)
         depth=np.where(post,u*u*(3-2*u),0)
         assert np.allclose(depth[live],z['sensor_pre_landing_brake'][live],atol=1e-6)
-        for i,key,fraction in ((12,'kp',.20),(13,'kd',.10)):
+        for i,key,fraction in ((12,'kp',profile['brake_kp_extra']),(13,'kd',profile['brake_kd_extra'])):
             expected_gain=np.minimum(1.,z['sensor_pre_original_'+key]*(1+fraction*depth))
             assert np.allclose(requested[...,i][live],expected_gain[live],atol=1e-6)
             assert np.array_equal(requested[...,i][live & ~post],z['sensor_pre_original_'+key][live & ~post])
@@ -130,7 +131,8 @@ def execute(args,out,result,limit):
     ck=torch.load(args.checkpoint,map_location='cpu',weights_only=True)
     assert ck['update']==56 and ck['frozen_sha256']==SOURCE_FROZEN
     assert ck['voltage_v']==24 and ck['assist_strength']==.625
-    profiles=PROFILES if args.mode=='search' else [PROFILES[args.profile]]
+    grid=COUPLED_PROFILES if args.coupled else PROFILES
+    profiles=grid if args.mode=='search' else [grid[args.profile]]
     if args.search:
         search=read(args.search)
         ranked=search['ranked_for_native']
@@ -242,13 +244,13 @@ def execute(args,out,result,limit):
             return Normal(mean,policy.std.expand_as(mean))
     trace=out/'traces.npz' if args.mode=='native' else None
     *_,summary=trial(env,standing,FrozenLaunch(env.device),Proposal(),limit,trace_path=trace)
-    summary['controller_revision']='precontact proximity and velocity feedback; inherited postcontact controller'
+    summary['controller_revision']='precontact proximity and velocity feedback; explicit postcontact impedance schedule'
     write(out/'summary.json',summary)
     result.update(profiles=profiles,source_checkpoint=dict(path=str(args.checkpoint),sha256=SOURCE_SHA,update=56),
         mass_kg=env.mass,terrain=env.terrain_receipt,all_metrics=metrics(summary),evaluation=compact(summary),
         prefix_proof_samples=env.proof_samples,launch_fixed=True,training_updates=0,
-        landing_protection=dict(enabled=args.protect_landing,start_height_m=.140,full_height_m=.115,
-            max_kp_multiplier=1.20,max_kd_multiplier=1.10,old_collision_gate_unchanged=True),
+        landing_protection=dict(enabled=args.protect_landing,parameters_in_profiles=True,
+            capped_at_standing_gains=True,old_collision_gate_unchanged=True),
         proximity_sensor=dict(kind='ideal simulated clearance, causal backward-difference velocity',
             actual_fifo_delay_exposed=False,hardware_qualified=False,noise_tested=False))
     assert env.proof_samples>0
@@ -298,13 +300,17 @@ def main():
     p.add_argument('--baseline',type=Path)
     p.add_argument('--height-m',type=float,choices=[0.,.01],default=0.)
     p.add_argument('--protect-landing',action='store_true')
+    p.add_argument('--coupled',action='store_true')
     a=p.parse_args()
     assert __import__('re').fullmatch('[A-Za-z0-9_-]+',a.run_id)
     assert not a.height_m or a.mode=='native'
+    assert not a.coupled or a.protect_landing
+    grid=COUPLED_PROFILES if a.coupled else PROFILES
+    assert a.profile<len(grid)
     assert verify()==SOURCE_FROZEN
     out=HERE/'runs'/a.run_id
     assert not out.exists(),'Use a new run id'
-    n=45*len(PROFILES) if a.mode=='search' else 45
+    n=45*len(grid) if a.mode=='search' else 45
     with exclusive(n) as resources:
         out.mkdir(parents=True)
         start=time.monotonic()
