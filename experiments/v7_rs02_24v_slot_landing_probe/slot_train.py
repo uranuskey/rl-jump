@@ -11,7 +11,8 @@ from slot_training_runtime import *
 def execute(args, out, result, contract, limit):
     import torch
     from slot_env import SlotEnv
-    from slot_learning import Policy, PPO, FrozenLaunch, exploration
+    from slot_learning import Policy, FrozenLaunch, exploration
+    from slot_ppo import PPO
     from compliant_rollout import trial, compact
     from standing_policy import JumpPolicy
     torch.set_num_threads(1)
@@ -81,6 +82,9 @@ def execute(args, out, result, contract, limit):
         write(out/f'update_{update:04d}.json', row)
         write(out/'progress.json', result)
         print(json.dumps(row), flush=True)
+        if update>=8:
+            recent=[read(out/f'update_{i:04d}.json') for i in range(update-7,update+1)]
+            assert sum(r['actor_steps'] for r in recent)>0, 'Eight updates without an accepted actor step'
         if update%8 == 0 or update == budget:
             checkpoint = save(f'model_{update:04d}.pt', update)
             *_, evaluation = trial(env, standing, launch, policy, limit)

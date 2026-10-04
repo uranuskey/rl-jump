@@ -22,10 +22,19 @@ One 16-dimensional landing-plan action is sampled at 0.6 s per episode. Effects
 remain gated until COM apex. Gaussian standard deviations decrease linearly from
 0.060 to 0.035 for eight parameter logits and 0.020 to 0.012 for eight feedback
 gain logits over 128 updates. This is plan exploration, not sensor noise or
-independent noise every servo tick. PPO actor LR is 5e-5, critic LR 3e-4, clipping
-0.2, and attempted actor updates with mean KL above 0.03 are rolled back along
-with their optimizer state. The original guided 13-term full-landing reward is
+independent noise every servo tick. PPO starts actor LR at 5e-5, critic LR at
+3e-4, with clipping 0.2. An actor attempt with mean rollout KL above 0.03 is
+rolled back with its complete Adam state, then retried from the same state at
+half the step size (at most seven attempts). Accepted LR persists in the actual
+optimizer. The next update adjusts it within 1e-7..5e-5 using measured KL.
+The original guided 13-term full-landing reward is
 unchanged (including 300 N force target and actual first-stop COM stroke).
+
+The preserved `train_01_smoke` exposed 0/16 accepted actor updates with the
+original fixed LR; the two-update smoke exited 1 instead of silently beginning
+an ineffective long run. Its deterministic landing still passed. The retry
+uses a fresh run ID and the above backtracking optimizer; physical controller,
+policy distribution, collision gates and diagnostic seed remain unchanged.
 
 The air-height minus 5 mm change remains inside the actor mean and therefore
 inside both PPO log-probability and KL calculations. All checkpoints explicitly
