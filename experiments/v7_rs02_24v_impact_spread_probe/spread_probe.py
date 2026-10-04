@@ -71,6 +71,15 @@ def admitted(candidate,baseline):
         and candidate['mean_recovery_s']<=baseline['mean_recovery_s']+.10)
 
 
+def load_controller_audit():
+    # Several frozen ancestors have an audit.py; resolve this one by file.
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('spread_v3_controller_audit',PARENT/'audit.py')
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.controller_trace
+
+
 def execute(args,out,result,limit):
     import numpy as np
     import torch
@@ -82,7 +91,7 @@ def execute(args,out,result,limit):
     from standing_policy import JumpPolicy
     from analyze_saved import contact_metrics
     from audit_training import audit_trace
-    from audit import controller_trace
+    controller_trace=load_controller_audit()
     torch.set_num_threads(1)
     torch.manual_seed(104056)
     torch.cuda.manual_seed_all(104056)

@@ -1,11 +1,16 @@
 """CPU checks for preserving the chosen policy and its feedback outputs."""
 import unittest
 import torch
-from spread_probe import change_parameters, PROFILES
+from spread_probe import change_parameters, PROFILES, load_controller_audit, PARENT
 from compliant_control import encode, decode
 
 
 class ParameterContract(unittest.TestCase):
+    def test_controller_audit_resolves_exact_v3_file(self):
+        from pathlib import Path
+        audit=load_controller_audit()
+        self.assertEqual(Path(audit.__code__.co_filename).resolve(),(PARENT/'audit.py').resolve())
+
     def test_baseline_exact_and_only_requested_parameters_change(self):
         initial=torch.tensor([.16255,.19258,.04785,.12162,.60617,.47064,.41921,.73907])
         raw=torch.cat((encode(initial),torch.arange(8)/100)).repeat(405,1)
