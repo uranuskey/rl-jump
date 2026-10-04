@@ -1,0 +1,40 @@
+{
+  "task": "guided_parameter_cushion_v1",
+  "parent_sha256": "bf14a91691f27c9af41d9341032df9a6fc04387bb81949341903c2bad98861e7",
+  "contract": {
+    "num_envs": 512,
+    "updates": 128,
+    "voltage_v": 24,
+    "assist_strength": 0.625,
+    "action_dim": 13,
+    "observation_dim": 17,
+    "physics_hz": 400,
+    "control_hz": 50,
+    "source_checkpoint_sha256": "393a58a7b1abaa442c11ae858b88f332e6ab64a3c86924bd64e1a338f361c713",
+    "source_update": 120,
+    "seed": 104042,
+    "force_target_n": 300.0,
+    "impact_multiplier": 6.0,
+    "immutable_controller": true,
+    "immutable_physics": true,
+    "proposal_count": 20,
+    "selection": "all worlds pass and retain height, then lower mean force",
+    "optimizer": "new Adam and critic; inherited actor; proposal samples excluded from PPO"
+  },
+  "sha256": {
+    "experiments/v7_rs02_24v_guided_landing/audit.py": "522ac54d249be76b5c9a505728ed77374b9e3014bf23c8999ca1365fd8254881",
+    "experiments/v7_rs02_24v_guided_landing/evaluate.py": "c1a8e7d18f75c2933377047c66425bc486b2652a284f014e04b581ef2f3f2114",
+    "experiments/v7_rs02_24v_guided_landing/freeze.py": "e3921128d212594c9c0f908b0fa5b05a8e518ef9b3a52e36c069c40b5a671f49",
+    "experiments/v7_rs02_24v_guided_landing/guided_env.py": "fc428250458c4cacc163f37f78e5ced5465ed3fc53f767095f6c1f34b064566e",
+    "experiments/v7_rs02_24v_guided_landing/guided_learning.py": "125a07a74fe05ffabc26ae9907b6737e775ce055c3f23b608ea1454948fbe81b",
+    "experiments/v7_rs02_24v_guided_landing/guided_paths.py": "39a5c54f9d9ba2dc0a2d4dee54a054eb47156a24062aec0222dc9ca15a4f1bce",
+    "experiments/v7_rs02_24v_guided_landing/guided_reward.py": "db75bbdb8dac2a39566712d681984eed552a5caeb7d2e3fbfc017a67e06bc7f2",
+    "experiments/v7_rs02_24v_guided_landing/guided_rollout.py": "6a25cbe8e989f8c2eab222d51e9c08e92f9d56e5ec6b1bede7e4f765a81b14ac",
+    "experiments/v7_rs02_24v_guided_landing/guided_runtime.py": "63af6d824bd387ad5b6a3c92c2a35247bae2fb46ad5d6b444a2c45fc76ed72bf",
+    "experiments/v7_rs02_24v_guided_landing/guided_search.py": "541c10281aab203ca514dcd259d1f9fa6da1dff2582515c0b95304419fa7f1d1",
+    "experiments/v7_rs02_24v_guided_landing/README.md": "988bafad42c0121e385b94a84791ef81cfdfcfb43dfd610c2e36d35a03fbca85",
+    "experiments/v7_rs02_24v_guided_landing/run_pipeline.ps1": "d9f063341c76498df24cb81ab12e0cc8e71478d169c7405d7e2baa5ed1f193fd",
+    "experiments/v7_rs02_24v_guided_landing/train.py": "a51e898b184ff5ae5782062bf91e777b636437ea5f7d52e1185d228744dae606",
+    "experiments/v7_rs02_24v_guided_landing/verify_cpu.py": "72a035372b28c8ef87bc79397061c455ab5e6276064a18dac8e812c0c1b6bb43"
+  }
+}
