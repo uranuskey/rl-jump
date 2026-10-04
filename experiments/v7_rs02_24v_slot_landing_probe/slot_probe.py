@@ -225,7 +225,7 @@ def main():
     p.add_argument('--rank',type=int,choices=[0,1],default=0)
     p.add_argument('--baseline',type=Path)
     p.add_argument('--height-m',type=float,choices=[0.,.01],default=0.)
-    
+
     a=p.parse_args()
     assert __import__('re').fullmatch('[A-Za-z0-9_-]+',a.run_id)
     assert not a.height_m or a.mode=='native'
@@ -256,4 +256,3 @@ def main():
 
 if __name__=='__main__':
     raise SystemExit(main())
-
