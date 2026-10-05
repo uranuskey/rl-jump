@@ -1,0 +1,14 @@
+{
+  "parent_fix_sha256": "c5ea8dd2111aac3a5e8634e8f7316d9e264d744408c72a8c952bd002e923e42c",
+  "sha256": {
+    "experiments/v7_rs02_24v_rotor6125_learning/audit_transfer.py": "092184209c49c3037d6b2ad1722a8c8bffa4035035f095f283f8533f3ac991a1",
+    "experiments/v7_rs02_24v_rotor6125_learning/pipeline_stage.py": "736d5bf5750ec886d355d0a0f39bb1327e7b232f5e542b71f2602585402381b0",
+    "experiments/v7_rs02_24v_rotor6125_learning/README.md": "635b153ce10fbe8c637a1530069378989011c1046cff076a802828a74665c397",
+    "experiments/v7_rs02_24v_rotor6125_learning/run_pipeline.ps1": "988f352cc899f73f74a238f52627c58fe1a31c159bf290bf0e7fb103720e5bb9",
+    "experiments/v7_rs02_24v_rotor6125_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_rotor6125_learning/test_transfer.py": "2afbfcac8f7a517093d117f53611032a919a88683eb778eb3de366c1ad4f0ca8",
+    "experiments/v7_rs02_24v_rotor6125_learning/transfer_contract.py": "75bc6df9ca83a5b2e6549b1a8e24bcc099ba1a2af335ef4519ccb1fdb625b6a8",
+    "experiments/v7_rs02_24v_rotor6125_learning/transfer_engine.py": "39b863655bbaace6324065191d1346267cec61848775586867ff827d638c1b3b",
+    "experiments/v7_rs02_24v_rotor6125_learning/transfer_runtime.py": "03b8ea151bf9e9ba6da627dfd12c0baaf54ecf008480d11a981ae794b9aefb04"
+  }
+}
