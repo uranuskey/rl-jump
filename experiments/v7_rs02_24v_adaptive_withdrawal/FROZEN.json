@@ -1,0 +1,14 @@
+{
+  "parent_transfer_sha256": "c977dd472dfe668233a96719a73f22179a8310a955c6216d11afe437da46b357",
+  "sha256": {
+    "experiments/v7_rs02_24v_adaptive_withdrawal/curriculum.py": "4736ac7452e35998e98cc52c0c20a31296d9c694385c0e81e808fda758de694b",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/curriculum_audit.py": "3f7264b29b59a1dba2c2c304f6eb329429970cfbefba46a0d903fd65abff9263",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/curriculum_contract.py": "a9d59ab398b83765e61492a4e851d63047abc7ee75818778d8377bebb86e64a4",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/curriculum_runtime.py": "14c203dbf0076e1d42e049387fb204f973cdd713bd8258b7e5853fb21387450f",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/curriculum_worker.py": "3a91e20a5766f7284f8bbc6c4e5b50de38486e04df29e9cb785cba2dfd27c218",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/README.md": "b7084095a14aaece47685067e081d2c68a9194fc183d5c9f4b0ca07a2e517536",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/run_pipeline.ps1": "cbddd188d83b12c4a499f2c591d3efe36999f9295ec573395684c2e80a7062e3",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_adaptive_withdrawal/test_curriculum.py": "84948263935e143364bec82320ec179748b37cfbfd61d7f81977e46f935822d0"
+  }
+}
