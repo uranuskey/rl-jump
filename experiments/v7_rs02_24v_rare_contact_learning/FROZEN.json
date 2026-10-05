@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "6db46199d2df6522ff3faa6ec9778f70af4875543b38ef06df7e1e56af1d2677",
+  "sha256": {
+    "experiments/v7_rs02_24v_rare_contact_learning/PLAN.txt": "0ff0f2f30e884748e86e2c457f5a08b3d3bbd8eb29f446f8b2f146cce2f7f27f",
+    "experiments/v7_rs02_24v_rare_contact_learning/preflight.py": "a5a8bcb5f49f7864c6e72c088816bb9f80a4e57111a7d52c93ec3715d93fcf65",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_audit.py": "62a55dcddeb7e4508b336b6fdb07fc2bf4d5a42b15453ca70bdc94940974a5c8",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_contract.py": "35ecf9e506fa034c351c13866d58094a73dbbd3b94d4a0000c595fde1a24cf25",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_course.py": "f7c7854ea75188e8538887ce9700273ffe74bc1645b71c26149cb8c992dc7cd0",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_row_audit.py": "7187b151bd30d46857b0939128d1932e5cde92d682b92e27174b39b1e24ffb4c",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_runtime.py": "88e8f43253cc36ec528a084d56daea08109e342746376e07af703ae01ce0da64",
+    "experiments/v7_rs02_24v_rare_contact_learning/rare_worker.py": "5998c8f5e3442a89363ac04104cded10483534932f2ab518d9d6152fc0ba56f2",
+    "experiments/v7_rs02_24v_rare_contact_learning/RESEARCH.txt": "f186dffe5fd4e76faca15358f41ae38961c0ef6120386e8dff852ec8add883ba",
+    "experiments/v7_rs02_24v_rare_contact_learning/run_pipeline.ps1": "8d93f4a66159ee3c763082a554d0f254c03d2c4ac9c136b2193a1da94d13af33",
+    "experiments/v7_rs02_24v_rare_contact_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_rare_contact_learning/test_rare.py": "5e2d99dc9fd648d54550125fdc583a20f6cdcf2de28bfc053b2a34554267a8df"
+  }
+}

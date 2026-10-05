@@ -1,0 +1,45 @@
+2026-10-05: resume learning while preserving strict promotion.
+
+The latest controller (zero_slot_window_1500, motor offset bound +/-0.09rad) is
+strictly qualified at45%. At42.5%, native45 and two512 batches passed, while one
+of512 worlds self-contacted65ms after touchdown at93.93/94.29mm leg height. Its
+peak344.366N and zero final stable duration also fail the strict final gate.
+The whole course/audit/wrapper exited0 and is retained asENTRY_FAILED, not success.
+
+CPU reconstruction of saved poses confirms base-link/lower-leg overlap0.237 to
+0.387mm. At fixed height a0.5mm movement toward the slot clears static overlap;
+this does not prove dynamic control. The largest impact also occurs near first
+touchdown, so simply widening late correction is not a complete remedy.
+
+The previous learning entrance required every case to succeed (except small
+rebound). As a result, this correctable post-apex failure prevented any PPO update.
+This version changes only simulation learning eligibility, not physical control,
+reward, collision detection or promotion. A512 evaluation batch may enter learning
+with at most2 illegal_contact failures, only after valid apex and touchdown,
+within150ms of touchdown, self contact with no body-ground contact, height90..230mm,
+no saturation/overspeed/constraint violation, actual motor torque inside the17Nm
+envelope, and all-world peak<=350N. All surviving cases retain original learning
+gates; global mean impact, jump height, actualCOM stroke, recovery and rebound
+gates also remain. Native45 must still pass full independent physical audits.
+These are research training admission bounds, not new hardware safety limits.
+
+Failed episodes remain failures, terminate, and receive the original13-term score
+including the-300 failure penalty. They are never relabeled successful. Every
+promotion still requires native45 + exactly three512 strict tests, zero contacts,
+zero rebound<=1e-6, original and corrected-reference force/height/stroke/stability
+limits, all original physics audits and external-wrench evidence. Native/three512
+failures remain in the ledger. No repeated same-actor draw until success.
+
+Reuse the existing complete42.5% evidence once as an explicitly identified CPU
+learning preflight, including original failed result/audit/exit hashes. Do not
+replay the same failed actor. Perform2 actual PPO updates then full fresh strict
+qualification; continue8-update chunks only when learning entry permits. Shared
+128 new updates across42.5%,40%,...,0%, immediate promotion on full strict success.
+FreshAdam at new levels, exactAdam/RNG resume within a level. Fixed launch and
+landing actor only after apex remain; pre-apex failure must be repaired separately.
+
+Zero assistance still requires actual all-body applied wrench and free-base force
+exactly zero for the entire episode. Estimated24V curve,17Nm limits,rotor5ms,
+geometry, physical contacts, motor FIFO and controller profile are unchanged.
+Original and revised45% fallback controllers remain available. Parent repairs
+further failures in new frozen versions. GitHub receives only source files.

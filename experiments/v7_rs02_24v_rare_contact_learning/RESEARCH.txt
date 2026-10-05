@@ -1,0 +1,15 @@
+Primary research revisited2026-10-05:
+https://arxiv.org/html/2304.08663v1
+Continuous Versatile Jumping Using Learned Action Residuals. Section4 describes
+learning corrections over an analytical controller, with early termination for
+failed episodes. This supports preserving useful control while letting learning
+correct imperfect behavior; it does not prescribe our2/512 or350N thresholds.
+https://arxiv.org/abs/2401.16337
+Curriculum-Based Reinforcement Learning for Quadrupedal Jumping: A Reference-free
+Design. Curriculum progression starts with in-place vertical jumps. We retain
+strict independent evaluation and immediate assistance reduction after success.
+https://mujoco.readthedocs.io/en/stable/APIreference/APIfunctions.html#mj-geomdistance
+Official distance/contact APIs used to interpret static geometric evidence.
+
+This is an eligibility correction for simulation PPO, not a CBF implementation,
+not a collision-criterion relaxation, and not hardware qualification.
