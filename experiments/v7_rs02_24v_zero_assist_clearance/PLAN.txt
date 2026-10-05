@@ -1,0 +1,36 @@
+Cause and scope, 2026-10-05 UTC
+
+The immutable zero_assist_curriculum/course_01 finished with real exit0 and
+AUDITED, 0 new PPO updates. Uniform45% qualified native45 and three512. At42.5%,
+native45 and two512 passed but batch3 world407/case2 hit illegal_contact60ms
+after touchdown, leg height95.14mm. It had no rebound or takeoff residual failure.
+The terminal observation is not a saved geometric contact pair. Preserve it.
+
+The passing native case2 trace shows a related tracking bottleneck: about42.5N
+of slot correction requested, about18.9N allocated at deep compression while
+knee motor offset reaches its declared1.25 window. This is a hypothesis for the
+rare batch failure, not proof that opening the window will resolve it.
+
+One finite225-world screen at42.5% compares windows1.25,1.375,1.5,1.75,2.0.
+Only motor offset window/name change. Window units multiply0.06rad, therefore
+the full allowed offset ranges from0.075rad to0.12rad. Slot gains3750/40 and
+force cap50N stay fixed. Choose the smallest changed window satisfying all old
+strict screen admissions and reducing worst measured slot error by at least0.5mm.
+No selection is qualification. No repeated identical actor/controller retries.
+
+Then requalify45% for the selected profile; proceed42.5%,40%,...,0%. Every level
+requires native45 full400Hz audit plus exactly three512 strict batches. These
+are repetitions of45 conditions, not512 unique conditions. PPO only after
+learning entry passes:2 then8 updates, shared128 new updates, immediate promotion
+when all strict tests pass. Preserve old45% controller as fallback. Save terminal
+and minimum-height poses for every deterministic trial to diagnose rare contacts.
+
+Unchanged: geometry/collision definitions,17Nm and estimated24V envelope, rotor5ms,
+fixed launch, FIFO,13 rewards, zero rebound final gate, jump height, impact ceiling,
+actual COM buffering, recovery and continuous stability; all applied body wrenches
+and free-base forces measured. At zero, all external applied wrenches must be
+exactly zero throughout. This remains simulation qualification, not hardware.
+
+Parent autonomously repairs any new failure in a new frozen version. Do not
+modify failed evidence or stop the overall zero-assistance objective atENTRY_FAILED.
+Only source code is synced to GitHub. All local data stay underD:/ROS2/RL_JUMP.

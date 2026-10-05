@@ -1,0 +1,16 @@
+Primary sources reviewed for the2026-10-05 clearance repair:
+https://arxiv.org/abs/2207.00692
+Khazoom et al., Humanoid Self-Collision Avoidance Using Whole-Body Control with
+Control Barrier Functions(2022). Dynamics-aware collision constraints matter;
+pure kinematic reactive corrections need not guarantee collision avoidance.
+https://stanfordasl.github.io/oscbf/
+Official OSCBF project(2025): task-space control with dynamics and bounded torque,
+including self collision and joint constraints. No OSCBF or CBF implementation is
+claimed here. It informs the fallback direction if the bounded offset scan fails.
+https://arxiv.org/html/1801.08093v3
+Learning Symmetric and Low-Energy Locomotion: assistance curriculum and evaluation
+without assistance. Retain immediate qualification-based withdrawal.
+
+Current intervention is the smallest finite bounded allocation-window experiment,
+with unchanged motor limits and strict independent evaluation. Do not equate this
+controller parameter change or screening success with PPO learning or hardware proof.

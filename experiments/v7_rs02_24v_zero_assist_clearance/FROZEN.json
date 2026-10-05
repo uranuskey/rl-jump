@@ -1,0 +1,23 @@
+{
+  "parent_frozen_sha256": "27d91b18a3dcbbdedbb1b2e7d386bc61be99dd6dca9a8306542c99be3f7532e1",
+  "sha256": {
+    "experiments/v7_rs02_24v_zero_assist_clearance/PLAN.txt": "294056ef33d251cd48cb995e158a4ea2cfdbd5b5f26345129de9b51b6b4458a9",
+    "experiments/v7_rs02_24v_zero_assist_clearance/pose_evidence.py": "621c5d61ec016e09911a8f549e9469b66da79aa0f6ecfcfcfd1fbb025f6d6680",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_audit.py": "8ce2cddac4908d2e56afccafe18293f2a48af8e2628e466d4a43e829e27f8123",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_bootstrap.py": "c6e7bf32fe60b198c40208500b6650d6d2c0a08a9c52f57afd4e1bdf695b34c6",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_contract.py": "ba91dc09cbd49a0f47c454443fba2a97a2f6c9d0714869ba6575c1c140f67191",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_course.py": "31c67d860b804b38736cbd7df102d7ff3a2881ccda53ace85217874feb1edb92",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_profiles.py": "4dbbe7de07174af549f0b4a878915a0a65dfc461ba787ab6d815b53bd558868e",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_row_audit.py": "bd3556b5637b3d968a0877a8f05feeb1881fbd570b78ad0e9da4f3df2a5ba915",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_runtime.py": "87fb4138636f3c8a315c10a6d280dda0f6e066b4e346ef848f946c5fcaaf06d8",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_screen.py": "7009db217a7bd47851621555eba690ff3d5da0bc93eeb7be7caf478cc2333613",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_screen_audit.py": "de090a020da6310878fdf87074835db5cc28bdd40f1efc3aaa368b210e4b0888",
+    "experiments/v7_rs02_24v_zero_assist_clearance/repair_worker.py": "0d5aa47259b097f3c878ed2ffa56f932c11af2e72a460891f19667e010b26beb",
+    "experiments/v7_rs02_24v_zero_assist_clearance/RESEARCH.txt": "022b04d7bcf082d3fe00c0776479a4ff32b824b45a030ffdb6930ac4fa87ca1d",
+    "experiments/v7_rs02_24v_zero_assist_clearance/run_pipeline.ps1": "c7fe5e25c7873ca81e8297fdb6f64da82e60560998a1187cd3b51d939f2dcc07",
+    "experiments/v7_rs02_24v_zero_assist_clearance/run_screen.ps1": "32ec1d097855105d678d8db90122f66aaca39d26270573fa4704fffddf1dcfb1",
+    "experiments/v7_rs02_24v_zero_assist_clearance/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_zero_assist_clearance/supervise_screen.ps1": "050723881c73827c990da64cde00c5bd4c8bb6f496250d98501588324a4851df",
+    "experiments/v7_rs02_24v_zero_assist_clearance/test_repair.py": "47b486a876497222cd0409e669cba26989ad3d679ac022f02b15f3e73fab5944"
+  }
+}
