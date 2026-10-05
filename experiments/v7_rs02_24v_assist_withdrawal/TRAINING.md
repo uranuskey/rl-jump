@@ -26,6 +26,7 @@ assistance reduction or automatic retraining follows this pipeline.
 Python stage exits. When launched over Windows OpenSSH, use a WMI-created
 supervisor outside the SSH process job, then verify it survives connection
 closure; ordinary `Start-Process` alone did not persist in the first probe
-launch. The `-SelfTest` mode only waits12seconds and records a child exit; it
+launch. The `-SelfTest` mode only waits12seconds and records a child exit (0,
+or deliberately7 with `-SelfTestExitCode 7`); it
 does not import the simulator, acquire the physics lock or start training.
 Use hidden windows and preserve all failed launch/run directories.
