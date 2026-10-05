@@ -1,0 +1,13 @@
+{
+  "parent_sha256": "cf4f32c7d77e2706f3ed3b8b42c0095ce451f76c39e935f6fd6dd590219d0919",
+  "sha256": {
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_audit.py": "d5803f0fbf856884fca39384422771885b5729098f58667ab1d3975f3ad3c45a",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_env.py": "8573905397702cb1fa079b861f9b7855c1ff6e93f3735af27226e358a1292aa0",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_probe.py": "4e739f710e4c32d95e509ac7afc78b0376ceaeaf0b3ec5741ed8fca7d3abb488",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_rollout.py": "de1c974f502440f12d38b9b9008eff9b6692f9a47b53f0d6b324f33bd7062d11",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_runtime.py": "fa5ef6ba16f025464ae5252f7517a94355ffe34c8cb15adb62394198413992c0",
+    "experiments/v7_rs02_24v_apex_assist_landing/README.md": "15132231438d8659ce77c67a7237367429f3c38fce1f271ee18547169cd51cb9",
+    "experiments/v7_rs02_24v_apex_assist_landing/run_probe.ps1": "acdfa73f57b90e17a2b3e5f02b6c4fc17f45b156a72c5959b0121d49ddc6efcf",
+    "experiments/v7_rs02_24v_apex_assist_landing/test_apex_assist.py": "29d39d7b0b7785ae5f20e6d985f52fb7802b6c587a550d757ce1249dce3adf7a"
+  }
+}
