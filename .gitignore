@@ -94,3 +94,13 @@
 !/run_checked.ps1
 !/SOURCE_PROVENANCE.json
 !/verify_portable.py
+!/experiments/v7_rs02_24v_assist_withdrawal/
+!/experiments/v7_rs02_24v_assist_withdrawal/withdrawal_contract.py
+!/experiments/v7_rs02_24v_assist_withdrawal/withdrawal_runtime.py
+!/experiments/v7_rs02_24v_assist_withdrawal/withdrawal_rollout.py
+!/experiments/v7_rs02_24v_assist_withdrawal/withdrawal_audit.py
+!/experiments/v7_rs02_24v_assist_withdrawal/withdrawal_probe.py
+!/experiments/v7_rs02_24v_assist_withdrawal/run_probe.ps1
+!/experiments/v7_rs02_24v_assist_withdrawal/test_withdrawal.py
+!/experiments/v7_rs02_24v_assist_withdrawal/README.md
+!/experiments/v7_rs02_24v_assist_withdrawal/FROZEN.json

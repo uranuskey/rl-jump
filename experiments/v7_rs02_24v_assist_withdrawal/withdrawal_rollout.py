@@ -1,0 +1,67 @@
+"""Use the real lower assistance through reset, physics, observation and report."""
+import withdrawal_runtime
+import numpy as np
+import torch
+from environment import reset_cases
+from fast_report import summarize
+from rollout import compact
+from compliant_control import decode
+
+TRACE_FIELDS = ('active', 'ticks', 'phase', 'reason', 'assist_wrench',
+    'arrived_reference_height', 'arrived_corrections', 'q', 'v',
+    'requested_payload', 'arrived_payload', 'impedance_kp', 'impedance_kd',
+    'landing_control_enabled', 'landing_action', 'assist_strength',
+    'assist_effective_strength', 'assist_world_omega_pre', 'assist_world_omega_post',
+    'base_rotation_pre', 'assist_power_w', 'assist_work_j')
+
+
+def trial(env, standing, launch, policy, limit, *, strength, stochastic=False, trace_path=None):
+    assert 0 < strength <= .625
+    env.assist_strength.fill_(strength)
+    reset_cases(env)
+    assert bool((env.assist_strength == strength).all()), 'Reset changed assistance'
+    env.record = trace_path is not None
+    blocks, observation, action = [], None, None
+    with torch.no_grad():
+        for step in range(250):
+            limit()
+            if step == 30:
+                observation = env.plan_observation().clone()
+                env.lock_launch(launch(observation))
+                distribution = policy.distribution(observation)
+                action = distribution.sample() if stochastic else distribution.mean
+                env.lock_parameters(action)
+            teacher = standing.actor(env.obs) if step < 30 else torch.zeros(env.n, 6, device=env.device)
+            env.step(teacher, auto_reset=False)
+            if env.record:
+                rows = env.last['traces']
+                block = {k: torch.stack([row[k] for row in rows]).cpu().numpy() for k in TRACE_FIELDS}
+                block.update({'sensor_'+k: torch.stack([row['sample'][k] for row in rows]).cpu().numpy()
+                              for k in rows[0]['sample']})
+                blocks.append(block)
+            if step >= 30 and bool((env.terminal_mask() | (env.ticks >= 2000)).all()):
+                break
+        assert observation is not None and bool((env.terminal_mask() | (env.ticks >= 2000)).all())
+        assert bool((env.assist_strength == strength).all()), 'Physics changed assistance'
+        env.assert_launch_fixed()
+        env.assert_parameters_fixed()
+        reward, passed, retained = env.task.landing_reward.score(env.task, env.ticks)
+        eligible = env.gate_tick >= 0
+        summary = summarize(env, reward, passed, retained, env.task.landing_reward.metrics(),
+            env.task.landing_reward.last_terms, torch.zeros_like(reward), reward.new_empty(0),
+            eligible.sum(), eligible)
+        summary.pop('dense_reward_identity_max_error')
+        summary.pop('landing_transitions')
+        summary.update(assist_strength=float(env.assist_strength[0]),
+            requested_assist_strength=strength, executed_landing_plans=int(eligible.sum()),
+            parameter_samples_per_episode=1, parameter_plan_unchanged=True,
+            reward_mode='unchanged guided 13-term actual-landing score', force_target_n=300.,
+            controller_hz=400, sample_kind='stochastic_training' if stochastic else 'deterministic_evaluation')
+        parameters, gains = decode(env.parameter_action)
+        for row, values in zip(summary['cases'], torch.cat((parameters, gains), 1).cpu().tolist()):
+            row.update(landing_parameters=values[:8], feedback_gains=values[8:])
+        if trace_path is not None:
+            arrays = {k: np.concatenate([b[k] for b in blocks]) for k in blocks[0]}
+            np.savez_compressed(trace_path, **arrays)
+    env.record = False
+    return observation, action, reward, eligible, summary
