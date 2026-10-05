@@ -1,0 +1,21 @@
+{
+  "parent_frozen_sha256": "86258351f0ca2142272543adad66666e7c85c286670c697e0fd6e52f487af49c",
+  "sha256": {
+    "experiments/v7_rs02_24v_zero_assist_curriculum/AUTONOMY.txt": "9523d72ef74202de96b438ae017f8b2347085742ca01acf635312bbbc0896fa2",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/RESEARCH.txt": "d9e729a8a1c31bea88e3de7ca46f551c8b2d9abe7285d019005fd7ec4a6213d5",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/run_pipeline.ps1": "ee828d4f07ccc85ed7b9ad923aa0b31e9e4d3485f5049e9a10c1aed45bbf4a54",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/test_zero_contract.py": "39ecf217a1ca39004a6d37d00ee8103e2f7016c53e07abc98b1ee8b27f247bbc",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/test_zero_env.py": "49bb4138286776e276a049240ddd1ff4e800fb80e4c130a5b4967b08be17dab8",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_assist_audit.py": "6c4bda61b82070121102202e14acf992af744e5e58f23c6fc04ee3be90adcfea",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_audit.py": "c287468bb91416fde1a582de008acc3b737f4b50712c29b168fd9c39019301fc",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_contract.py": "25a0c3ef19a107775911998fccdf42bb9a35bd5a775e9b1ad57afa1bcbdb1ff2",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_course.py": "9221c46b1d1ce0dc6e3c4a15e2dfa7dd676d9f3253aba1a5a13c88954cb2b922",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_env.py": "16eb7a4876736ee7d48349919fea97c9bcfe9709ef49f6809721521dcf15946d",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_row_audit.py": "2db9e5e6752c4d83eb843cd4d754e447ad16d41e4a5506b868fa8ed50d1c38c3",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_runtime.py": "86d25f0e969dafa39fead4d952ed93b89482d9a9fa31c0e4de29ff1d1882097f",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_trace_audit.py": "897b830c8dce171c3eecf76f21b5dd12efb87b618277453d318601615ff50d65",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_worker.py": "e9197c16a65542edb4a69c5fe650abd3f3dc29185aeea9c555628f2f993f8996",
+    "experiments/v7_rs02_24v_zero_assist_curriculum/zero_wrench_audit.py": "1b9ab2abdaede4c28108ad8f30405e85e349da413d489e3f4edfcbf03dbb2b95"
+  }
+}

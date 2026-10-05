@@ -1,0 +1,18 @@
+Primary sources consulted 2026-10-06 JST
+1. Yu, Turk and Liu, Learning Symmetric and Low-Energy Locomotion (2018).
+https://arxiv.org/html/1801.08093v3
+Relevant evidence: assistance can be reduced according to demonstrated proficiency; overlapping assistance ranges can help adaptation; their final policy is trained without assistance.
+Application here: qualify before advancing, preserve a last-qualified controller, consider smaller/overlapping lessons if a drop fails. Their return-percentage thresholds are not imported as our physical gates.
+
+2. Yang et al., Continuous Versatile Jumping Using Learned Action Residuals (2023).
+https://arxiv.org/html/2304.08663v1
+Relevant evidence: an analytical stance controller and learned residual cooperate, while a whole-body controller maps commands to feasible motor actions.
+Application here: retain feasible motor control and learn a bounded residual where traces show missing authority. If pre-apex failures appear, revise the takeoff phase rather than retrying a landing-only actor.
+These results concern different robots; their jump heights and hardware robustness are not evidence for this wheel-legged model.
+
+3. Atanassov et al., Curriculum-Based Reinforcement Learning for Quadrupedal Jumping: A Reference-free Design (2024).
+https://arxiv.org/abs/2401.16337
+https://github.com/Vassil17/Curriculum-Quadruped-Jumping-DRL
+Paper abstract and linked source location verified; repository content was unavailable through web open in this session. Do not claim its code was integrated.
+Application here: learn the flat in-place jump before extending to obstacles or direction commands. Our present goal remains removal of external assistance on flat-ground jumping.
+

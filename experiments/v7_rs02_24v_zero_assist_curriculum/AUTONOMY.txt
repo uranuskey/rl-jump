@@ -1,0 +1,20 @@
+Objective and authorization
+The user explicitly authorized autonomous progress to zero external assistance, repair of failures, online research of mature methods, and checks every 15 minutes. Existing Luna monitors read-only; the parent owns planning, source changes and acceptance.
+Current code is a frozen first continuation, not a promise that the current landing-only policy can solve every lower level.
+
+First course
+Revalidate uniform50%, then uniform47.5%,45%,...2.5%,0%. Every level requires native45 plus exactly three512 deterministic batches and an independent audit before transition. Qualified levels advance immediately, including zero-update transitions.
+At a learning-admissible level, PPO runs in chunks of2 then8, with at most128 new updates in this course. The final strict gates are unchanged. This128 budget limits one audited attempt, not the overall autonomous objective.
+ENTRY_FAILED or BUDGET_EXHAUSTED ends the safe GPU worker/course and creates a parent repair request. The parent must diagnose and progress rather than merely announce failure and abandon the goal. Do not rerun the same failed actor/controller to fish for a lucky pass.
+
+Repair policy
+Preserve frozen experiments. Diagnose physical/phase failure before changing anything. Examine 400Hz traces, motor limits, controller saturation, contacts, actual slot trajectory, takeoff pose and assistance impulse. Search primary papers/official source implementations as needed.
+If a2.5-point drop is too abrupt, use new frozen smaller/intermediate steps or overlapping training levels, without weakening final qualification. If failure occurs before apex, the landing-only actor cannot fix it: consider a bounded motor-space takeoff/attitude residual or physically constrained controller with its own evidence. Any changed control path needs CPU checks and small GPU validation before another course.
+Keep24V estimated actuator limits, actual robot geometry/contact definition, torque/speed/current envelope, FIFO and the qualified jump-height/impact/stroke/recovery/stability limits. Never add concealed external assistance, project state, disable collisions, or count a stopped test as passed.
+Local files stay underD:/ROS2/RL_JUMP; source only goes throughGitHub. Keep failed logs/checkpoints/results locally and remotely. Never run concurrent physics workers.
+On a failed course the next heartbeat must inspect the repair request and begin the next defensible repair; stop for the user only when external access/input is essential or reasonable evidence-backed approaches cannot solve the constraint.
+
+Zero-assistance completion
+Actual xfrc_applied on EVERY body and qfrc_applied on the free base are measured at400Hz throughout crouch/takeoff/flight/landing/recovery. Native traces independently check zero body wrench and root generalized force. Every512 batch also accumulates all-step maxima onGPU. Exact zero is required at the zero level, together with all inherited strict gates and valid exits/audits.
+This establishes tested unassisted simulation only, not hardware or a calibrated24V motor curve. No PPO-learning benefit is claimed without accepted updates and changed actor hash.
+
