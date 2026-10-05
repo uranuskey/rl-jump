@@ -1,0 +1,15 @@
+Primary sources checked2026-10-05:
+https://proceedings.mlr.press/v100/portelas20a.html
+Portelas et al., Teacher algorithms for curriculum learning of Deep RL in
+continuously parameterized environments, CoRL/PMLR2020. The paper studies
+selecting task parameters according to learning progress and learnability.
+We borrow the curriculum principle, not its ALP-GMM algorithm: practice at a
+qualified frontier before retesting a harder task with an updated policy.
+
+https://proceedings.mlr.press/v164/rudin22a.html
+Rudin et al., Learning to Walk in Minutes Using Massively Parallel Deep RL,
+CoRL/PMLR2022. Parallel legged training with a game-inspired curriculum supports
+progressive difficulty rather than directly training only the hardest tasks.
+Our robot, jump task and gate/physics setup differ; their runtime and hardware
+claims cannot be transferred. Two warmup updates and35% are our bounded experiment,
+not parameters prescribed by either paper. All existing gates remain unchanged.

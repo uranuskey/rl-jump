@@ -1,0 +1,31 @@
+2026-10-05: learn a performance margin at the last qualified assistance level.
+
+Parent rare_contact_learning/course_01 is completed, all actual exits0 and AUDITED.
+Its changed actor qualified42.5%,40%,37.5%,35% after2 PPO updates. At32.5% native45
+and all three512 batches completed every task, with zero self contact/rebound and
+continuous stable1s. The first512 batch peak342.0791626N exceeds the corrected
+reference limit331.6277771*1.03=341.5766104N by0.5025522N. The other batches pass.
+This is a strict performance failure, not a collision or broken numerical constraint.
+
+Do not broaden the learning entrance to arbitrary over-limit impacts. Instead,
+perform2 fresh-Adam PPO updates at the already fully qualified35% frontier. The
+source35% native45+three512 evidence, actor/checkpoint SHA and complete parent
+exits/audit are mandatory. The unchanged13-term landing reward already penalizes
+impact, so this is a bounded hypothesis that additional learning can create margin;
+success is not guaranteed and no gain is claimed before deterministic evaluation.
+
+Only an actually changed actor with accepted optimizer steps may attempt32.5%
+again. It must pass fresh native45 + exactly three512 strict qualification and
+independent audits. Upon passing, immediately withdraw to30%,27.5%,...,0%; if
+ordinary inherited learning admission permits, use2-update then8-update chunks.
+Final qualification AND training admission are identical to the frozen parent.
+Budget126 new updates includes the2 warmup updates; parent2 consumes the rest of
+the original128. A failed worker/entry/budget writes parent_repair_request for
+further autonomous diagnosis; it is not the end of the zero-assistance objective.
+
+Fixed takeoff, controller, profile zero_slot_window_1500, geometry, collisions,
+24V estimated curve,17Nm envelope,rotor5ms,FIFO,reward,zero rebound and original
+reference force/height/stroke/recovery/stability gates are unchanged. Native traces
+still audit all body wrenches and free-base generalized force on every physics step.
+No zero-assistance or hardware claim before complete qualification. Preserve all
+parent failures and qualified checkpoints. Only source files go to GitHub.

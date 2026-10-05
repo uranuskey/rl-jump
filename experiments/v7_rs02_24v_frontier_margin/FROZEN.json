@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "05917a540a6784ae4dd213f1d88e67d8f8a6464d00ab30974ed34323d75641b6",
+  "sha256": {
+    "experiments/v7_rs02_24v_frontier_margin/margin_audit.py": "c57aec852d6071841f44808cacf148730f747bbb28ec29ca69ad5de5519c5d67",
+    "experiments/v7_rs02_24v_frontier_margin/margin_contract.py": "c1ddfe68a7a573c80f8c4135d957bfa15888f4a344f06c7d72c99dd44cb95766",
+    "experiments/v7_rs02_24v_frontier_margin/margin_course.py": "9ee1bb448a49e226dfc01ddaed0252d5b13fac7e0ff07fda2427aa548cf2dc90",
+    "experiments/v7_rs02_24v_frontier_margin/margin_runtime.py": "21a6725998def02b401224b7699f4770aa83b539f5aca9e2a38a8a6ff31e3c3d",
+    "experiments/v7_rs02_24v_frontier_margin/margin_worker.py": "81139aaeb487449e3b0621528d9029f23b79a790e44ecf8d5c088dc16945ee9b",
+    "experiments/v7_rs02_24v_frontier_margin/PLAN.txt": "d239b74f74f83748cbc9347ce23657f92317e0be5c28ec774889a7fad0f63050",
+    "experiments/v7_rs02_24v_frontier_margin/preflight.py": "b20241f6133f8eca378801eddbc2828ea9f10899874c1421059c7d17c20375d8",
+    "experiments/v7_rs02_24v_frontier_margin/RESEARCH.txt": "410c84ff4e4a0e08ae82f80f2a88f39e300f9c11a2cbed88be623ad81df168c0",
+    "experiments/v7_rs02_24v_frontier_margin/run_pipeline.ps1": "8b56222542e527eb1c4d3da8365c4fe15abd482c2fc498ad23c44d9c0a0f4364",
+    "experiments/v7_rs02_24v_frontier_margin/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_frontier_margin/test_margin.py": "991c521c5a36075ee8cd6f6750ad82ea4abad6b589d632d3e24ba5d707c04a60",
+    "experiments/v7_rs02_24v_frontier_margin/test_margin_orchestration.py": "56a824b4a0743ffaa60f91c433c4875df0d19b7d288dea9505b3a6b207620a72"
+  }
+}
