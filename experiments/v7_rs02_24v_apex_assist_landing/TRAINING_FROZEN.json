@@ -1,0 +1,12 @@
+{
+  "probe_frozen_sha256": "b4eae640eee4fc25be7c4552681dfd935a3954b9e21ab75b193fa5a065aae26a",
+  "sha256": {
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_training_runtime.py": "86e19c87b165f490ca90f17df16869ef78a1045f611ddc9bec62d22474537c64",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_train.py": "0fc008c4b8bed0bb15347179c3247d82b5a62a3149bf45e0c925b71ba5427a85",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_evaluate.py": "e257e18260fe8febb98371aa6fc95879be8f01157ea344e53bfde9ef5217e602",
+    "experiments/v7_rs02_24v_apex_assist_landing/apex_training_audit.py": "1aa0688d81d01679c6c4dc4020c1dddaf7d8428dfc97891cebc131254f5be84d",
+    "experiments/v7_rs02_24v_apex_assist_landing/run_training.ps1": "05597b69a6f7d4a3ee3235d26361418106619b0950db8a29162cebcf1f900100",
+    "experiments/v7_rs02_24v_apex_assist_landing/supervise.ps1": "1165e4d0e7c2f14b16fa2b6a5b8f427bd1bf1d0a8ae5e0963426d717cf5da1c0",
+    "experiments/v7_rs02_24v_apex_assist_landing/TRAINING.md": "dd44644968e96e18e336a4b82ff74bf1a3ce6ed4a1b410c103cc1a13d8dcaed9"
+  }
+}
