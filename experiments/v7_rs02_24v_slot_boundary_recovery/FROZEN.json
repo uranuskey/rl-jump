@@ -1,0 +1,23 @@
+{
+  "parent_frozen_sha256": "86354cb2ec5ed3e6aba3c98cf6080cca91fb79cf4d1fba8199b60b12349453c6",
+  "purpose": "Match CUDA scalar slot indexing in independent audit; unchanged physical controller and final gates; qualified-frontier PPO with 23.75 percent intermediate level",
+  "sha256": {
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_assist_audit.py": "78d97e602cfa67a61be1830ac5279c85bc1975713f74ca23002c8c2bf794e909",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_audit.py": "c604ece8c3be22f07115c1dcd76c0439008c740ec1a1fd74429a2aa17c86231c",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_contract.py": "c326ca79e6e6571a7bf8247314bfefa0c05889c4fd4001ebc72fa72f9d73dc3e",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_course.py": "c831e43e97534dea6b32fc8a077b767e3271ab029fd319512aa29974a3bfaafa",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_env.py": "14a56245ee9fa2edb513f19c8831eb6e1ce643741b1b30efe5dabe26ef1edfa9",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_row_audit.py": "d257cd4121e0ad621b501ed26d1aedacde9cbefeb1ba8ab02891dc8f151568a9",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_runtime.py": "cf2ad2f96689d3090d8f3844e6df07b6490535df42a3be690ad7be2e0c3dc9b3",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_trace_audit.py": "bde8cb79bafae90c6d864fca44c4381e003a794d5fa53ccc0ed1c3561e4c70e6",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_worker.py": "789de8ed40a1bd6e80c0b6eb61d4d40d3e201467c397bb2ea04bda738312197a",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/boundary_wrench_audit.py": "c354730daed3792850da368a5cbb1bbead4deeac66310f020876f0ce5b51e9a1",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/PLAN.txt": "836d1bde8f92cf51c17b67215211b7f972f39660405d94a023b6d71716c39484",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/preflight.py": "2b9ee2547b8311ec7ba1bd4abd801f03049818598623df46d8aa52128b0b4bc1",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/RESEARCH.txt": "641797422c07fcb102e1fb3fcba1ff88183390416799316d6f03bfc4d050bbec",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/run_pipeline.ps1": "4312db711cf206fc791de099d8a3907210b86aa76079802d232a5d88459a5c2e",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/test_boundary.py": "de582ef4eb217e344bd6137b0684ffa558b295b55ffd6d81170f843e8f6d8f25",
+    "experiments/v7_rs02_24v_slot_boundary_recovery/test_trace_cpu.py": "cd7e070b100608f35e8a416b0f73ae7706f51b9aa0a56cf8009fd9993315c5aa"
+  }
+}

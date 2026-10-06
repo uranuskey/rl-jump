@@ -1,0 +1,14 @@
+2026-10-06 primary evidence.
+Installed remote PyTorch 2.8.0+cu126, git a1cb3cc05d46d198467bebbb6e8fba50a325d4e7; NumPy 2.4.6.
+https://github.com/pytorch/pytorch/blob/a1cb3cc05d46d198467bebbb6e8fba50a325d4e7/aten/src/ATen/native/cuda/BinaryDivTrueKernel.cu
+That version computes a tensor/CPU-scalar floating division via a float32 reciprocal multiplication. Independent replay must preserve the branch arithmetic.
+Original trace tick633/world16: h=float32(0.1420000046491623); direct NumPy division gives26; reciprocal product and actual CUDA give25.999998092651367. floor chooses26 vs25; slope discontinuity propagates to one requested action difference0.00012364983558654785.
+No allclose tolerance is enlarged. Four preserved native traces pass after changing only this index arithmetic. The archived22.5% still fails original mean/worst physical caps, independently of this software correction.
+https://numpy.org/doc/stable/reference/generated/numpy.allclose.html
+https://numpy.org/doc/stable/reference/simd/index.html
+https://docs.pytorch.org/docs/stable/notes/numerical_accuracy.html
+These describe numerical semantics, not permission to alter physical qualification tolerances.
+Curriculum reference: https://proceedings.mlr.press/v100/portelas20a.html
+PPO reference: https://arxiv.org/abs/1707.06347
+The chosen23.75% intermediate and qualified-frontier update are empirical curriculum choices; no ALP-GMM/CPO implementation or theoretical/causal guarantee is claimed.
+
