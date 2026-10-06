@@ -1,0 +1,15 @@
+Primary sources consulted2026-10-06:
+
+Achiam et al., Constrained Policy Optimization, ICML2017.
+https://proceedings.mlr.press/v70/achiam17a.html
+Separates task objectives from constraints. We retain explicit final qualification and KL-limited PPO, but do not implement CPO or claim its guarantees.
+
+Portelas et al., Teacher algorithms for curriculum learning of Deep RL in continuously parameterized environments, CoRL2020.
+https://proceedings.mlr.press/v100/portelas20a.html
+Studies learning-progress-based selection of parameterized training tasks. It motivates inspecting where the policy is trained when a lower-assistance task remains unsolved. We use a fixed local target schedule, not ALP-GMM or a learning-progress teacher.
+
+Yang et al., Accelerating Safe Reinforcement Learning with Constraint-mismatched Baseline Policies, ICML2021.
+https://proceedings.mlr.press/v139/yang21i.html
+Studies using a baseline that does not satisfy all desired constraints, with a separate constrained optimization procedure. This supports treating a baseline as learning input rather than declaring it qualified. We do not implement their projection algorithm or transfer any convergence/safety guarantee.
+
+The0.25% mean-impact learning allowance is our predeclared experimental choice, not a value from these papers. Diagnosis is supported by the immutable final u16 failure and sixteen updates trained at27.5%; a controlled ablation has not isolated the cause or established the effectiveness of this repair.

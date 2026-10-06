@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "e50068477de73fb28357b009f3cfef141d6ac57a80f1b5d78defbe0ce67fcea3",
+  "purpose": "target-distribution learning with a bounded mean-only learning route; strict final gates and physics unchanged",
+  "sha256": {
+    "experiments/v7_rs02_24v_target_mean_learning/PLAN.txt": "72f198002ae4543378c4feb3f234a15f6ace4d7cac937514f41f5d1823e45467",
+    "experiments/v7_rs02_24v_target_mean_learning/preflight.py": "ecc97c5a4d26e4f8e5dda27c46b2cfe4d8d737b51b70b81834548d177e8ac9bc",
+    "experiments/v7_rs02_24v_target_mean_learning/RESEARCH.txt": "23d2450ea0c326b1e861e5fc47d464fca5e08db329143af668ded3e35c0af891",
+    "experiments/v7_rs02_24v_target_mean_learning/run_pipeline.ps1": "0644f76f846bf777b7c57a142c62102001e31c35897d1f67e5e4cb029d29bee5",
+    "experiments/v7_rs02_24v_target_mean_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_target_mean_learning/target_audit.py": "0cea1b66d7b073845b0112a97633efd5195ae425851b7b6aba5405440651656f",
+    "experiments/v7_rs02_24v_target_mean_learning/target_contract.py": "05a7dc505a9b0cef4d3425cb60f91c61a45a310946d7ee04ed82111c597875a9",
+    "experiments/v7_rs02_24v_target_mean_learning/target_course.py": "c2c1a6a5452b9a7376588911e581c96c7122107a2b748c2fc23097f00475e0cf",
+    "experiments/v7_rs02_24v_target_mean_learning/target_runtime.py": "57afba0c52cbabea7bf4605402da77c9c3a2faf431f589fdab0acc737d0ef929",
+    "experiments/v7_rs02_24v_target_mean_learning/target_worker.py": "7d263148470636c5441050331255c6a68ecc148b94fa6869cd4ca6f541938f63",
+    "experiments/v7_rs02_24v_target_mean_learning/test_target.py": "8095ad31a6658ddb07ae0e66f07c98269d8d56a9642aa9f754205cfcec1c3e43"
+  }
+}
