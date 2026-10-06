@@ -1,0 +1,13 @@
+本次查阅的原始研究（2026-10-06 UTC）
+
+Achiam等，Constrained Policy Optimization，ICML/PMLR 2017：
+https://proceedings.mlr.press/v70/achiam17a.html
+该研究将奖励与约束分开处理。本实验据此保持学习准入、随机目标和最终物理资格的区分；没有实现CPO的完整求解器，不引用其保证。
+
+Yang等，Accelerating Safe Reinforcement Learning with Constraint-mismatched Baseline Policies，ICML/PMLR 2021：
+https://proceedings.mlr.press/v139/yang21i.html
+该研究讨论基线不一定满足约束，并在回报、基线距离和约束投影间迭代。本次仅借鉴“基线资格不能继承、恢复后重新验约束”的思路；仍是原小步PPO，未实现论文投影或收敛算法，没有理论保证。
+
+本次证据和修复范围
+父课程新u1的25%结果只有native修正最坏冲击失败，三512全strict；同一完整结果已通过原near_native_peak学习入口。旧课程在frontier_check环节仅接受strict而关闭。新课程给既有学习入口独立恢复角色，并在每次上档训练后强制完整严格复验，恢复成功后才下档。没有增加学习阈值、物理容差或硬件能力，没有重复物理测试该未改变源。
+这是基于具体课程衔接证据的有限工程修复，不证明native冲击的因果来源或PPO有效，也没有对照实验。若仍无可用入口或恢复次数用尽，保留全部失败交父重新诊断，不重复同一actor抽签。

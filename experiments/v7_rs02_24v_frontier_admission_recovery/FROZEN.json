@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "c5cebb9b77c70db2ebb52ecc220a2ba39927e1afcd704f775c297cae1acdda3c",
+  "purpose": "Explicit frontier recovery using unchanged bounded learning entries; require strict requalification before descent",
+  "sha256": {
+    "experiments/v7_rs02_24v_frontier_admission_recovery/PLAN.txt": "0c4ded7f65725fbdcf630fa5986ae3c5be0ee68d674994ac6f4e71fa31d030b9",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/preflight.py": "f413c1c7553a160b1bf972099253ea9c5628133654a6c21f785e0eba6a0300c9",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/recovery_audit.py": "2f029c83fabbe32aa82116a45d0140342ceafd9a14ea976a4f534e146eae2ad2",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/recovery_contract.py": "d7d69fc4ffa7b46344d3e8b023c1aa081d154ae998e8c437bfb5c587a0123f99",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/recovery_course.py": "5892dd9652a53a4eeb3615ec9e8e2245f18c840745bb2e1dd69942b84e18f651",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/recovery_runtime.py": "89b3dbec84661e53678c273ede7f5d953b22b503efdd12f458c8c7273ef4eaa8",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/recovery_worker.py": "24dd19783c0311e7084bdb1f656910626572eab0198aacddd195f327f2012971",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/RESEARCH.txt": "4fd7339dda6decb8873292a9ed327d7f24a4c91c414dfaa79d1176a0a9aa9262",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/run_pipeline.ps1": "dc51dba2ec4ab6eddee4f83a5cb56db7f32bfeb7b2e9003e016a167b88f81a21",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_frontier_admission_recovery/test_recovery.py": "e9bbbc7f547b35c02a0eba120788f0e5a26f1b494cb96ef87efa1f32760a8cba"
+  }
+}

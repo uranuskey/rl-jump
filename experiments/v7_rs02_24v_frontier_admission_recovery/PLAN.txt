@@ -1,0 +1,24 @@
+V7 原学习准入下的上档恢复课程
+
+问题与原始证据
+slot_boundary_recovery/course_01 的新 u1 在 23.75% 完整评估只因平均冲击失败；返回25%后，native最坏339.759460449 N超原修正门槛339.677767944 N，其余native检查及三批512所有strict通过。它不具备25%最终资格，但完整证据已满足既有near_native_peak学习入口。旧课程要求frontier_check必须strict而终止，FRONTIER_RECHECK_FAILED，全部真实退出0/AUDITED。这是原冻结流程的限制，不是进程崩溃。
+
+本次具体修复
+新增明确的frontier_recovery_train角色：只使用原完整qualification的既有learning_entry，不增加任何学习允许量。普通frontier_train继续要求strict。每次任一种上档训练后，必须用改变后的actor完成native45+恰好三512的frontier_recovery_check；只有该actor在该档strict合格，才准许继续下档。同一失败actor/档位不重复抽签。资格、学习准入、历史复用、随机探索和PPO收益分别记录。
+
+源与冻结链
+源为父course_01/level_00_u0000_frontier_train/update_0001.pt，SHA c858ba31a1a434555bae5a13ea5186ddb181118b5a9884879d46c72538c6ea35，actor 13b5c133d2f87af669245fa74c96f7cea18084e944e0ed2bb2530b58f1ee4969。
+初始CPU复用父level_00_u0001_frontier_check的完整失败，result SHA 6b34a834b8ddc363e19b7a0455d438d274b22e06b292f5e9b44c59697dc558b7，0新物理、qualified=false和既有learning_entry=true保留。旧peak u3的严格25%回退单独保留，绝不继承给源。
+父course result 00676b60261f4cf26817898c32758c15b6e7edffcff0b8e742c4983e66d286e0，FROZEN c5cebb9b77c70db2ebb52ecc220a2ba39927e1afcd704f775c297cae1acdda3c。
+
+课程与预算
+实际档位25%、23.75%、22.5%、20%、17.5%、15%、12.5%、10%、7.5%、5%、2.5%、0%，起跳落地同时撤。每chunk1次PPO，每目标自身更新最多8次；每个目标阶段的上档训练（严格frontier与bounded recovery合计）最多8次，初始恢复阶段同限8次；每目标返回上档最多8次。共享剩88次，先前40次已支出，全部仍128，不是每档128。无入口、上限或预算耗尽发repair，父继续新修复，总目标不终止。
+源与本实验均在25%，PPO和目标完全不变，首次精确恢复源Adam/RNG；同训练档恢复、不同训练档fresh。exploration offset26只是既往16+6+3+1个更新的探索计划索引，不算新PPO。max actor_lr2.5e-6、接受KL<=.005、critic lr3e-4、拒绝回滚均直接沿用已冻结peak_ppo。每更新checkpoint和objective保留、绑定SHA/actor，必须接受steps>0且actor改变才重新评估。
+
+不变边界
+recovery_contract直接导入父相同qualification/admission/metrics/objective/wrench_valid及所有learning_entry函数；合法档位亦完全相同。near_mean和near_native_peak的0.25%/0.05%学习允许量不变，不能拼接成任意联合放行；它们不是最终容差、硬件限制或理论保证。严格门槛一律不变。实际控制、完整build/sample、环境、400Hz实际wrench、trace/pose审计沿用父冻结实现，包含已核实的CUDA倒数取段审计修复。
+profile zero_slot_window_1500、slot bound1.5=±.09rad、gains3750/40cap50N、固定起跳网络、估算24V/17Nm包络、rotor5ms、FIFO、几何和碰撞判据不变；不动实物硬件。原13奖励/失败惩罚和随机bulk/tail成本不变。
+
+验收
+两机CPU门槛与状态机测试、语法/PS解析、完整冻结链/source Torch/原失败与既有学习入口CPU预检先通过；旧进程/audit/wrapper全退出且锁空后启动。路由事件单独记录，由最终审计独立重放，不能用route事件冒充物理试验。新晋级须父核对所有实际退出、SHA、AUDITED及原始JSON原门槛逐例重算；新PPO须逐world目标/接受steps/checkpoint核算，整课程退出后父补独立Torch检查。
+最终零外力必须逐400Hz确认全部阶段actual applied body wrench和free-base generalized force为零，并通过native45+恰好三512全部strict、真实exit0/AUDITED/完整冻结链。仍非实机或实测24V资格。
