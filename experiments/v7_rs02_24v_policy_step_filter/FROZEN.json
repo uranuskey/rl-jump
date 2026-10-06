@@ -1,0 +1,18 @@
+{
+  "parent_frozen_sha256": "9a6876de709f0406a485ceead4011dbe4b03c38bd21101b1ea98341e11ee841f",
+  "purpose": "finite same-lineage actor step filter; unchanged physical and final gates; zero new PPO",
+  "sha256": {
+    "experiments/v7_rs02_24v_policy_step_filter/PLAN.txt": "e8eb8b7d9a01789d79f13d27810068077e40c534765c0e0b3e85e4ed0684f9a0",
+    "experiments/v7_rs02_24v_policy_step_filter/RESEARCH.txt": "9d888cd88e6f947c03f6751e2382b888be1b1dbd8013735b6de7470bf22e51ff",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_audit.py": "eec186b45718174564a28d6ee2f855f1be82c6b6f645666c966cd25cd3b7361d",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_candidates.py": "d718e0b1ea95704ef252925590fea35589a894c0ef2622e04c37c2d8f3a613c7",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_contract.py": "3fc47253a96505a453da7483337a01b322403f08036cdbd08c7a799b7208bdba",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_course.py": "e1aa2e3f2ff7b3c7bbcda06a1015fede73400734e0490ff00bf71e659f3e54bb",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_runtime.py": "f78c82c0969fb7c8232e90f106dc8429fb32edd4d86032d725a5d59019b020b6",
+    "experiments/v7_rs02_24v_policy_step_filter/filter_worker.py": "33bf8630087b5c60a40c16d796b4a6d7b9dc8af73cb2619ad90da29933088dd2",
+    "experiments/v7_rs02_24v_policy_step_filter/preflight.py": "402089894dd6958d45d283f012d893dc04003f1a3e43edd3a586760d69e1cb08",
+    "experiments/v7_rs02_24v_policy_step_filter/run_pipeline.ps1": "6cefebf8a11986a2e606a7b7e593b83472aa0474dbf10ce03cd729107f442588",
+    "experiments/v7_rs02_24v_policy_step_filter/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_policy_step_filter/test_filter.py": "44329e86f82d2e6253d915c57134450837575637c03c8a7735bbb921013fcc70"
+  }
+}

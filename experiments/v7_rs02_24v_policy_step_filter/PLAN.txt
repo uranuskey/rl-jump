@@ -1,0 +1,15 @@
+Finite policy-step repair and automatic withdrawal
+
+The completed tail-impact course improved the worst 25% peak but exceeded the unchanged mean-peak gate. Its complete failure evidence and last fully qualified 27.5% policy remain immutable. Only latest checkpoints exist for the eight-update chunk; intermediate trained checkpoints are unavailable.
+
+Use actor parameters from the qualified 27.5% policy A and its direct eight-PPO-update descendant B. Generate A + alpha*(B-A), in fixed order alpha=0.75,0.50,0.25. These fractions are parameter-step fractions, not assistance strengths. Interpolate trainable actor parameters only. Preserve all other model state from A, including critic and exploration buffer. Do not reuse Adam or RNG state; any future learning requires fresh optimizer initialization. Every candidate must be distinct from both endpoints and from other candidates. Parent hashes, actor lineage, complete tensor equality, non-actor preservation and checkpoint hashes are independently audited.
+
+There are zero new PPO updates in this bounded repair. Fourteen shared updates have already been consumed; 114 remain in the original 128-update accounting. Do not claim a filtered candidate is additional PPO learning or an intermediate checkpoint actually produced during training.
+
+At 25% assistance, each tested candidate receives exactly one native45 trial and exactly three512 trials, with unchanged physical and final gates and complete native400Hz audits. No early pass on a partial batch. The first fully qualified candidate is selected. If all three fail, preserve all evidence and request parent repair. There is no repeated test of a failed actor at the same level.
+
+Once selected, use the same candidate to test 22.5%,20%,17.5%,15%,12.5%,10%,7.5%,5%,2.5%,0%, with simultaneous takeoff/landing withdrawal. Every full strict pass and independent qualification audit immediately advances. Any failed lower level stops this bounded course and emits parent_repair_request for continued autonomous repair. It does not end the user's zero-assistance goal.
+
+Keep profile zero_slot_window_1500, original controller laws, fixed takeoff network, 24V estimated RS02 envelope,17Nm limit,rotor5ms,FIFO,mechanical geometry,collision predicates,13 base rewards and all mean/worst-impact,height,stroke,recovery,stability,rebound,pre-apex residual gates. 512 repeats the45 existing scenarios. No hardware action. No virtual wrench added. At zero assistance, the inherited per-step body/free-base wrench audit must prove actual zero throughout the motion. Simulation qualification is not hardware or measured24V qualification.
+
+Run CPU checks and source/endpoint preflight before launching one supervised pipeline. The native45 phase is the first small GPU validation; full batch qualifications follow. All workers are sequential and use the existing shared physics lock. During execution, monitor through SSH and pure PowerShell only; independent remote Python monitoring can trip the resource gate. Keep old experiments unchanged and synchronize source files only through GitHub.

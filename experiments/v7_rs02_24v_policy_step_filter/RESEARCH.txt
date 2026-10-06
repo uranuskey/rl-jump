@@ -1,0 +1,7 @@
+Primary reference: Achiam, Held, Tamar, Abbeel. Constrained Policy Optimization, ICML/PMLR70,2017.
+https://proceedings.mlr.press/v70/achiam17a.html
+https://proceedings.mlr.press/v70/achiam17a/achiam17a.pdf
+
+Section6 and Algorithm1 describe backtracking after a proposed policy update to check surrogate constraints. This motivates retaining explicit mean and worst-impact feasibility checks while reducing the accepted parameter displacement.
+
+Our implementation is a finite empirical actor-parameter step filter along one directly observed PPO lineage. It does not implement CPO's constrained natural-gradient optimization, Fisher matrix, dual solution or theoretical guarantees. The tested direction spans eight PPO updates, so no assumption of linear behavior or intermediate-checkpoint equivalence is made. Fractions0.75,0.50,0.25 and the choice to preserve non-actor state are local design choices. All actual qualifications are determined by unchanged simulation tests; failure of every fraction remains possible and must lead to a new parent repair, not relaxed gates.
