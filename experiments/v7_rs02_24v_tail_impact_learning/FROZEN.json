@@ -1,0 +1,18 @@
+{
+  "parent_frozen_sha256": "40d39ffa2ab763870b91a765057fe868b2db997461d6e374a04ab3c1956fead8",
+  "purpose": "tail-impact objective and strictly qualified frontier returns; unchanged physical entry/final gates",
+  "sha256": {
+    "experiments/v7_rs02_24v_tail_impact_learning/PLAN.txt": "c0b9df50743d8322d62cf35a4b01a23914777cb317f57220d33d9b61e0c8718b",
+    "experiments/v7_rs02_24v_tail_impact_learning/preflight.py": "86a8d3ab7964c4888681e36be3e25ec328fcaea186fdc5b955f4ce95b6518063",
+    "experiments/v7_rs02_24v_tail_impact_learning/RESEARCH.txt": "9f0a4df76afd22ef3a3fa1903111963e23fb2259b9d8c21f981f17d8d42b4c74",
+    "experiments/v7_rs02_24v_tail_impact_learning/run_pipeline.ps1": "a531fb1ae4309c14a6c95bc45c8a1621be8842f324c9c8b4ffde3dab82de8487",
+    "experiments/v7_rs02_24v_tail_impact_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_tail_impact_learning/tail_audit.py": "f1f7d62ff7e46b3bd78444a110fcaeeea307494f8ba3ef000aea8a0440e20875",
+    "experiments/v7_rs02_24v_tail_impact_learning/tail_contract.py": "e1317f5b99eb6d43cf4795f6ac37fa145d5697fa8f246fe3900118acd4c2e3a5",
+    "experiments/v7_rs02_24v_tail_impact_learning/tail_course.py": "cf992e0a7084d231c15bd5fc199017c8677d17690a7c46263fc40cf4f3e6a06e",
+    "experiments/v7_rs02_24v_tail_impact_learning/tail_runtime.py": "a9460e6a68383d3cdb407fa13bb60d5ffc7e77cc72ac04c638e092e3aad1e873",
+    "experiments/v7_rs02_24v_tail_impact_learning/tail_worker.py": "dbb28a856af343e86b13f1bb597e3d1016d8350b7958bf0aaa31235dedbf332d",
+    "experiments/v7_rs02_24v_tail_impact_learning/test_tail.py": "6413ad6db1c0da5e101c2518e744d12c64978d9027914b20570711a096906b26",
+    "experiments/v7_rs02_24v_tail_impact_learning/test_tail_course.py": "8cd6242379d6a71091f02b42a5820f0a9af0a358b07eb54c92668cd1ff9c2b04"
+  }
+}

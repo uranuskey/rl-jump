@@ -1,0 +1,14 @@
+Purpose
+The unchanged 32.5% gate still failed after two PPO updates at35%: all physical tasks passed, but the worst three512 impacts341.8747/341.8076/341.8082N exceed341.5766104N. Preserve that failure. Native traces show the available case5 and native worst peaks on the first contact tick; no batch400Hz trace exists for the over-cap world, so do not claim its exact peak timing is proved.
+
+Changes
+1. Add a stochastic-training-only negative squared hinge above330N: -min(100,20*((max(0,F-330))/10)^2). This gives extra incentive to the high-impact tail.330N and the20/10/100 scales are declared research reward parameters, not qualification or hardware limits. Keep all13 base reward terms and all deterministic physical metrics.
+2. Start from the failed frontier course's trained checkpoint, which has not yet requalified at35%. Run complete native45+three512 at35% first. Only strict success permits initial2PPO at35% under the new objective.
+3. Test32.5% after changed weights; qualify immediately then descend2.5points to0. If only peak impact prevents entry, check the current changed actor at the prior higher-assistance level (or use existing strict evidence for that exact actor), then train8there and try the lower level with newly changed weights. At most3such returns per target; same failed actor is never re-tested. All other entry failures stop the worker/course for parent repair.
+4. Remaining shared budget124 new updates includes all frontier and target learning; four recent updates have already been spent. Per-level fresh Adam; same training level/checkpoint exact Adam/RNG restoration.
+
+Invariants
+24V estimated curve,17Nm motor envelope,rotor5ms,FIFO,geometry,collision judgement,fixed launch network,zero_slot_window_1500 controller and native/three512 final qualification remain unchanged. Training exceptions remain exactly rare_contract functions; no new physical entry allowance.512 repeats45 scenarios. Source checkpoint plus profile define controller. Retain all old artifacts and frozen sources. Only source code GitHub sync. No real hardware use.
+
+Evidence
+Every PPO update saves full world-wise base reward, peak, penalty, effective reward and eligible mask in objective JSON, binds SHA and independently recomputes the objective and PPO mean target in audit. Every promotion retains original native400Hz external wrench/physical/controller audit and three512 summary/pose proof with real exit0 and independent audit. AUDITED alone is not success. Zero requires every sampled body and root external wrench to be zero and all strict tests to pass. Failures write parent_repair_request for autonomous parent continuation.

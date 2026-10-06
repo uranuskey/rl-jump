@@ -1,0 +1,9 @@
+Primary sources consulted2026-10-06:
+https://proceedings.mlr.press/v100/tang20a.html
+Tang,Zhang,Salakhutdinov, Worst Cases Policy Gradients, CoRL/PMLR2020. Their actor-critic optimizes varying CVaR levels to account for adverse outcomes; this motivates attention to the tail rather than only average rewards.
+https://proceedings.neurips.cc/paper_files/paper/2022/hash/eb4898d622e9a48b5f9713ea1fcff2bf-Abstract-Conference.html
+Bastani,Ma,Shen,Xu, Regret Bounds for Risk-Sensitive Reinforcement Learning, NeurIPS2022. General risk-sensitive objectives including CVaR.
+https://proceedings.mlr.press/v100/portelas20a.html
+Portelas etal, curriculum selection by learning progress. Prior qualified-frontier schedule support.
+
+Our implementation is a bounded fixed-threshold high-impact reward penalty plus curriculum returns to a strictly qualified easier level. It is NOT a CVaR estimator, distributional critic, CBF, or a reproduced paper algorithm. None of these sources validates the chosen330N scale,35% level,2/8updates, physical model, or final robot capability. Those are experiment choices that require the preserved deterministic gates.
