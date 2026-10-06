@@ -1,0 +1,19 @@
+{
+  "parent_frozen_sha256": "fd18374197646f7478bafd5d028ffdb74cdb66df184d46dccf06c5a891389818",
+  "purpose": "bounded native-peak learning with smaller single PPO updates; unchanged final gates and physics",
+  "sha256": {
+    "experiments/v7_rs02_24v_target_peak_learning/peak_audit.py": "ba69513c0b478c64afbe9a2a97e1d129384b99e1e6d8db1d16c185f2d38e38a2",
+    "experiments/v7_rs02_24v_target_peak_learning/peak_contract.py": "00f8ca5c57df287d3fb2101c34867653b10d12953604c76831c210de9fb6ec59",
+    "experiments/v7_rs02_24v_target_peak_learning/peak_course.py": "42a669f01638324a137b7b3140074664e0f56a44347d3ec5e75d934c29adf5b7",
+    "experiments/v7_rs02_24v_target_peak_learning/peak_ppo.py": "ccb06460aebd6c040c2fd1c5be667f34d21d8d32101c293d71139ab83405f3dd",
+    "experiments/v7_rs02_24v_target_peak_learning/peak_runtime.py": "4f6bd6f269c4b4502d35b021ec936b3aa8b6a3e401e6c81121cab0d1c7b758f8",
+    "experiments/v7_rs02_24v_target_peak_learning/peak_worker.py": "3957b7d0d4c653cf71eccee7151af08e518c61c47e259658f29385010a0911b4",
+    "experiments/v7_rs02_24v_target_peak_learning/PLAN.txt": "1a2e7d7bab28f9cacafa9e4a7757095f51162fe0c1aeba9c758722b30eb50f69",
+    "experiments/v7_rs02_24v_target_peak_learning/preflight.py": "5b8fd3c643e8a44e985db89a14d016a45d4aaaf1c376d67364a41feb10cc773c",
+    "experiments/v7_rs02_24v_target_peak_learning/RESEARCH.txt": "8879dd96dc96024b463e94f98383b46fe009a5417cf10236c6a7bc2741ea2e95",
+    "experiments/v7_rs02_24v_target_peak_learning/run_pipeline.ps1": "64ff85b821e270f78f57725f3f36b990c40ddef1dc186977980b821d07bec6f2",
+    "experiments/v7_rs02_24v_target_peak_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_target_peak_learning/test_peak.py": "6054d7a3b9548d776bedbbeb4fc51a8d0d2e4d1c6f9548345e3bee4301b3ed3b",
+    "experiments/v7_rs02_24v_target_peak_learning/test_peak_ppo.py": "c0b2dc90d26f12bf407fd9a01969b5e11ee9425f88023f395fc734f4407c2dce"
+  }
+}
