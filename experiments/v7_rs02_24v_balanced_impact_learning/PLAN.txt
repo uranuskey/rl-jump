@@ -1,0 +1,17 @@
+Balanced impact learning with a finer withdrawal level
+
+The finite actor-step filter ended NO_FEASIBLE_STEP. All candidate task successes remain visible, but strict mean and/or worst impact gates failed. None is promoted. Keep all frozen source experiments and evidence.
+
+Use the tail-impact course's last qualified 27.5% actor A, not its unqualified descendant B. Reuse its existing complete native45 plus three512 qualification as CPU-verified entry; no fresh physical retest of that actor at27.5%. Add a declared26.25% assistance level between27.5% and25%. Constructor, assistance formula, wrench accounting and audits are byte-equivalent function bodies except for importing the new level whitelist. No physics bounds change.
+
+First test the unchanged qualified actor at the new26.25% level. If it passes, descend immediately. If the same source reaches25%, reuse its old failed25% evidence without new physical trials, preserving failure. The course then learns at the nearest strictly qualified higher level. Training cannot begin at an unqualified impact-violating target. If a new target actor satisfies the unchanged learning-entry rules, it can learn there.
+
+Retain all13 base reward terms and the previous tail penalty. Add a bounded bulk-peak penalty -min(100,2*max(0,Fpeak-280)) to stochastic PPO only. This supplies a gradient toward lower peaks in the common280..330N range; the old tail penalty remains -min(100,20*(max(0,Fpeak-330)/10)^2). At300/310/330/340/350N total added costs are40/60/100/120/180. All coefficients are experimental reward settings, not final gates or hardware limits. Failures retain their original penalty and gain no bonus. Deterministic summaries use the original13-term reward.
+
+Every learning chunk has at most2 PPO updates, uses fresh Adam at a new assistance level and exact Adam/RNG resume only at the same level. Store every update checkpoint, actor hash, objective artifact and accepted-step count. Full native45 and exactlythree512 qualification follows changed actors; no same failed actor is repeatedly tested. Total budget is114 new updates, accounting for14 already consumed. At most8 qualified-frontier returns per target. Exhaustion/failure emits parent_repair_request for continued autonomous repair.
+
+Advance immediately after all strict gates and independent audits pass. Levels:27.5,26.25,25,22.5,20,17.5,15,12.5,10,7.5,5,2.5,0 percent, takeoff and landing together. Both mean and worst impact can trigger a return to a strictly qualified higher level; this changes scheduling only, not target learning entry or final qualification.
+
+Keep24V estimated RS02 curve,17Nm limits,rotor5ms,FIFO,slot profile zero_slot_window_1500,all controller equations,geometry,collision predicates,all height/stroke/recovery/stability/zero-contact/zero-rebound/constraint/mean-worst impact thresholds. Only the declared26.25 level is added to assistance whitelists, with the exact same wrench limits and physical-step checks.512 repeats45 existing scenarios. AllGPU workers run sequentially. No hardware and no training artifacts uploaded.
+
+At zero, actual body wrench and free-base generalized force must be zero at every physical step of crouch/takeoff/flight/landing/recovery. Native45+three512 strict passes, real exits, independent audit and complete frozen chain are required. This remains estimated24V simulation qualification.

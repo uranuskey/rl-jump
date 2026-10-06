@@ -1,0 +1,8 @@
+Primary references read2026-10-06:
+https://proceedings.mlr.press/v119/stooke20a.html
+https://proceedings.mlr.press/v119/stooke20a/stooke20a.pdf
+https://proceedings.mlr.press/v70/achiam17a.html
+
+Stooke et al., ICML2020, separate reward from constraint cost and study how optimization can overshoot cost limits. Achiam et al., ICML2017, separate constrained policy acceptance from reward improvement. These motivate recording cost effects independently and retaining empirical acceptance checks.
+
+This experiment is a fixed, auditable bulk-plus-tail penalty and a finer qualified-frontier curriculum. It does not implement PID-Lagrangian cost critics, CPO or their theoretical guarantees. The coefficients,26.25% level,two-update chunks and114-update budget are local experimental choices. No source guarantees their effectiveness. The prior parameter interpolation failed empirically; its evidence is preserved. Need full deterministic qualification before claiming improvement. No isolated ablation of individual changes is claimed.

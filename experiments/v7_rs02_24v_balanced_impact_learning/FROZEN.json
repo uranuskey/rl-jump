@@ -1,0 +1,22 @@
+{
+  "parent_frozen_sha256": "40bbe441f46ecb22c66cdbaa7d8fa653e988d28a5d89dbd1b23a8a0045463878",
+  "purpose": "finer assistance schedule, bulk plus tail cost, two-update chunks; unchanged physical bounds and final thresholds",
+  "sha256": {
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_assist_audit.py": "5a323de80250473ceabab52435e2d7bf4e077bd6f016775dbb67c87f824e45d9",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_audit.py": "efc564583c0d661fd2b2eb5864f06a303ac2ddb498ef23ece351e8dc54619e8f",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_contract.py": "6935b483c4ce8e388900751a351f83daa526cc2cdd1abb8e0a6b06c9e915fb02",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_course.py": "2816675238ad6f2eaf1384d701b2d7b88ab8fb9c01aca1fd6b4d354a15f74b3b",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_env.py": "f197223c1d69249caf949186f923ab8e8ab9ad4af3a4ef956f2fec38661db205",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_row_audit.py": "543061f0b3cf995e5800dfe0f8a88deeed04e77a76a30a9ee5eb67abcdbb9e91",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_runtime.py": "7488d3ecf5b11f96b828028f8f2fea3d6a68e4c1aedd75cdb359972ead125e7b",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_trace_audit.py": "2501c6a1ae00b1257f0a6b5bef47e3e57a30d9ba518e93aa703a50af977059af",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_worker.py": "c409957a17aa657d9b3122d2b425365bc5d4fbb0f2f07569735f9ba58c39c01c",
+    "experiments/v7_rs02_24v_balanced_impact_learning/balanced_wrench_audit.py": "997146de55b9c758adcca9316e8be2bc2081631f885a94e7aca77c0417a18552",
+    "experiments/v7_rs02_24v_balanced_impact_learning/PLAN.txt": "51d1663f820a29e30e207432f97095baa4824ea8290eabadc1c991a082ce4526",
+    "experiments/v7_rs02_24v_balanced_impact_learning/preflight.py": "711203a2a18e8385bef44c73c2202a6c776faa61997c952d5bb69d7e68e1acb3",
+    "experiments/v7_rs02_24v_balanced_impact_learning/RESEARCH.txt": "c5eb21ba94f48d51db78383646049c48ce38d5bca024093690033dd74ce057e9",
+    "experiments/v7_rs02_24v_balanced_impact_learning/run_pipeline.ps1": "5ebbba4dffc286b0f30d295cc224754ec96954a1eb8bb967ad26f6a9a1b155c3",
+    "experiments/v7_rs02_24v_balanced_impact_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_balanced_impact_learning/test_balanced.py": "8d044af3c222a906e853ac2da0a60c2177ddeb5b7a84ddc654825c88b2be8479"
+  }
+}
