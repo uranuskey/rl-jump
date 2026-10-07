@@ -1,0 +1,10 @@
+本次查阅的primary研究及适用范围（2026-10-07）
+
+Dallali, Kormushev, Tsagarakis, Caldwell. Can Active Impedance Protect Robots from Landing Impact? Humanoids 2014.
+作者论文 https://kormushev.com/papers/Dallali_Humanoids-2014.pdf
+作者出版记录 https://kormushev.com/bg/publication/dallali2014humanoids/
+Imperial书目 https://www.imperial.ac.uk/robot-intelligence/research/publications/?id=741702&noscript=noscript&respub-t4-action=citation.html
+作者论文的索引摘要和引言讨论了落地冲击、传感/执行延迟、着地预测及接触前收腿。论文还研究被动顺应性与直接策略搜索；这里不改变被动机械结构、不声称复现它的全部算法。PDF直接打开两次超时，作者出版记录与论文索引内容可读，不声称已读全部实验细节。
+本机原native轨迹的首接触峰值及未用尽3mm命令修正，是本次只调整原有预测提前量的具体证据。35/40/45ms为预先固定的工程试验值，不是论文保证，也不是最终门槛或硬件限制。研究不保证提前会降低冲击；全部候选必须通过本项目原严格门槛。控制器、动作时序和接触相位耦合，若失败保留并继续诊断，不能挑批次或重复抽签。
+
+此前约束/奖励区分参考仍适用：Achiam等CPO https://proceedings.mlr.press/v70/achiam17a.html；Yang等约束不匹配基线 https://proceedings.mlr.press/v139/yang21i.html。本次没有训练PPO、CPO或投影算法，不声称其理论保证。此前受限学习入口不等于资格。

@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "42496bdefb050f6b7cef01b13554e9fc57a24eb4782dc4f12a86d247af4737c8",
+  "purpose": "Fixed actor precontact timing candidates, unchanged final gates, zero new PPO",
+  "sha256": {
+    "experiments/v7_rs02_24v_precontact_horizon_probe/horizon_audit.py": "d6524dc879cd79b6b0641b3e81a1ea7c60d55cc1ba31eaa1ec178b336f07c5e1",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/horizon_contract.py": "53baf2489cd8a773b72da5fb4523b69a2aa6ba3a97cede70dbd82515a88379cc",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/horizon_course.py": "017f393e46e5ae663cb878dd25fb186d4f38c85963baf9cf2893940e0ddb696b",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/horizon_runtime.py": "6c9bafc367a3dbe5b0358b5069244b3bfc3284cdcbb66d4692e9473aeb59ecdc",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/horizon_worker.py": "9aa305c53db32ffc82195a5003ee862712c8b832b88052e868ad48e59079c9a9",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/PLAN.txt": "b06ba065646e4ae82cec62b0d54973d0874a413f05b52fbe52456e2e689bf0d5",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/preflight.py": "d32b87119cceb7e0e0cefb3a7b95a2cd36de4d61887c73e84ba6fd2fc1a05206",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/RESEARCH.txt": "a9608973eaa48545a849c9756710ef67557ee14951f68ee9e246a61f02957d0a",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/run_pipeline.ps1": "578d892eee7c5488b842543bbe6deec24b932b0d1efdd18f597dbd99fd072c71",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_precontact_horizon_probe/test_horizon.py": "5bd42cc5a05256af76aeb66ab45cdab3767bce2ae619340298266a6045947209"
+  }
+}
