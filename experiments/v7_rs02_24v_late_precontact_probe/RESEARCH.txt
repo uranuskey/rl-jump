@@ -1,0 +1,21 @@
+Research reviewed 2026-10-07, primary sources
+
+1. Dallali, Kormushev, Tsagarakis, Caldwell (Humanoids 2014), Can Active Impedance Protect Robots
+from Landing Impact? Author page: https://kormushev.com/publication/dallali2014humanoids/
+Paper: https://kormushev.com/papers/Dallali_Humanoids-2014.pdf
+The search-indexed paper passage parameterizes a retraction reflex by start time, end time and
+amplitude, and discusses landing-time estimation error. The author page and indexed passage were
+read. Direct PDF retrieval timed out again; do not claim full PDF review or exact algorithm reproduction.
+
+2. Guo et al. (2022), Design and dynamic analysis of jumping wheel-legged robot in complex terrain
+environment. https://pmc.ncbi.nlm.nih.gov/articles/PMC9755738/
+doi:10.3389/fnbot.2022.1066714. Full text was opened. Its jumping discussion keeps the mechanism
+retracting until the wheels touch ground. It uses a different parallel four-bar robot; its geometry,
+motor parameters and reported performance are not transferred to this serial V7 robot.
+
+These sources motivate testing timing and touchdown motion. The actual choice27.5/25/20ms is a
+bounded project experiment justified by the preserved 30/35/40/45ms native traces, not a parameter
+prescribed by either paper. The existing budget taper correlates with lower contraction command
+speed near contact for longer horizons. This is not proof of causal peak reduction for shorter
+horizons. No full cited algorithm, theoretical guarantee or hardware validation is claimed.
+All original qualification thresholds remain unchanged and failures must be preserved.

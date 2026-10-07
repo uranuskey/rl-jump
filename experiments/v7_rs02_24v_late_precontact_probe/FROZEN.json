@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "49f4d02fdb5080a4f0a2e28cce6b2744820a56c395f5b9e63dc523016c5897db",
+  "purpose": "Fixed actor later precontact timing after failed longer horizons; unchanged strict gates; zero new PPO",
+  "sha256": {
+    "experiments/v7_rs02_24v_late_precontact_probe/late_audit.py": "e7de422fd877583b843f8d7b5a4c8f17546b32c543232f0cf91f11296139efb8",
+    "experiments/v7_rs02_24v_late_precontact_probe/late_contract.py": "3145369f9dab665b5d4d0527252be66fefd53cbe1c1c614079097e50e9486783",
+    "experiments/v7_rs02_24v_late_precontact_probe/late_course.py": "88cfdeffe3c9517300d94ef96badcb11f73a90b36d858cf9d2ac00d060d36b35",
+    "experiments/v7_rs02_24v_late_precontact_probe/late_runtime.py": "b4da95dd6e46dbcf05d5a9f7ee5f67d54dd6063b9728af955c067767b9553df4",
+    "experiments/v7_rs02_24v_late_precontact_probe/late_worker.py": "b1a76e7e3d0d07086b5569fac1056da56030bc4f80fbc0a5655b196797256d2d",
+    "experiments/v7_rs02_24v_late_precontact_probe/PLAN.txt": "2f71274dd263c7a22cdec0638da76ccce58347bfb087216370f7ef47deae31b6",
+    "experiments/v7_rs02_24v_late_precontact_probe/preflight.py": "a93fc49e608f18bd1fcbd1b6f4a271c360e19376fbf1293cc7f7e50d091f27e0",
+    "experiments/v7_rs02_24v_late_precontact_probe/RESEARCH.txt": "c7ec5d72ca41aaed077007f1208917547f293c0596af5dec4237c6edb2a3203d",
+    "experiments/v7_rs02_24v_late_precontact_probe/run_pipeline.ps1": "3544dc80ef4b0b1dd87c5d67908b3654306a827490c2e5d028a69c60a812bc5f",
+    "experiments/v7_rs02_24v_late_precontact_probe/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_late_precontact_probe/test_late.py": "ad17726ac694ebbfe29221b63f9cd68487d285cb849d91b5259577a411497866"
+  }
+}

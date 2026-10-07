@@ -1,0 +1,37 @@
+V7 late precontact horizon probe -- frozen repair, simulation only
+
+The completed predecessor precontact_horizon_probe/course_01 tested the same recovery u3 actor
+at 23.75% with 35/40/45 ms horizons. All three failed original and corrected mean/worst impact
+gates. Course/audit/wrapper exited 0; no policy was selected, zero new PPO, 4743 evaluation worlds.
+Parent raw JSON, source tensor, full row/trace/pose and independent ordered closure audits passed.
+No predecessor frozen source or failed artifacts are modified.
+
+CPU inspection of existing native45 traces found mean pre-contact-tick offset command velocities
+of -0.0356748, -0.0271491, -0.0222722, -0.0191417 m/s for 30/35/40/45 ms respectively.
+Mean native peaks were 313.1643/317.9247/322.8813/328.4659 N. These are recorded command velocities,
+not measured leg contraction velocities. Earlier activation consumes more of the 3 mm budget,
+and the unchanged budget_blend reduces the remaining speed command. This is a testable timing
+hypothesis, not a proven sole root cause. There are no per-step 512 peak trajectories.
+
+Fix the same source actor/checkpoint and test three previously untested horizons in the exact
+order 27.5 ms, 25 ms, 20 ms. Names only describe the new profile. The first step shortens the
+30 ms source horizon by one 2.5 ms physics step; the remaining candidates check larger reductions.
+Every profile-level pair is evaluated once: native45 plus exactly three sequential 512 batches.
+Use the first strictly qualified candidate, then keep its profile fixed for 22.5,20,17.5,15,12.5,
+10,7.5,5,2.5,0 percent full-trajectory assistance. Stop the subcourse on any failed descent or
+on all three candidates failing; emit a parent repair request and continue the overall goal.
+No repeated failed controller, no 30/35/40/45 ms replay, no source qualification inheritance.
+
+Every final reference/gate, environment/sample, geometry/collision predicate, 24 V estimated
+17 Nm envelope, rotor5ms/FIFO, fixed takeoff network and after-apex landing actor remain the same.
+Only horizon_s plus the descriptive profile name change. The 3 mm budget, 0.45 m/s command speed,
+25 m/s^2 command acceleration, closing target0.65, slot bound1.5 +/-0.09rad, gains3750/40 and cap50N
+are unchanged. The causal simulated proximity measurement and past two-frame derivative remain;
+no future touchdown, no true per-case FIFO lookup. This does not validate a real sensor or motor.
+
+Zero new PPO/actor steps; shared spending remains44/128,84left. The offset learning index is not
+advanced. No learning-entry allowance replaces final qualification. CPU source evidence is reused
+only for preflight, counted as zero physical trials. Runtime actor plus complete profile binds ID.
+Full zero requires every 400 Hz crouch/takeoff/flight/landing/recovery actual body wrench and
+free-base generalized external force zero, all strict native45+3x512 gates, actualexit0, AUDITED
+and complete frozen evidence. It is not hardware/measured24V qualification.
