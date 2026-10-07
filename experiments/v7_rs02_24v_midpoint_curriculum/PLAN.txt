@@ -1,0 +1,15 @@
+Fixed midpoint curriculum after timing course ENTRY_FAILED.
+Source is latest u9, not best-of-nine selection. Preserve all source successes/failures.
+23.75% was strict for all 9 actors but 22.5% never strict; 8 frontier updates exhausted.
+Insert exactly (0.2375+0.225)/2=0.23125, both phases. No further .2375 training.
+Initial midpoint must run native45 and exactly three512 batches under unchanged gates.
+Source old .225 failure CPU reused if actor still unchanged. Never redo that physics.
+Any .225 physical retest requires accepted PPO steps and a new actor. Midpoint frontier
+must requalify strict after every actor change before descent. Original learning routes,
+8-update/8-return limits per new frontier and global remaining75 apply. No budget reset.
+First new training level is new, hence fresh Adam/RNG. Same-level continuation exact.
+All controller parameters including 27.5ms horizon, physical/motor/collision and strict
+and learning thresholds unchanged. New declared .23125 accepted in cloned validators;
+function AST and physical sampling audits require identity except module imports.
+Midpoint is an experiment, not interpolation of a qualification or a monotonicity proof.
+No hardware. No trained weights or raw runs committed. Parent repair on failure.

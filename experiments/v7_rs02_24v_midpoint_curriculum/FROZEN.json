@@ -1,0 +1,23 @@
+{
+  "parent_frozen_sha256": "f705dab221a76a589b6e34fd6a6a0e512b8ca7f2e12d296fae0449b08221bebc",
+  "purpose": "Single fixed 23.125 percent curriculum midpoint with unchanged controller, final gates and original learning routes; old failed target only reused until changed actor",
+  "sha256": {
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_assist_audit.py": "855607b40be23ab683d4f09f9050ccf96566cb6303f04acbfa91d2f0c035362c",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_audit.py": "1de53f152ac7c8389680e5eafe61587a1c47e6819046fc23d8ea912bd43cc034",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_contract.py": "7df3448e214cf4c572be8453144f2adeab3456f9c30bfba83dd60d51d967765f",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_course.py": "3d075f28e84ded378fc98881ba6cbfef4b3c61f30f1f79d46c321f656bb512d0",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_env.py": "b5c708ac760641a03b4fc127af4698952e76f898d1e9154a44fab5e7afb8e618",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_gates.py": "9aefa6195e63945b97d1d4e8479c815e0c44518e113cebab20371274cbd3c34b",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_row_audit.py": "ebb72142dea459d41b9ce1bfb57084ec96bb391f971ef1fc98f7b578d8871190",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_runtime.py": "8bf683bebe9ba15aa1393670316c77c8ef2089519015614d4cb32b8f02cb796e",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_trace_audit.py": "2522b5a8e0669e433042e8c7bd9deab1b14486fc4ffcaa9f0a77549e1603c9af",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_worker.py": "84ec3a01efe99f5d075c6ace5dca90b63627f5f678170edf17107474a99f8fec",
+    "experiments/v7_rs02_24v_midpoint_curriculum/midpoint_wrench_audit.py": "da6d4b4b114afff25cb1cf0b7842697cd19aaf9b7668fb459364b0ad7950901d",
+    "experiments/v7_rs02_24v_midpoint_curriculum/PLAN.txt": "b51b56c2874189d09c1f869ae60eec6a4d0b98ccad70210889dbacba826530d5",
+    "experiments/v7_rs02_24v_midpoint_curriculum/preflight.py": "6f6d0898f0c53191873ddde12e174044b8fb86c40f945a346e741cdc58f27a5f",
+    "experiments/v7_rs02_24v_midpoint_curriculum/RESEARCH.txt": "5dead55ae4fae673f137694aa621066dd234e51ca5a3a12714ecb019be8dcf91",
+    "experiments/v7_rs02_24v_midpoint_curriculum/run_pipeline.ps1": "4ebdd9b570427e6cb5f08bf1969ef0710579dc9f266d24d83f24b737f050c4b4",
+    "experiments/v7_rs02_24v_midpoint_curriculum/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_midpoint_curriculum/test_midpoint.py": "e4f9b5c2d6587bfb5d51d844ecd62d9526208f58b260dcb282dc885f6bed0920"
+  }
+}

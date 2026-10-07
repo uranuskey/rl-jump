@@ -1,0 +1,18 @@
+Research read 2026-10-07:
+Portelas et al., Teacher algorithms for curriculum learning of Deep RL in continuously
+parameterized environments, CoRL, PMLR100 (2020):
+https://proceedings.mlr.press/v100/portelas20a.html
+https://proceedings.mlr.press/v100/portelas20a/portelas20a.pdf
+Read abstract, introduction, related work and methods sections from primary PDF.
+The work selects tasks in continuous environment-parameter spaces using learning
+progress (ALP-GMM). It also warns intermediate difficulty alone need not yield progress.
+Our single deterministic midpoint is a limited curriculum-refinement experiment;
+it is not an ALP-GMM implementation or an asserted guarantee.
+Luo et al. 2020 https://arxiv.org/abs/2002.02697 abstract read only: continuous curricula
+for reaching; task differs, no robot geometry or performance claims transferred.
+Existing PPO, Yang and Guo research remains in parent RESEARCH.txt.
+Evidence: timing course9 updates, 8 at .2375 and1 at .225, exhausted returns; all
+actors have .2375 strict but none .225. Latest native .225 mean312.031045871 exceeds
+corrected cap311.892970866; original reference passes. Only mean failures remain.
+No proven single physical cause; native diagnostics are commands not actual leg speed,
+no stepwise512 trajectory evidence. Fix targets curriculum spacing, not hardware gates.
