@@ -1,0 +1,9 @@
+固定零外力起跳轮电机反馈诊断（2026-10-08 JST）
+
+原零辅助45例在COMPRESS蹬伸前后因倾角失败，俯仰在晚段电机限幅出现之前已增长；无落地actor启用，不将它归为落地PPO问题。保留原exit1/空落地审计异常及所有冻结。
+
+唯一新控制器：在0.6s交接后、实际顶点前，每400Hz用当前重力方向算pitch及当前gyroY，wheel_action=clip((14*pitch+1*gyroY)/2,-1,1)，前50ms线性渐入；两轮同号。命令仍经原15通道0–8 tick FIFO、原wheel velocity servo及真实驱动包络。终止或实际顶点后停止此新反馈，原落地actor/slot控制不变。未增加body/generalized wrench，未改起跳网络/计划、几何、碰撞、24V估算包络、rotor5ms、最终门槛或原学习门槛。
+
+14/1是一次有界启发式测试参数，不宣称LQR/MPC、最佳增益、动力学等效或理论保证。先native45，不达原完整native strict即诊断停止并记录实际45；只有native原门槛与全部审计通过才继续恰好三512。部分失败DIAGNOSTIC_AUDITED明确不等于完整资格AUDITED。不得重跑同一失败完整控制器/档位抽签。资格仍要求原45+3x512全部strict及实际全程零wrench。
+
+源最新midpoint u1，固定actor/27.5ms落地profile，controller身份增加上述起跳反馈profile。0 PPO，不更改共享54/128支出、74余额。空landing数据只在新版本返回NOT_REACHED且不合格，不改旧异常/原退出。记录反馈前q/v、pitch/gyro、原/新payload、门控与渐入；父NumPy逐步核因果、命令、FIFO及外力。

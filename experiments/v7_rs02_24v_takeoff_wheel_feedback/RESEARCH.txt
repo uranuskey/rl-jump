@@ -1,0 +1,11 @@
+原始资料及实现范围（2026-10-07 UTC）
+
+Hua Chen et al., Underactuated Motion Planning and Control for Jumping with Wheeled-Bipedal Robots, arXiv:2012.06156.
+https://arxiv.org/abs/2012.06156
+本次读摘要：使用W-SLIP规划，wheel LQR与task-space whole-body控制结合。支持把轮平衡控制作为跳跃控制的一部分这一设计方向，未从该文获取/转用增益、硬件数值；本实验没有实现其LQR/WBC或扰动观测器。
+
+Todor Dinev et al., Modeling and Control of a Hybrid Wheeled Jumping Robot, IROS 2020.
+https://wolfgangmerkt.com/publications/2020/iros20vlwip.pdf
+本次读引言、动力学、规划和控制段开头：VL-WIP模型轮力矩对机身有反作用，腿长变化与俯仰耦合，反馈及重规划用于处理跟踪误差。它的伸缩腿模型与本机串联腿不同，不转用机械/惯量/电机数值。本实验只实现固定有界pitch PD轮速目标，不是该论文MPC/轨迹优化，无成功保证。
+
+本任务原轨迹：零外力原生45例全部在COMPRESS tilt失败；.6s后站立actor输出被原代码置零，真实电机位置/速度伺服仍在。俯仰先增长、晚段部分腿电机请求被速度相关包络裁剪，只是时序证据，不能证明单一根因。新轮反馈为可证伪的单一控制器改动；实际motor输出/外力/阶段通过与否必须由新轨迹验证。

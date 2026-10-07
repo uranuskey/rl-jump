@@ -1,0 +1,26 @@
+{
+  "parent_frozen_sha256": "f2e791ffc50a7ba303b05c5acf173307ff62ffe000959874baf2c6e07ef79910",
+  "purpose": "Isolated bounded causal wheel pitch feedback at zero external assistance; unchanged physical/final gates, no PPO, native failure early rejection",
+  "sha256": {
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/PLAN.txt": "2af46944cc5e495a16454790e58e842fac7eae772e94e19bbb1572c23b43db0d",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/preflight.py": "e7e3098e1fcfe8c877096b41c305700c16ad669f6d15aa64e2d97c95132a6833",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/RESEARCH.txt": "5b68b645895ac59fbfa0c4719e1d67a7aedd3ac5c038ec805b23dfb4e29440fa",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/run_pipeline.ps1": "a8c8763ed4bda579ffb379a95e6d9c314600acaf5cb9d28d6267470a7409e3f2",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/test_twpd_control.py": "ccff1ebfa341980f86310cac052a6f816541f50bc84121b0ed352579df3d50ef",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/test_twpd_empty.py": "0a14c76880ac291add4e1523a5f71d747ab4705b7b044d0209134800b662e435",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_assist_audit.py": "d0cea2905b5bbf61521f68a9991a4bfbe6e523e81441bca1f27d3b6228cf1602",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_audit.py": "b1108aaa90bc43f294eb0c66effc320a6aff36d5b323a3347b45e1ba7ceff16b",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_contract.py": "423fc28cf494dcab7f8b899caec2691b1212e5fb072ae2f71854d4d427ab875f",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_control.py": "6ef5a5da2f05855ed4d4e6c710abc2b597d61816bdd07ffe96f46de4a68910ec",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_course.py": "f3c05bd7add0b16b219cc280119b566cc61ed1ddd2ee383e6868a5cd8702bcc9",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_env.py": "53aacdfecb122f4c892024c27b0912767ca4f2070f9f4c9e65df1ddff83863d2",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_feedback_audit.py": "d41ef5c22f1fa58a7e50dc8e6f5bb3a86b5741e674131a0d06f39f8430dc83c2",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_gates.py": "9aefa6195e63945b97d1d4e8479c815e0c44518e113cebab20371274cbd3c34b",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_row_audit.py": "bc5f8cdce3c34344e59ec93ab69535e3a5444ea2b45ac51210a63adcc629e279",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_runtime.py": "6234975493adea6b585bb25617499505b5fd31cfca817b5bc1fde078cfe3ccda",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_trace_audit.py": "eaef470241044ba68e041b25a30dad8695589bee76cd89f5d36690cfa4578e67",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_worker.py": "4b03dbbde7083af18d86e0c211b0ec1400e5ce5bb18f5b4eefbf481c9e7a7d0d",
+    "experiments/v7_rs02_24v_takeoff_wheel_feedback/twpd_wrench_audit.py": "90d77a412f4ca66bd2e2b26d5c7c90d33c5dbc42f41cf71b5797de58cfad10dd"
+  }
+}
