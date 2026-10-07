@@ -1,0 +1,23 @@
+{
+  "parent_frozen_sha256": "f4287cba393804479f59efd31abdf8d4f55c88be10b568cccc6d84ddfd05fd22",
+  "purpose": "User-requested single full zero-assistance diagnostic using latest midpoint actor, unchanged physics and final gates, no PPO",
+  "sha256": {
+    "experiments/v7_rs02_24v_zero_assist_snapshot/PLAN.txt": "011398dc3e2b1d4761f1dbda6eb984ac4a55df9369ce48b1fec5fc72a75b087a",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/preflight.py": "122113b63ad9ace2cb4f157efcaa00e6df8c4cb4bd4b7b542d7402bab749f124",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/RESEARCH.txt": "f77e5b7cf6c43619be0f7496d835aa8b674423bcf3fa395b8c865ff3e9827ad6",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/run_pipeline.ps1": "30bab2287cd8acaefc5110fdd2ac0d154e6e1950ae8bbfc4f1291bc1b63bcdd0",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/test_zsnap.py": "4a3ad7990b51f3828b3214a1b60c0540e121df04e0d13bf8155760bdda4a894c",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_assist_audit.py": "b73fc767af86d4760b103f6474333f858679d9223261cf6f1a615c11547f2e8c",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_audit.py": "2de26b9b9afa7c75016cd7b232fe4930b1ec69155aa622b9129d71fa27a01387",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_contract.py": "8d2b2d08175856914de90b48ad1cedc117703155f0ffb057f3851f3c59b95770",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_course.py": "4db3302a1c22d6306614c772955f737a19ae7aa81e5b1855a67b206eac3f7be4",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_env.py": "2646140a9259ef87a9fa96b73c47dea060b27f7ad2dd6146671924aaeac1e372",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_gates.py": "9aefa6195e63945b97d1d4e8479c815e0c44518e113cebab20371274cbd3c34b",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_row_audit.py": "9e826e73c25be7f77a22ffbc5fd9d190be1fb406a51ebbe97d8bba4786c4d82e",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_runtime.py": "5301f704d0df66b7410412fc49b99c316e6c34ca5d8ed7003e22a7c05b9afc44",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_trace_audit.py": "5804d4a246af8135810b3c51230828a5b4a54b6716961a7a902e4f9b924001c2",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_worker.py": "625e8c452019b9aad571879392abc4f4d47c793793f55a5b6204fab6fed759f9",
+    "experiments/v7_rs02_24v_zero_assist_snapshot/zsnap_wrench_audit.py": "fd6c6c552b2071082fd6f03949dfcf75bf3aca4e477b08d34843526671d85d93"
+  }
+}

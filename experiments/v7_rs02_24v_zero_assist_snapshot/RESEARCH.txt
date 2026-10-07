@@ -1,0 +1,4 @@
+This is an explicitly requested diagnostic, not a new learning or control method.
+It freezes the existing midpoint environment, fixed takeoff policy, landing actor, full27.5ms controller profile, actual-wrench recording, qualification gates and physics limits.
+Parent evidence: midpoint closure_tensor_native_1416.json SHA b85513e696405ba72f79434b2827d0f7fb02998ce576456c1d2b34bc423a2054. All source/freeze/row/trace/pose/PPO accounting verified with0newphysics after parent wrapper and audit exited.
+No new paper-derived safety claim, admission tolerance or hardware parameter is introduced.
