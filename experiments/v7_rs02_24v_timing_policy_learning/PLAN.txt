@@ -1,0 +1,14 @@
+固定已选中的 27.5 ms 控制器，进行有界小步 PPO；所有实验仅仿真。
+立即父实验 late_precontact_probe 已 TARGET_FAILED，所有退出0，源CPU张量/行/trace/pose补审通过。
+源 recovery u3 仍为原30ms checkpoint，但新运行profile是已独立严格合格的 zero_slot_late_h27p5；两者分开绑定。
+先纯CPU复用同actor/profile的23.75%严格资格、22.5%完整失败；各0新物理，不重测失败源。
+22.5%仅平均冲击失败，无既有学习入口。返回严格23.75%训练，每次1PPO/最多8接受actorsteps；首次fresh Adam/RNG，后同档精确恢复，新档fresh。
+每次真实接受steps>0且actor改变才重测，且新actor必须先在23.75% native45+恰好三512全strict才下降。
+上档恢复仅使用原rare/near_mean/near_native_peak各自完整路线，不扩大或拼接条件；所有最终资格门槛完全继承。
+固定profile/起跳网络/机械几何/碰撞/17Nm估算24V包络/rotor5ms/FIFO不变，起跳落地同时撤力。
+档位23.75、22.5、20、17.5、15、12.5、10、7.5、5、2.5、0%。三512是原45工况重复。
+预算共享84（先前已花44/128），不是每档128；每目标自身8更新、每目标上档strict+recovery合计8更新、返回最多8次。
+actor_lr上限2.5e-6，KL<=.005，critic3e-4和完整actor/Adam拒绝回滚继承；exploration offset30只延续索引，不计新PPO。
+原13奖励+bulk+tail目标不变，每world和每update检查点可审计；PPO只是测试适应新时序profile的假设，无单项因果或理论保证。
+保存所有失败，拒绝/上限/预算耗尽写parent_repair_request，父继续新修复不结束总目标。
+完整0%逐400Hz全阶段实际body wrench/free-base generalized force全零+全部strict+退出0+AUDITED才称仿真零辅助。

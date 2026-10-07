@@ -1,0 +1,17 @@
+{
+  "parent_frozen_sha256": "91e4a496fa6c8a5ef219b713fe2ce9e0272594656714832f3f36d1cb167a2e65",
+  "purpose": "Fixed selected 27.5 ms profile small-step PPO with exact source evidence reuse and strict frontier requalification",
+  "sha256": {
+    "experiments/v7_rs02_24v_timing_policy_learning/PLAN.txt": "ecacaf461669912c07e3d3e666982565c22986242deccb2247dc6ba39b31b17d",
+    "experiments/v7_rs02_24v_timing_policy_learning/preflight.py": "64f3ffec3d7f122d7b8babad995b7d074007b3d0a68c4df4f8a43a8ea55a5bfe",
+    "experiments/v7_rs02_24v_timing_policy_learning/RESEARCH.txt": "1a4d08d9c3c2260a04fdec87996a0331238bd23dcabf8bf727bc3c622cf67264",
+    "experiments/v7_rs02_24v_timing_policy_learning/run_pipeline.ps1": "049e5e5192437d6c0a309b4e4dafcaf6b6530d56a596425ae3c33eddf5146df8",
+    "experiments/v7_rs02_24v_timing_policy_learning/supervise.ps1": "32d6942c820314c43e5477e209a4ca45510923ecd704c825fa3d2213b0f04c39",
+    "experiments/v7_rs02_24v_timing_policy_learning/test_timing.py": "fb3ad0fd6eae0ce42b646bbe3e7b447c7450f7a2d487a93a9799f38b79088ab9",
+    "experiments/v7_rs02_24v_timing_policy_learning/timing_audit.py": "86b2b81d565aba5f480376701a6a0182055912f70302c31440a4a2f6af72ec8d",
+    "experiments/v7_rs02_24v_timing_policy_learning/timing_contract.py": "08e3933fbea03a49b2ead354b19f4945c1a865187ca8048e4a1add22682b236b",
+    "experiments/v7_rs02_24v_timing_policy_learning/timing_course.py": "65e6532063558a884267d2ebd771c63475ea6e65c348bad547c19712451ae6c8",
+    "experiments/v7_rs02_24v_timing_policy_learning/timing_runtime.py": "7249bea045090e7e670be67e5d08e67dadc82e4c2d6360a2997de7be268f0560",
+    "experiments/v7_rs02_24v_timing_policy_learning/timing_worker.py": "4135c36393594135f78a362e217124c8238d5d8951ff450593cec273da0b62ad"
+  }
+}

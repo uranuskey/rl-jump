@@ -1,0 +1,6 @@
+检索与决策日期：2026-10-07。
+Schulman et al., Proximal Policy Optimization Algorithms (2017), https://arxiv.org/abs/1707.06347 ：原始摘要已读；使用采样数据和代理目标的小批次优化。继续既有小步PPO并记录KL与实际接受步骤，不声称KL限制保证落地硬约束。
+Yang et al., Accelerating Safe Reinforcement Learning with Constraint-mismatched Baseline Policies (2021), https://proceedings.mlr.press/v139/yang21i.html ：原始论文页面已读，奖励与约束需分别核算；未实现其完整投影算法或理论保证。
+Guo et al. (2022), https://pmc.ncbi.nlm.nih.gov/articles/PMC9755738/ ：全文已读，仅作为落地控制背景；论文机器人是不同平行四杆拓扑，不转用其几何、性能或电机值。
+项目证据：late profile27.5ms在23.75%原/修正strict全部通过，在22.5%只mean失败；源actor仍针对旧30ms训练。固定已选profile，在已有strict23.75%入口小步学习，独立检查新actor能否改善22.5%。分布适应只是可检验假设，不是已证实根因。
+本实验不实现新控制器公式，不扩大最终或学习阈值，不轮换未执行的25/20ms备选，不重复失败actor同档。
